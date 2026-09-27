@@ -45,6 +45,17 @@ The converter displays a progress line after completing each bundle. Large maps 
 
 See [TECHNICAL.md](TECHNICAL.md) for architecture, failure history, byte-level findings, and reproducibility notes.
 
+## Project policies and release status
+
+- [LEGAL.md](LEGAL.md) — imagery rights, attribution limitations, trademarks, agency approval, lack of affiliation and operational-use cautions.
+- [CREDITS.md](CREDITS.md) — Esri's public specifications and licenses, the MBTiles format, Pillow, Python and QGIS acknowledgments.
+- [LICENSE_STATUS.md](LICENSE_STATUS.md) — **no project software license has been granted yet**; the authorized owner must resolve ownership and choose one.
+- [CONTRIBUTING.md](CONTRIBUTING.md) — safe contributions, source provenance and reproducible test expectations.
+- [SECURITY.md](SECURITY.md) — how to request private reporting without posting sensitive material publicly.
+- [RELEASE_CHECKLIST.md](RELEASE_CHECKLIST.md) — owner review and testing required before broader claims or redistribution.
+
+No imagery datasets, proprietary example tile packages or agency data are intentionally included. References to QGIS, Esri or other providers are descriptive and are not claims of affiliation, sponsorship or official certification.
+
 ## Respect for imagery providers and their rights
 
 This is an independent, noncommercial **file-format conversion project** motivated by public-safety and offline-mapping needs. We appreciate the technology and imagery made available by GIS software developers, imagery providers, and the wider mapping community. **We respect imagery providers' copyrights, licenses, terms of service, attribution requirements, and decisions about permitted uses.**
@@ -72,4 +83,4 @@ Esri publishes the material in both repositories under the **Apache License 2.0*
 - [Esri tile package specification](https://github.com/Esri/tile-package-spec)
 - [MBTiles 1.3 specification](https://github.com/mapbox/mbtiles-spec/blob/master/1.3/spec.md)
 
-**Project status:** working conversion baseline, under continued application and large-dataset validation. No software license is included yet; the repository owner must select one before others can assume permission to reuse or redistribute the code.
+**Project status:** user-tested working conversion baseline, with additional testing and owner review pending. The public repository has **no software license yet**; see [LICENSE_STATUS.md](LICENSE_STATUS.md).
