@@ -45,9 +45,15 @@ The converter displays a progress line after completing each bundle. Large maps 
 
 See [TECHNICAL.md](TECHNICAL.md) for architecture, failure history, byte-level findings, and reproducibility notes.
 
-## Imagery permissions
+## Respect for imagery providers and their rights
 
-**Technical access is not a redistribution license.** The converter is source-independent, but imagery providers set their own rules for downloading, storing and redistributing their imagery. Before creating or sharing offline packages, verify that your chosen source permits the intended use. In particular, access to Google or Esri imagery through a QGIS service or plugin does not by itself establish permission for bulk download, offline retention, or redistribution. Consult the terms applicable to the actual source, such as [Google Maps/Google Earth terms](https://www.google.com/help/terms_maps/) and [Google Map Tiles API policies](https://developers.google.com/maps/documentation/tile/policies) when applicable.
+This is an independent, noncommercial **file-format conversion project** motivated by public-safety and offline-mapping needs. We appreciate the technology and imagery made available by GIS software developers, imagery providers, and the wider mapping community. **We respect imagery providers' copyrights, licenses, terms of service, attribution requirements, and decisions about permitted uses.**
+
+The converter does not download imagery, bypass provider access controls, remove watermarks or attribution, or grant permission to store or redistribute anyone's data. It converts an MBTiles file that the user already has, copying its image tiles without altering them. **Users are responsible for ensuring they have the appropriate rights or permission** for the imagery they acquire, convert, retain offline, use, or share; noncommercial or emergency-service intent does not, by itself, establish those permissions.
+
+Technical access through QGIS or another viewer does not automatically authorize bulk downloading, offline retention, or redistribution. Check the specific provider's applicable terms or obtain permission where necessary; for example, consult [Google Maps/Google Earth terms](https://www.google.com/help/terms_maps/) and [Google Map Tiles API policies](https://developers.google.com/maps/documentation/tile/policies) for relevant Google services.
+
+This project is **not affiliated with or endorsed by QGIS, Google, Esri, or any imagery provider**, unless such a relationship is expressly documented. Our work concerns interoperability between published file formats, not ownership of the imagery those formats can contain.
 
 ## Format references
 
