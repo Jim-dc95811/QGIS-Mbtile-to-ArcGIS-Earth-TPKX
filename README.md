@@ -6,7 +6,7 @@ The converter copies each source PNG or JPEG tile **byte-for-byte**, maps MBTile
 
 ## Why this exists
 
-QGIS can create raster MBTiles from a variety of imagery sources. Previously, this project's ArcGIS Earth workflow involved extra raster conversion and ArcGIS Pro processing, or KML super-overlays that experienced substantial navigation delays in ArcGIS Earth. A directly generated TPKX uses the application's native offline tile-package path instead.
+Raster MBTiles may come from any compatible map-making software. Previously, this project's ArcGIS Earth workflow involved extra raster conversion and ArcGIS Pro processing, or KML super-overlays that experienced substantial navigation delays in ArcGIS Earth. A directly generated TPKX uses the application's native offline tile-package path instead.
 
 The breakthrough was achieved by comparing two **working ArcGIS Pro-generated TPKX references** against experimental packages, correcting their metadata and binary bundle layout until the new packages worked in ArcGIS Earth. The multi-bundle colored diagnostic TPKX was also accepted by ArcGIS Pro. The project owner has now confirmed that an MBTiles file converted with the distributed script works very well in ArcGIS Earth.
 
