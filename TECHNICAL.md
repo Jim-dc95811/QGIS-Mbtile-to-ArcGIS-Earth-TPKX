@@ -9,6 +9,12 @@ Two native ArcGIS Pro TPKX files of substantially different sizes were analyzed 
 
 The earlier KML super-overlay architecture also worked in Google Earth but produced approximately 3–4-second navigation lockouts in ArcGIS Earth for the tested overlays. The same symptom appeared for locally linked and HTTP-delivered KML, and with synthetic color tiles without external internet. A 5,461-GroundOverlay flat KML was worse. Wireshark established fast local HTTP responses but did not directly identify ArcGIS Earth's internal bottleneck. The TPKX work *bypasses* this workload; it did not prove the root cause of the KML issue.
 
+## Multi-gigabyte application test (2026-09-27)
+
+The project owner supplied screenshots showing a completed conversion with the distributed script of `3-1-1_10.mbtiles` (**4,137,400 KB in Windows Explorer**, approximately 3.94 GiB) to `3-1-1_10.tpkx` (**4,108,022 KB**). A companion screenshot shows the resulting map open in **ArcGIS Earth**. The owner reports correct operation at the specific map scene associated with the original KML navigation problem.
+
+This expands our application evidence from small demonstration packages to **one multi-gigabyte real-world input**. The observed TPKX size reflects the actual input tiles and container overhead; do not generalize a compression ratio from this sample. The original satellite imagery is not included in the public repository because its redistribution permissions have not been established. This particular package has **not** been separately documented as accepted by ArcGIS Pro, nor have district-scale datasets or all MBTiles variants been fully validated.
+
 ## Conversion invariants
 
 1. **No imagery transformation.** Copy each input tile's exact PNG or JPEG bytes. Do not stitch, resample, recolor or recompress. A separate `thumbnail.png` can be generated for package presentation.
