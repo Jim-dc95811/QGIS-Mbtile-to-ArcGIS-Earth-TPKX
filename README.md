@@ -14,7 +14,7 @@ This demonstrates a usable conversion route; it is not a claim that every possib
 
 ## Download and use
 
-Download [mb2tpkx.zip](mb2tpkx.zip) and extract the two files together:
+Use **Code → Download ZIP** on this repository, extract it, and keep these two files together:
 
 - `mb2tpkx.py` — standalone Python converter.
 - `mb2tpkx.bat` — Windows launcher.
