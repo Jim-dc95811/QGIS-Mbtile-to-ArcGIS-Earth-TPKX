@@ -66,16 +66,20 @@ Technical access through QGIS or another viewer does not automatically authorize
 
 This project is **not affiliated with or endorsed by QGIS, Google, Esri, or any imagery provider**, unless such a relationship is expressly documented. Our work concerns interoperability between published file formats, not ownership of the imagery those formats can contain.
 
-## Esri's published format documentation
+## Publicly documented formats: Mapbox MBTiles and Esri TPKX
 
-This converter is an **independent implementation of publicly documented file formats**, not an attempt to reverse-engineer or circumvent a closed service. Esri itself maintains two public repositories directly relevant to this work:
+**Both ends of this conversion are publicly documented, and neither format requires a particular map-making application.** This project reads compatible raster MBTiles made by any producer and independently writes Esri's Compact Cache V2 TPKX format. It does not check which program originally created the MBTiles.
 
-- [Esri: Compact Cache V2 documentation and sample code](https://github.com/Esri/raster-tiles-compactcache). Esri describes how its raster tile bundles are structured and publishes an example Python implementation for building bundles from individual image tiles.
-- [Esri: Tile Package Specification](https://github.com/Esri/tile-package-spec). Esri documents the TPKX container layout, tiling scheme, metadata, and Compact Cache V2 tile storage. Its repository explicitly recommends TPKX rather than the older TPK format, whose specification is not published.
+**Input — Mapbox's [MBTiles specification](https://github.com/mapbox/mbtiles-spec).** Mapbox publicly maintains the open MBTiles format for tiled map data. Its official README explicitly says use of the specification in products and code is free, with no royalties, restrictions or requirements. The *text of the specification* has its own [Creative Commons Attribution license](https://github.com/mapbox/mbtiles-spec); the right to implement the format is distinct from republishing the specification text. MBTiles is **not owned by QGIS**.
 
-Esri publishes the material in both repositories under the **Apache License 2.0**. These publications provide a clear technical basis for developers to study the formats and create interoperable tools such as this converter. We appreciate Esri making that work publicly available and acknowledge its authorship of the formats.
+**Output — Esri's published specifications and example code:**
 
-**Important distinction:** Publishing format documentation and sample code is not an endorsement of this particular project, nor does it grant rights to third-party imagery or waive the terms of any imagery or mapping service. The imagery-permissions statement above applies independently.
+- [Esri Compact Cache V2](https://github.com/Esri/raster-tiles-compactcache): publicly documents the bundle format and supplies example Python code for constructing bundles from image tiles.
+- [Esri Tile Package Specification](https://github.com/Esri/tile-package-spec): publicly documents the TPKX container, metadata, tiling scheme and Compact Cache V2 tile storage, and recommends TPKX instead of the older TPK format.
+
+Esri publishes those two repositories under **Apache License 2.0** and invites contributions to its TPKX specification repository. Together with Mapbox's implementation-friendly MBTiles specification, these publications establish a documented technical basis for independent interoperability tools. We credit both organizations for publishing the respective formats; neither organization is claimed to endorse or participate in this project.
+
+**Format openness is not imagery permission.** Neither specification grants rights to download, cache, convert, display offline or redistribute Google, Esri or other providers' map imagery. Those activities remain governed by the applicable provider terms and permissions, as explained above. The project code also has its own separate [pending license decision](LICENSE_STATUS.md).
 
 ## Format references
 
