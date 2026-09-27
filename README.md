@@ -47,7 +47,7 @@ See [TECHNICAL.md](TECHNICAL.md) for architecture, failure history, byte-level f
 
 ## Imagery permissions
 
-**Technical access is not a redistribution license.** The converter is source-independent, but imagery providers set their own rules for downloading, storing and redistributing their imagery. Before creating or sharing offline packages, verify that your chosen source permits the intended use. In particular, access to Google or Esri imagery through a QGIS service or plugin does not by itself establish permission for bulk download, offline retention, or redistribution.
+**Technical access is not a redistribution license.** The converter is source-independent, but imagery providers set their own rules for downloading, storing and redistributing their imagery. Before creating or sharing offline packages, verify that your chosen source permits the intended use. In particular, access to Google or Esri imagery through a QGIS service or plugin does not by itself establish permission for bulk download, offline retention, or redistribution. Consult the terms applicable to the actual source, such as [Google Maps/Google Earth terms](https://www.google.com/help/terms_maps/) and [Google Map Tiles API policies](https://developers.google.com/maps/documentation/tile/policies) when applicable.
 
 ## Format references
 
