@@ -35,6 +35,16 @@ py mb2tpkx.py "input.mbtiles" "output.tpkx"
 
 The converter displays a progress line after completing each bundle. Large maps can require substantial disk space and time.
 
+## Real-world conversion milestone (2026-09-27)
+
+The project owner successfully ran the **distributed Python converter** against a much larger MBTiles imagery dataset, not just the synthetic and small real-imagery test packages:
+
+- Input: `3-1-1_10.mbtiles`, **4,137,400 KB** as displayed in Windows Explorer (approximately 3.94 GiB).
+- Output: `3-1-1_10.tpkx`, **4,108,022 KB** as displayed in Windows Explorer.
+- Application check: the resulting package loaded and displayed in **ArcGIS Earth**, including a map location where the earlier KML super-overlay workflow had exhibited slow navigation. The owner reported that the converted package worked correctly there.
+
+This is a **reported, screenshot-supported application test of a multi-gigabyte conversion**, rather than an independent reproduction on the maintainer's computer. It does not establish universal large-dataset compatibility, offline operational certification, or ArcGIS Pro acceptance of this particular file. The imagery and project screenshots are not redistributed here.
+
 ## Verified scope and limits
 
 - Input: standard **Web Mercator raster MBTiles**, TMS row convention, **256 × 256 PNG/JPEG** tiles at zoom levels **0–23** as implemented. Other formats and grids are not silently converted.
