@@ -55,6 +55,17 @@ Technical access through QGIS or another viewer does not automatically authorize
 
 This project is **not affiliated with or endorsed by QGIS, Google, Esri, or any imagery provider**, unless such a relationship is expressly documented. Our work concerns interoperability between published file formats, not ownership of the imagery those formats can contain.
 
+## Esri's published format documentation
+
+This converter is an **independent implementation of publicly documented file formats**, not an attempt to reverse-engineer or circumvent a closed service. Esri itself maintains two public repositories directly relevant to this work:
+
+- [Esri: Compact Cache V2 documentation and sample code](https://github.com/Esri/raster-tiles-compactcache). Esri describes how its raster tile bundles are structured and publishes an example Python implementation for building bundles from individual image tiles.
+- [Esri: Tile Package Specification](https://github.com/Esri/tile-package-spec). Esri documents the TPKX container layout, tiling scheme, metadata, and Compact Cache V2 tile storage. Its repository explicitly recommends TPKX rather than the older TPK format, whose specification is not published.
+
+Esri publishes the material in both repositories under the **Apache License 2.0**. These publications provide a clear technical basis for developers to study the formats and create interoperable tools such as this converter. We appreciate Esri making that work publicly available and acknowledge its authorship of the formats.
+
+**Important distinction:** Publishing format documentation and sample code is not an endorsement of this particular project, nor does it grant rights to third-party imagery or waive the terms of any imagery or mapping service. The imagery-permissions statement above applies independently.
+
 ## Format references
 
 - [Esri Compact Cache V2 technical description](https://github.com/Esri/raster-tiles-compactcache/blob/master/CompactCacheV2.md)
