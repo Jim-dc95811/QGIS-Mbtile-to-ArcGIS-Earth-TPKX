@@ -1,4 +1,4 @@
-# Direct MBTiles to ArcGIS Earth TPKX
+# MBTiles to TPKX
 
 **Make a native, offline Esri tile package from an existing raster MBTiles file, without an intermediate GeoTIFF or ArcGIS Pro export.**
 
