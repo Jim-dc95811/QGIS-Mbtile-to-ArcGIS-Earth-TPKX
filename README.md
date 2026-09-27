@@ -1,6 +1,6 @@
 # MBTiles to TPKX
 
-**Make a native, offline Esri tile package from an existing raster MBTiles file, without an intermediate GeoTIFF or ArcGIS Pro export.**
+**Convert existing raster MBTiles from any compatible producer into native offline Esri TPKX, without an intermediate GeoTIFF or ArcGIS Pro export.**
 
 The converter copies each source PNG or JPEG tile **byte-for-byte**, maps MBTiles TMS tile addresses into Esri's tile grid, writes indexed Compact Cache V2 `.bundle` files, and packages them as a `.tpkx` file. It does not change the imagery, invent missing zoom levels, resample pixels, or improve source resolution.
 
