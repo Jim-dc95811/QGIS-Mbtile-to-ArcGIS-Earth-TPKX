@@ -13,7 +13,22 @@ The earlier KML super-overlay architecture also worked in Google Earth but produ
 
 The project owner supplied screenshots showing a completed conversion with the distributed script of `3-1-1_10.mbtiles` (**4,137,400 KB in Windows Explorer**, approximately 3.94 GiB) to `3-1-1_10.tpkx` (**4,108,022 KB**). A companion screenshot shows the resulting map open in **ArcGIS Earth**. The owner reports correct operation at the specific map scene associated with the original KML navigation problem.
 
-This expands our application evidence from small demonstration packages to **one multi-gigabyte real-world input**. The observed TPKX size reflects the actual input tiles and container overhead; do not generalize a compression ratio from this sample. The original satellite imagery is not included in the public repository because its redistribution permissions have not been established. This particular package has **not** been separately documented as accepted by ArcGIS Pro, nor have district-scale datasets or all MBTiles variants been fully validated.
+This was the **first multi-gigabyte real-world input** tested with the distributed script. The observed TPKX size reflects the input tile bytes and packaging; it is not evidence of a general compression ratio. The original satellite imagery is not included in the public repository because its redistribution permissions have not been established. This particular package has **not** been separately documented as accepted by ArcGIS Pro, and neither full-district coverage nor all MBTiles variants have been fully validated.
+
+## Large-package and source-JPEG/75 application tests (2026-09-27)
+
+The project owner next used the **same distributed converter without code changes** on additional production grid datasets. Explorer screenshots recorded the following sizes (Windows-displayed KB):
+
+| Input run | MBTiles size | Converted TPKX size | Reported application evidence |
+| --- | ---: | ---: | --- |
+| `Master Grid 3-1 z20`, PNG tiles | 39,891,100 KB | 39,587,335 KB | Package loaded in ArcGIS Earth; owner reports responsive offline navigation, immediate display and no noticeable zoom-time pixelation |
+| `Master Grid 3-2 z20 jpg`, JPEG/75 tiles | 4,354,360 KB | 4,090,206 KB | Package loaded in ArcGIS Earth; owner supplied screenshots showing detailed Z20 hybrid graphics and legible labels |
+
+The observed JPEG/75 run was roughly **9.2× smaller at the MBTiles stage** and **9.7× smaller at the TPKX stage** than the reported PNG run (approximately 89–90% smaller). They were **different production grids**, not a controlled encode of the exact same pixels and tile inventory. The large difference strongly motivates a controlled same-source comparison, but these two files alone cannot establish a universal JPEG/75 compression factor or equivalent pixel-level fidelity. Viewer responsiveness is based on the owner's interactive observations, not frame-time benchmarks.
+
+**Mechanism:** The JPEG/75 setting belongs to the *MBTiles-producing application*. This converter copies each accepted source JPEG or PNG tile **byte-for-byte** into Esri Compact Cache V2 bundles. It does not invoke JPEG compression, regenerate the zoom pyramid, resample cartography, or change the verified binary packaging logic. A source format change therefore required **zero changes** to `mb2tpkx.py` or `mb2tpkx.bat`.
+
+The screenshots and owner observations constitute a successful, substantial **~40 GB-class field test** plus a smaller, visually inspected JPEG/75 test. They do **not** establish maximum file size, tolerance for every MBTiles producer, equivalent image quality for all imagery, or formal compatibility certification. Preserve representative map tiles and exact inventories privately if a future controlled PNG/JPEG comparison is needed. Do not commit third-party imagery without permission.
 
 ## Conversion invariants
 
@@ -40,7 +55,7 @@ This expands our application evidence from small demonstration packages to **one
 
 Preserve the verified Python and BAT files until a narrowly specified code change is needed; change one functional behavior at a time. Before publishing a changed converter, verify every tile's output bytes against the input, run a multiple-bundle test, compare JSON and bundle header/index invariants, and obtain acceptance of the **exact newly generated output** in ArcGIS Earth and ideally ArcGIS Pro. A GDAL reader accepting a package is useful but was **not sufficient**: GDAL opened some early TPKX files that ArcGIS Earth rejected.
 
-The current script is a **CLI with a Windows BAT launcher, not a GUI application**. It processes one bundle at a time, rejects an existing destination file, and validates tile dimensions and image signatures. Known work remains for huge inputs, interrupted runs, unusual MBTiles layouts, spatially uneven zoom coverage, and mixed-format metadata.
+The current script is a **CLI with a Windows BAT launcher, not a GUI application**. It processes one bundle at a time, rejects an existing destination file, and validates tile dimensions and image signatures. Known work remains for inputs larger or more complex than the owner-reported ~40 GB test, interrupted runs, unusual MBTiles layouts, spatially uneven zoom coverage, and mixed-format metadata.
 
 ## Technical references
 
