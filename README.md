@@ -1,5 +1,7 @@
 # MBTiles to TPKX
 
+**Continuing this project in a new conversation?** Read [CONTINUITY.md](CONTINUITY.md) first, then refresh against the current [technical record](TECHNICAL.md), the repository's actual program files and relevant ChatGPT Library materials. The continuity note is a dated handoff, not a replacement for current evidence.
+
 **Convert existing raster MBTiles from any compatible producer into native offline Esri TPKX, without an intermediate GeoTIFF or ArcGIS Pro export.**
 
 **Latest field results (September 27, 2026):** the owner reports smooth offline navigation of a roughly 40 GB-class converted TPKX; a separate JPEG/75 production grid yielded a much smaller package with visually clear Z20 hybrid cartography. See [test figures and important comparison limits](#larger-file-field-tests-and-jpeg75-milestone-2026-09-27).
