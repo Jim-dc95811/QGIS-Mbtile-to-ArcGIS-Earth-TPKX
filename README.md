@@ -45,13 +45,30 @@ The project owner successfully ran the **distributed Python converter** against 
 
 This is a **reported, screenshot-supported application test of a multi-gigabyte conversion**, rather than an independent reproduction on the maintainer's computer. It does not establish universal large-dataset compatibility, offline operational certification, or ArcGIS Pro acceptance of this particular file. The imagery and project screenshots are not redistributed here.
 
+## Larger-file field tests and JPEG/75 milestone (2026-09-27)
+
+The project owner subsequently tested the **unchanged converter** with much larger real-world raster MBTiles and reported responsive offline navigation in ArcGIS Earth. Windows Explorer screenshots supplied these file sizes:
+
+| Production run | Input MBTiles | Converted TPKX | Observed viewer result |
+| --- | ---: | ---: | --- |
+| Master Grid 3-1 Z20, PNG source tiles | 39,891,100 KB | 39,587,335 KB | Loaded in ArcGIS Earth; owner reports very responsive navigation and immediate screen display |
+| Master Grid 3-2 Z20, JPEG quality 75 source tiles | 4,354,360 KB | 4,090,206 KB | Loaded in ArcGIS Earth; screenshot shows detailed hybrid cartography and legible Z20 labels |
+
+These are **different grid runs**, although the owner reports comparable grid dimensions/coverage. Their displayed sizes differ by approximately **9.2× for MBTiles** and **9.7× for TPKX** (roughly 89–90% smaller in the JPEG/75 run). This is an important *production observation*, **not** a controlled PNG-versus-JPEG experiment using byte-identical source imagery, an independently confirmed identical tile inventory, or a measured image-fidelity benchmark.
+
+**The JPEG/75 choice is made upstream when creating the MBTiles.** The converter already accepts PNG or JPEG and copies every source map tile's image bytes unchanged into the TPKX. It performs **no JPEG conversion or extra compression**; neither the Python script nor the Windows launcher required modification for this result.
+
+The owner reports that the large PNG package remained highly responsive during zooming and that the JPEG/75 output retained visually clear, zoom-dependent Google Hybrid road labels and graphics. These are owner-reported, screenshot-supported ArcGIS Earth observations, not a measured performance comparison or proof that JPEG/75 will preserve every source equally well. For mixed text/graphics, transparency, and different imagery types, producers should inspect their own results before choosing an output image format.
+
+These packages are **not included** in the repository; rights and redistribution requirements for their imagery have not been established.
+
 ## Verified scope and limits
 
 - Input: standard **Web Mercator raster MBTiles**, TMS row convention, **256 × 256 PNG/JPEG** tiles at zoom levels **0–23** as implemented. Other formats and grids are not silently converted.
 - Output: native Esri **Compact Cache V2 TPKX** with 128 × 128 indexed tile blocks.
 - Source imagery bytes are preserved. A separate thumbnail is generated from a source tile; it is not used to replace or alter map imagery.
 - Verified during development: exact-tile byte comparisons, multiple bundles at the same zoom level, ArcGIS Earth acceptance of the color and real-imagery demonstration packages, ArcGIS Pro acceptance of the Color 2B package, and a successful real MBTiles-to-TPKX run of the distributed script reported by the project owner in ArcGIS Earth.
-- **Still to stress-test:** district-scale files, many bundles across several zoom levels, diverse MBTiles layouts, uneven multizoom coverage, failure recovery, and a separate ArcGIS Pro acceptance check for freshly generated output from the distributed script.
+- **Still to validate:** full district-scale coverage, independently repeated large-file tests, diverse MBTiles producers/layouts, uneven multizoom coverage, failure recovery, and a separate ArcGIS Pro acceptance check for freshly generated output from the distributed script. The owner-reported ~40 GB success is a substantial field test, not a universal maximum-size guarantee.
 
 See [TECHNICAL.md](TECHNICAL.md) for architecture, failure history, byte-level findings, and reproducibility notes.
 
