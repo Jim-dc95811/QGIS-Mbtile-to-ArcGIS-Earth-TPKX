@@ -30,6 +30,7 @@ See [TECHNICAL.md](TECHNICAL.md) and [README.md](README.md) for the actual Windo
 ## Public documentation and video (2026-09-28)
 
 - [x] Link the published [Jacksonville offline-mapping demonstration](https://www.youtube.com/watch?v=8uziJNzan1g) from the README and explain what is—and is not—being reproduced.
+- [x] Link the published [Washington, DC QGIS-to-ArcGIS Earth tutorial](https://www.youtube.com/watch?v=C71n8TAByuE) from the README and dedicated [DEMO.md](DEMO.md) guide.
 - [x] Provide a source-agnostic four-stage explanation, beginner quick start and dedicated [video guide](DEMO.md).
 - [x] Record the owner-reported Jacksonville Metro JPEG/75 hybrid test (**21,786,032 KB MBTiles → 20,629,591 KB TPKX**) with evidence limitations in [TECHNICAL.md](TECHNICAL.md).
 - [x] Document the corrected synthetic Z12–Z18 color demo and its instructional purpose.
