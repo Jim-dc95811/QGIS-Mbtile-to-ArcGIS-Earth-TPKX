@@ -2,6 +2,14 @@
 
 **Snapshot: 2026-09-27.** For the next ChatGPT conversation working with this project, **read this file, the current repository files, and relevant Library materials before resuming**. This is a dated handoff, not a substitute for fetching newer evidence. Later user instructions and actual test results supersede this snapshot.
 
+## Update after the September 28 public video release
+
+- The owner published **[Google Maps OFFLINE — The Impossible Is Now Possible!](https://www.youtube.com/watch?v=8uziJNzan1g)**. The repository README and [DEMO.md](DEMO.md) now lead with the viewing demonstration and a four-stage, source-agnostic explanation.
+- The owner reported a further single-file **Jacksonville Metro JPEG/75 Z20** result: **21,786,032 KB MBTiles → 20,629,591 KB TPKX**, with the output displayed in ArcGIS Earth. A separately created Jacksonville Street Z20 map was also loaded in Earth. Consult [TECHNICAL.md](TECHNICAL.md) for details and limits.
+- A synthetic colored Z12–Z18 Jacksonville test package was corrected after an interrupted first generation and then displayed successfully in ArcGIS Earth. The owner also found a useful role for the partial package in visually demonstrating a border and changing zoom levels.
+- The project owner asked to add the video's link and two illustrative images to the GitHub page and to audit its public-facing documentation. **Verify current repository assets and licensing status rather than assuming this handoff proves that artwork has been uploaded.**
+- The original Python converter and BAT launcher must remain unchanged unless the owner specifically authorizes an implementation change. Verify current GitHub blob SHAs before claiming the baseline is preserved.
+
 ## First steps when refreshing
 
 1. Open this repository: https://github.com/Jim-dc95811/QGIS-Mbtile-to-ArcGIS-Earth-TPKX . The repository URL still contains QGIS, but the **converter itself is source-application-independent**.
