@@ -5,7 +5,7 @@ This is a practical review list, not a declaration of legal compliance, governme
 ## Ownership and licensing
 - [ ] Identify who can authorize publication and license the original code, including any relevant employer or public-agency policy.
 - [ ] Review attribution and license notices for any upstream implementation code actually incorporated.
-- [ ] Choose and approve the project's license; add the exact approved LICENSE text and update LICENSE_STATUS.md.
+- [x] Owner added an [MIT LICENSE](LICENSE) naming Jim Gaddy (2026); [LICENSE_STATUS.md](LICENSE_STATUS.md) has been updated. Separate ownership/provenance/agency checks above remain open.
 - [ ] Review QGIS's brand guidelines regarding use of the QGIS name in this repository and planned promotion.
 - [ ] Keep any no-affiliation statements accurate.
 
@@ -33,8 +33,8 @@ See [TECHNICAL.md](TECHNICAL.md) and [README.md](README.md) for the actual Windo
 - [x] Provide a source-agnostic four-stage explanation, beginner quick start and dedicated [video guide](DEMO.md).
 - [x] Record the owner-reported Jacksonville Metro JPEG/75 hybrid test (**21,786,032 KB MBTiles → 20,629,591 KB TPKX**) with evidence limitations in [TECHNICAL.md](TECHNICAL.md).
 - [x] Document the corrected synthetic Z12–Z18 color demo and its instructional purpose.
-- [ ] Review final publication of any separately supplied illustrations; do not assume they are hosted by GitHub merely because they were uploaded to a chat.
-- [ ] Select and approve a software license and any required ownership/source-code notices before representing the repository as open-source-licensed. See [LICENSE_STATUS.md](LICENSE_STATUS.md).
+- [x] Confirm that the two owner-supplied illustrations were uploaded to [images/](images/) and embedded on the [README](README.md) and [video guide](DEMO.md).
+- [x] Publish the owner-selected [MIT License](LICENSE) and align the public license descriptions. Any required ownership/agency clearance and upstream implementation notices still need separate review; see [LICENSE_STATUS.md](LICENSE_STATUS.md).
 - [ ] Complete any required owner/agency clearance and source-imagery credit review for published screenshots and future demo downloads.
 
 ## Converter quality and scope
