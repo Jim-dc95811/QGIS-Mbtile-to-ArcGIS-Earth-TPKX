@@ -4,7 +4,7 @@ Thank you for helping make offline mapping accessible. Before proposing a substa
 
 ## Intellectual property and data
 
-- Contribute only code and documents you are entitled to submit. The project's own software license and possible agency publication requirements are still being reviewed; please discuss significant code contributions with the maintainer first.
+- Contribute only code and documents you are entitled to submit. This project's code is published under the [MIT License](LICENSE), but possible agency publication requirements and contributor ownership/provenance remain separate concerns; please discuss significant code contributions with the maintainer first.
 - Credit upstream code you actually use and retain any necessary license or modification notices. Implementing a published format and copying someone else's implementation are different activities.
 - Do not commit unauthorized imagery, proprietary reference TPKX packages, private Wireshark recordings, incident mapping data, credentials, tokens, personal information or agency-only materials.
 - Reproduce issues with synthetic color tiles or explicitly redistributable imagery. Do not paste copyrighted satellite imagery into issue attachments unless permitted.
