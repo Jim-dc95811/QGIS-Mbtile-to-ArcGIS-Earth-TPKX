@@ -71,6 +71,12 @@ The project owner has supplied Windows Explorer screenshots and tested the conve
 
 **JPEG/75 is chosen while producing MBTiles, not in the converter.** The two Master grid runs are different grids, so their substantial size difference is useful production evidence, **not** a controlled identical-source image-quality or compression benchmark. Hybrid and Street map imagery compress differently. Details and remaining test limitations are in [TECHNICAL.md](TECHNICAL.md).
 
+## A human–AI engineering collaboration
+
+This project was conceived, directed, developed through hands-on experiments, and field-tested by **Jim Gaddy**, working with **OpenAI's ChatGPT** as an AI coding and documentation partner. The converter emerged through that iterative collaboration: Jim supplied the problem, technical direction, reference tests and real-world acceptance testing, while ChatGPT helped produce and refine the implementation and written materials.
+
+**This is Jim's project to publish, not code taken from an AI assistant without permission.** Under [OpenAI's Terms of Use](https://openai.com/policies/terms-of-use/), as between the user and OpenAI and to the extent permitted by applicable law, the user owns the generated output; OpenAI assigns any rights it may have in that output. No separate permission from ChatGPT is needed to publish it. Jim has published the project's software under the [MIT License](LICENSE). This acknowledgment is not a claim of OpenAI sponsorship or endorsement, nor does it override any independent rights in third-party code or map imagery.
+
 ## What it supports
 
 - **Input:** existing standard Web Mercator **raster** MBTiles with 256 × 256 PNG/JPEG image tiles using the TMS row convention; the implemented tiling scheme covers levels 0–23. It does **not** convert vector MBTiles, arbitrary projections or every unconventional MBTiles layout.
