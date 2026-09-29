@@ -12,6 +12,12 @@ This project appreciates the authors and communities that make interoperable map
 | [QGIS](https://qgis.org/) | Optional upstream GIS tool for authoring the input MBTiles; **not bundled** in this repository | [Project and license information](https://qgis.org/) and [brand guidelines](https://www.qgis.org/community/organisation/guidelines/) |
 | [ArcGIS Earth and ArcGIS Pro](https://www.esri.com/) | Independently tested viewers of TPKX output; **not bundled** | Respective product/service terms apply |
 
+## Human–AI project collaboration
+
+**Jim Gaddy** conceived and directed this project, supplied the real-world engineering requirements, conducted the mapping experiments and field-tested the output. **OpenAI's ChatGPT** was the AI-assisted coding, technical research and documentation collaborator. The published software is the outcome of that user-directed, iterative development process.
+
+ChatGPT is credited for its assistance, **not presented as a separate software rights holder requiring the owner to seek its permission**. [OpenAI's Terms of Use](https://openai.com/policies/terms-of-use/) state that, as between the user and OpenAI and to the extent applicable law allows, the user owns generated output and OpenAI assigns to the user any rights it may have in that output. The project owner elected to distribute this software under the [MIT License](LICENSE). The project's independent status does not imply OpenAI endorsement, and this acknowledgment does not affect third-party code, software or imagery rights.
+
 ## What is actually included
 
 This repository contains the project's Python script, BAT launcher, MIT LICENSE file, documentation and two project illustrations. Pillow, QGIS, ArcGIS software, upstream sample repositories, imagery datasets and upstream sample caches are **not** bundled here. The converter includes empirically established TPKX metadata values and a template bundle header derived during compatibility work with ArcGIS Pro-produced files; no independently verified conclusion has been made about whether future use of additional upstream implementation code would trigger separate license notice obligations.
