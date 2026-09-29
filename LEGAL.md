@@ -42,7 +42,7 @@ References to QGIS and Esri describe software compatibility and workflow. Their 
 
 ## Repository code licensing and agency rights
 
-There is **no project software license yet**. A public GitHub repository is not automatically open-source-licensed. Before selecting a license or accepting substantial outside contributions, the person or entity entitled to license this code should confirm ownership, any employer/agency policy or publication approval, and any attribution or upstream-code obligations. See [LICENSE_STATUS.md](LICENSE_STATUS.md).
+The project owner added the [MIT software license](LICENSE) with a copyright notice naming Jim Gaddy (2026). The license permits use, modification and redistribution of the project's software under its stated notice requirement; it does **not** license the underlying map imagery or unrelated third-party materials. Any applicable ownership, employer/agency publication approval, or upstream-source attribution obligations remain separate matters for appropriate review. See [LICENSE_STATUS.md](LICENSE_STATUS.md).
 
 The project owner's public-safety employment is context for the project's motivation, **not** a claim of official governmental endorsement or authorization. Do not add an agency seal, agency name as sponsor, or official status absent approval.
 
