@@ -14,7 +14,7 @@ This project appreciates the authors and communities that make interoperable map
 
 ## What is actually included
 
-Only this project's Python script, BAT launcher and documentation are committed. Pillow, QGIS, ArcGIS software, upstream sample repositories, imagery datasets and upstream sample caches are **not** bundled here. The converter includes empirically established TPKX metadata values and a template bundle header derived during compatibility work with ArcGIS Pro-produced files; no independently verified conclusion has been made about whether future use of additional upstream implementation code would trigger separate license notice obligations.
+This repository contains the project's Python script, BAT launcher, MIT LICENSE file, documentation and two project illustrations. Pillow, QGIS, ArcGIS software, upstream sample repositories, imagery datasets and upstream sample caches are **not** bundled here. The converter includes empirically established TPKX metadata values and a template bundle header derived during compatibility work with ArcGIS Pro-produced files; no independently verified conclusion has been made about whether future use of additional upstream implementation code would trigger separate license notice obligations.
 
 If upstream example code or content is deliberately copied in a future contribution, identify the exact source and version and preserve all required copyright, license and modification notices. Do not assume that citing a public GitHub page alone fulfills those obligations.
 
