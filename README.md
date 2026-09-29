@@ -12,6 +12,18 @@ The video shows online Street and Hybrid map navigation over Jacksonville, then 
 
 **New here?** [See the four-step visual explanation and video notes](DEMO.md). **Continuing the engineering project?** Start with [CONTINUITY.md](CONTINUITY.md) and the current [technical record](TECHNICAL.md).
 
+## Project illustrations
+
+**The conversion workflow, in four simple steps:**
+
+![Four-step illustration: imagery source, QGIS MBTiles production, Python conversion, and offline ArcGIS Earth](images/ChatGPT%20Image%20Sep%2027%2C%202026%2C%2010_58_45%20PM.png)
+
+**The MBTiles → TPKX breakthrough:**
+
+![MBTiles to TPKX breakthrough graphic and offline ArcGIS Earth viewer](images/ChatGPT%20Image%20Sep%2027%2C%202026%2C%2012_44_11%20PM.png)
+
+The illustrations explain the workflow; neither the converter nor this repository includes or grants rights to third-party map imagery. See [DEMO.md](DEMO.md) for a beginner-oriented explanation.
+
 ## Four steps, from imagery to offline map
 
 1. **Choose an imagery source** appropriate for your purpose, with the necessary rights for your intended use.
@@ -75,7 +87,7 @@ The project owner has supplied Windows Explorer screenshots and tested the conve
 - [CREDITS.md](CREDITS.md) — upstream specifications, dependencies and acknowledgments.
 - [LEGAL.md](LEGAL.md) — imagery-provider rights, attribution, trademarks and intended-use limits.
 - [CONTRIBUTING.md](CONTRIBUTING.md) / [SECURITY.md](SECURITY.md) — project participation and reporting.
-- [LICENSE_STATUS.md](LICENSE_STATUS.md) — **the project has no selected software license yet**. Publicly viewable source code is not automatically licensed for redistribution or modification; this decision belongs to the authorized rights holder.
+- [LICENSE](LICENSE) — **MIT License**, copyright © 2026 Jim Gaddy. You may use, copy, modify and redistribute the project software under the license terms; preserve the required notice. [LICENSE_STATUS.md](LICENSE_STATUS.md) records its status and separate imagery-rights limits.
 
 ### Formats and attribution
 
