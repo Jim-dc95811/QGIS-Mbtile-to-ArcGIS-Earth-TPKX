@@ -1,11 +1,9 @@
 # Project licensing status
 
-**No software license is selected for this repository at present.** Making the code public on GitHub does not, by itself, grant permission to copy, redistribute, or adapt it. [GitHub explains this distinction](https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/licensing-a-repository).
+**The project owner added the [MIT License](LICENSE).** The repository's LICENSE file states `Copyright (c) 2026 Jim Gaddy`. Under its terms, recipients may use, copy, modify, merge, publish, distribute, sublicense and sell copies of the **Software**, provided they include the copyright and permission notice in all copies or substantial portions. See the [actual LICENSE file](LICENSE) for the complete governing text.
 
-Before adding a LICENSE file, the authorized rights holder should determine whether any employer or state-agency approval is needed; resolve ownership and third-party implementation-code notices; and deliberately choose a software license. Apache 2.0 and MIT are possibilities to consider, not licenses currently granted by this project.
+**Repository control is separate.** The MIT License allows people to fork and modify their own copies; it does not give them write access to this original GitHub repository. Repository access and contribution acceptance remain with people granted permissions by the owner.
 
-Esri's [Compact Cache V2 documentation and examples](https://github.com/Esri/raster-tiles-compactcache) and its [tile-package specification](https://github.com/Esri/tile-package-spec) use Apache 2.0, but that **does not automatically license this project's original code or any third-party imagery**. If upstream example code was actually copied or adapted, its applicable license and notice obligations must be reviewed.
+**Imagery and third-party materials are separate.** The MIT License does not grant rights to underlying Google, Esri or other provider map imagery, their trademarks, unrelated software or material supplied by others. Do not assume a map tile becomes freely reusable merely because it can be converted. See [LEGAL.md](LEGAL.md) and [CREDITS.md](CREDITS.md).
 
-An eventual code license will not grant rights to commercial map imagery, imagery services, software trademarks or government-agency materials. These are separate from the converter.
-
-Until the owner decides, this document states the limitation without pretending that a legal release decision has been made.
+**Provenance and publication review:** Selecting MIT does not substitute for confirming any applicable ownership, employer/agency publication approval, or required attribution/notices for upstream implementation code actually incorporated into the project. Those checks remain the responsible party's decision; they are not represented here as independently verified.
