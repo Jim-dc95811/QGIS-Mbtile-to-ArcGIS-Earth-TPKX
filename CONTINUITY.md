@@ -2,6 +2,11 @@
 
 **Snapshot: 2026-09-27.** For the next ChatGPT conversation working with this project, **read this file, the current repository files, and relevant Library materials before resuming**. This is a dated handoff, not a substitute for fetching newer evidence. Later user instructions and actual test results supersede this snapshot.
 
+## Second public video: Washington, DC map-making tutorial (2026-09-29)
+
+- The owner published **[How to Make an Offline Map with QGIS and ArcGIS Earth](https://www.youtube.com/watch?v=C71n8TAByuE)**, a roughly seven-minute beginner video demonstrating QGIS raster MBTiles production, conversion with this project's Python tool, and viewing in ArcGIS Earth using Washington, DC as the map target. The owner provided the YouTube link and confirmed publication; the video was not independently watched during this documentation update.
+- The README and DEMO guide now feature both the earlier Jacksonville proof-of-concept video and the new practical tutorial. The Python converter and Windows launcher were not modified for this documentation update.
+
 ## Verified repository publication update (2026-09-28)
 
 - The project owner added a root **[MIT LICENSE](LICENSE)** identifying **Jim Gaddy (2026)**; the current [LICENSE_STATUS.md](LICENSE_STATUS.md) and public README describe that license. This changes the **software** licensing status but does not establish rights to third-party imagery or conclusively resolve any outside ownership/agency approvals.
