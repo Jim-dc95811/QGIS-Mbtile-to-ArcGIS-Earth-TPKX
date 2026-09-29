@@ -27,6 +27,16 @@ These are **owner-reported, screenshot-supported tests**, not formal third-party
 
 See [TECHNICAL.md](TECHNICAL.md) and [README.md](README.md) for the actual Windows-reported figures and interpretation. Do not publish third-party test imagery solely to substantiate these results.
 
+## Public documentation and video (2026-09-28)
+
+- [x] Link the published [Jacksonville offline-mapping demonstration](https://www.youtube.com/watch?v=8uziJNzan1g) from the README and explain what is—and is not—being reproduced.
+- [x] Provide a source-agnostic four-stage explanation, beginner quick start and dedicated [video guide](DEMO.md).
+- [x] Record the owner-reported Jacksonville Metro JPEG/75 hybrid test (**21,786,032 KB MBTiles → 20,629,591 KB TPKX**) with evidence limitations in [TECHNICAL.md](TECHNICAL.md).
+- [x] Document the corrected synthetic Z12–Z18 color demo and its instructional purpose.
+- [ ] Review final publication of any separately supplied illustrations; do not assume they are hosted by GitHub merely because they were uploaded to a chat.
+- [ ] Select and approve a software license and any required ownership/source-code notices before representing the repository as open-source-licensed. See [LICENSE_STATUS.md](LICENSE_STATUS.md).
+- [ ] Complete any required owner/agency clearance and source-imagery credit review for published screenshots and future demo downloads.
+
 ## Converter quality and scope
 - [ ] Preserve the working Python/BAT baseline and its checksums.
 - [ ] Verify original imagery bytes, tile coordinates, zoom levels and multi-bundle indexes after any code change.
