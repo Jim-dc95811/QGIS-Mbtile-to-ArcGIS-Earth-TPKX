@@ -1,10 +1,8 @@
 # Project illustrations
 
-This folder is reserved for the owner's two video illustrations:
+The project owner uploaded these two video illustrations:
 
-- `workflow.png`: the four-stage explanation—imagery provider → MBTiles production → Python conversion → ArcGIS Earth.
-- `converter.png`: the MBTiles → TPKX / ArcGIS Earth breakthrough artwork.
+- [Four-step workflow: imagery source → MBTiles → Python conversion → ArcGIS Earth](ChatGPT%20Image%20Sep%2027%2C%202026%2C%2010_58_45%20PM.png)
+- [MBTiles → TPKX / ArcGIS Earth breakthrough artwork](ChatGPT%20Image%20Sep%2027%2C%202026%2C%2012_44_11%20PM.png)
 
-The original PNG illustrations were supplied by the owner for the public repository. If these exact filenames are not present in this folder, **they have not yet been uploaded**, and the README deliberately avoids broken image links. The public video preview in the main README is separately loaded from YouTube.
-
-These illustrations explain this project's work; they are not downloadable source imagery or examples licensed for arbitrary third-party image redistribution. Do not infer the rights to real-world map imagery from the illustrated screenshots or their labels.
+They are embedded in the [repository homepage](../README.md) and [video guide](../DEMO.md). The project's [MIT License](../LICENSE) applies to its software and associated documentation. Illustrations do **not** grant rights to any unrelated imagery, trademarks or third-party content they may depict; see [LEGAL.md](../LEGAL.md).
