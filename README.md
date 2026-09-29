@@ -48,20 +48,26 @@ flowchart LR
 
 ## Download and use
 
-Use this repository's **Code → Download ZIP**, then extract `mb2tpkx.py` and `mb2tpkx.bat` into the same folder.
+### First-time Windows setup
 
-**Requirements:** Python 3 and [Pillow](https://pillow.readthedocs.io/) installed once:
+1. **Install Python 3:** [Official Python downloads for Windows](https://www.python.org/downloads/windows/). Make sure the `py` command works in Command Prompt. Confirm the version with `py -3 --version`.
+2. **Install the only additional Python library, [Pillow](https://pillow.readthedocs.io/):** open Command Prompt and run:
+
+   ```powershell
+   py -3 -m pip install Pillow
+   ```
+
+   If the result says **"Requirement already satisfied,"** Pillow is already installed; you do not need to reinstall it.
+3. **Download the converter:** [Download this repository as a ZIP](https://github.com/Jim-dc95811/QGIS-Mbtile-to-ArcGIS-Earth-TPKX/archive/refs/heads/main.zip). Extract `mb2tpkx.py` and `mb2tpkx.bat` into the **same folder**.
+
+**Version reference:** A Windows screenshot supplied by the project owner shows an installation in the **Python 3.14** directory with **Pillow 12.3.0** already installed. This documents that computer's installed environment; it is **not** a claim that all versions have been tested or a separately verified minimum Python version.
+
+**Run it on Windows:** Drag your existing `.mbtiles` file onto `mb2tpkx.bat`, or double-click the BAT and paste the source path when prompted.
+
+**Command line (optional):**
 
 ```powershell
-py -m pip install Pillow
-```
-
-**Windows:** Drag your existing `.mbtiles` file onto `mb2tpkx.bat`, or double-click the BAT and paste the source path when prompted.
-
-**Command line:**
-
-```powershell
-py mb2tpkx.py "input.mbtiles" "output.tpkx"
+py -3 mb2tpkx.py "input.mbtiles" "output.tpkx"
 ```
 
 The source file is retained. Output is created alongside it unless you specify another location, and **an existing output is not overwritten**. Allow additional disk space and time for large datasets. Open the finished `.tpkx` with ArcGIS Earth. This is a Python CLI with a Windows launcher, not a GUI program.
