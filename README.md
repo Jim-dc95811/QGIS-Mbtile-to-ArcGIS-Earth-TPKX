@@ -19,8 +19,11 @@ The video shows online Street and Hybrid map navigation over Jacksonville, then 
 3. **Convert MBTiles → TPKX** with the included Python program. It copies the original PNG/JPEG image tiles without re-encoding or rebuilding the zoom pyramid.
 4. **Open the TPKX in ArcGIS Earth** and navigate the captured map offline.
 
-```text
-Imagery source → compatible raster MBTiles → mb2tpkx.py → native TPKX → ArcGIS Earth
+```mermaid
+flowchart LR
+    A[Imagery source] --> B[Raster MBTiles producer]
+    B -->|MBTiles| C[Python converter]
+    C -->|TPKX| D[ArcGIS Earth offline]
 ```
 
 ## Download and use
