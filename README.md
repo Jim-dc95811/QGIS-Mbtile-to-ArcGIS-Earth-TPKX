@@ -60,7 +60,7 @@ flowchart LR
    If the result says **"Requirement already satisfied,"** Pillow is already installed; you do not need to reinstall it.
 3. **Download the converter:** [Download this repository as a ZIP](https://github.com/Jim-dc95811/QGIS-Mbtile-to-ArcGIS-Earth-TPKX/archive/refs/heads/main.zip). Extract `mb2tpkx.py` and `mb2tpkx.bat` into the **same folder**.
 
-**Version reference:** A Windows screenshot supplied by the project owner shows an installation in the **Python 3.14** directory with **Pillow 12.3.0** already installed. This documents that computer's installed environment; it is **not** a claim that all versions have been tested or a separately verified minimum Python version.
+**Owner's confirmed Windows installation (2026-09-29):** `py -3 --version` reports **Python 3.14.5**, and `py -3 -m pip install Pillow` reports **Pillow 12.3.0 already installed**. These are the versions shown by the owner's Command Prompt, not minimum requirements or proof of compatibility testing across versions. Pip's displayed cache warnings did not prevent it from recognizing Pillow as installed.
 
 **Run it on Windows:** Drag your existing `.mbtiles` file onto `mb2tpkx.bat`, or double-click the BAT and paste the source path when prompted.
 
