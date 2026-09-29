@@ -8,6 +8,14 @@
 
 The demonstration compares familiar online Street and Hybrid map displays with independently prepared offline imagery viewed in **ArcGIS Earth**, and uses colored tiles to show how stored imagery can change by zoom level. It illustrates a **map-display** experience, not a duplicate of Google Maps' search, routing, Street View or online services.
 
+## Illustrated workflow
+
+![Four players: imagery source, QGIS MBTiles production, Python MBTiles-to-TPKX converter, and ArcGIS Earth](images/ChatGPT%20Image%20Sep%2027%2C%202026%2C%2010_58_45%20PM.png)
+
+The demonstration's companion artwork illustrates the same conversion route:
+
+![MBTiles-to-TPKX converter breakthrough artwork](images/ChatGPT%20Image%20Sep%2027%2C%202026%2C%2012_44_11%20PM.png)
+
 ## The four players
 
 ```mermaid
