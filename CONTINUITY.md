@@ -2,12 +2,19 @@
 
 **Snapshot: 2026-09-27.** For the next ChatGPT conversation working with this project, **read this file, the current repository files, and relevant Library materials before resuming**. This is a dated handoff, not a substitute for fetching newer evidence. Later user instructions and actual test results supersede this snapshot.
 
+## Verified repository publication update (2026-09-28)
+
+- The project owner added a root **[MIT LICENSE](LICENSE)** identifying **Jim Gaddy (2026)**; the current [LICENSE_STATUS.md](LICENSE_STATUS.md) and public README describe that license. This changes the **software** licensing status but does not establish rights to third-party imagery or conclusively resolve any outside ownership/agency approvals.
+- Both supplied illustrations were uploaded to **[images/](images/)** and are embedded in the main [README](README.md) and [DEMO.md](DEMO.md): the four-stage hand-drawn workflow and the more dramatic MBTiles → TPKX graphic. Their original timestamped filenames were preserved as uploaded.
+- The YouTube demonstration is linked on the homepage: https://www.youtube.com/watch?v=8uziJNzan1g . Documentation now distinguishes the source-imagery permission requirements from the MIT software license.
+- Verify all of these against the live GitHub repository when resuming, as the historical notes below describe states that were true **before** publication.
+
 ## Update after the September 28 public video release
 
 - The owner published **[Google Maps OFFLINE — The Impossible Is Now Possible!](https://www.youtube.com/watch?v=8uziJNzan1g)**. The repository README and [DEMO.md](DEMO.md) now lead with the viewing demonstration and a four-stage, source-agnostic explanation.
 - The owner reported a further single-file **Jacksonville Metro JPEG/75 Z20** result: **21,786,032 KB MBTiles → 20,629,591 KB TPKX**, with the output displayed in ArcGIS Earth. A separately created Jacksonville Street Z20 map was also loaded in Earth. Consult [TECHNICAL.md](TECHNICAL.md) for details and limits.
 - A synthetic colored Z12–Z18 Jacksonville test package was corrected after an interrupted first generation and then displayed successfully in ArcGIS Earth. The owner also found a useful role for the partial package in visually demonstrating a border and changing zoom levels.
-- The project owner asked to add the video's link and two illustrative images to the GitHub page and to audit its public-facing documentation. **Verify current repository assets and licensing status rather than assuming this handoff proves that artwork has been uploaded.**
+- The project owner requested a video link, two illustrations and a public-readiness audit. At that initial point the illustrations and license were still pending; see the newer verified publication update above and confirm the current repository state when resuming.
 - The original Python converter and BAT launcher must remain unchanged unless the owner specifically authorizes an implementation change. Verify current GitHub blob SHAs before claiming the baseline is preserved.
 
 ## First steps when refreshing
