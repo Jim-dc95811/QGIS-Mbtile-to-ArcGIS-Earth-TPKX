@@ -2,13 +2,21 @@
 
 **Make a native offline ArcGIS Earth map from an existing raster MBTiles file—without ArcGIS Pro or an intermediate GeoTIFF.** Bring MBTiles from QGIS or another compatible producer; the converter preserves the original map tiles at every recorded zoom level.
 
-## Watch the demonstration
+## Watch the videos
 
 **[Google Maps OFFLINE — The Impossible Is Now Possible!](https://www.youtube.com/watch?v=8uziJNzan1g)**
 
 [![Watch the offline maps demonstration](https://img.youtube.com/vi/8uziJNzan1g/hqdefault.jpg)](https://www.youtube.com/watch?v=8uziJNzan1g)
 
 The video shows online Street and Hybrid map navigation over Jacksonville, then an offline demonstration in ArcGIS Earth. The synthetic color-tile sequence makes the separately stored zoom levels visible. **This reproduces the captured map-display experience, not Google's complete application:** search, live traffic, Street View, routing and other online services are not reproduced.
+
+### Make your own offline map — QGIS and ArcGIS Earth tutorial
+
+**[How to Make an Offline Map with QGIS and ArcGIS Earth](https://www.youtube.com/watch?v=C71n8TAByuE)**
+
+[![Watch the Washington, DC map-making tutorial](https://img.youtube.com/vi/C71n8TAByuE/hqdefault.jpg)](https://www.youtube.com/watch?v=C71n8TAByuE)
+
+The follow-along Washington, DC video demonstrates the production workflow: create raster MBTiles in QGIS, convert the file to TPKX with this repository's Python tool, and open the map in ArcGIS Earth.
 
 **New here?** [See the four-step visual explanation and video notes](DEMO.md). **Continuing the engineering project?** Start with [CONTINUITY.md](CONTINUITY.md) and the current [technical record](TECHNICAL.md).
 
