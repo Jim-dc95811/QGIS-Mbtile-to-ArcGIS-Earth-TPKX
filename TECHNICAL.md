@@ -30,6 +30,18 @@ The observed JPEG/75 run was roughly **9.2× smaller at the MBTiles stage** and 
 
 The screenshots and owner observations constitute a successful, substantial **~40 GB-class field test** plus a smaller, visually inspected JPEG/75 test. They do **not** establish maximum file size, tolerance for every MBTiles producer, equivalent image quality for all imagery, or formal compatibility certification. Preserve representative map tiles and exact inventories privately if a future controlled PNG/JPEG comparison is needed. Do not commit third-party imagery without permission.
 
+## Later Jacksonville Metro and synthetic-zoom demonstrations (2026-09-28)
+
+The project owner supplied additional Windows Explorer and ArcGIS Earth screenshots after the earlier tests:
+
+- A **Jacksonville Metro JPEG/75 Z20** hybrid production run produced **21,786,032 KB MBTiles** and **20,629,591 KB TPKX** (Windows-displayed figures). A subsequent screenshot shows the produced package selected and displayed in ArcGIS Earth. The owner reported responsive map viewing. This is a single-file, metro-scale application test; no exact frame-time benchmarks or generalized size guarantee were collected.
+- A **Jacksonville Street map** produced separately for the metro experiment was also loaded in ArcGIS Earth. The owner reported an approximately 5 GB result for a street Z20 run; no authoritative paired file-size inventory has been entered here.
+- The **synthetic colored Jacksonville demonstration** was requested for an input map canvas EPSG:3857 extent approximately `[-9108536.3879, -9070925.6713] × [3519992.6675, 3564928.7271]`. Each distinct recorded zoom is visually labeled and differently colored. An initial generated color package was interrupted and only covered the northern part; it was corrected. The owner subsequently showed the full-color Z12–Z18 test map and separately retained the partial package to demonstrate borders and zoom transitions. This is a valuable *visual* check of stored zoom-level selection, not a benchmark for raster content compression.
+
+The converter remained at the **same original Python/BAT baseline** throughout these tests. User-supplied images support that output packages opened in ArcGIS Earth. This documentation does not assert formal GIS validation of the complete raster imagery, licensing rights to all source data, or acceptance of the newly created large files by ArcGIS Pro.
+
+The public demonstration video is now available: **[Google Maps OFFLINE — The Impossible Is Now Possible!](https://www.youtube.com/watch?v=8uziJNzan1g)**. Its map-display comparison is separate from a claim to duplicate the entire Google Maps application. Refer to [DEMO.md](DEMO.md) for the intended explanation.
+
 ## Conversion invariants
 
 1. **No imagery transformation.** Copy each input tile's exact PNG or JPEG bytes. Do not stitch, resample, recolor or recompress. A separate `thumbnail.png` can be generated for package presentation.
