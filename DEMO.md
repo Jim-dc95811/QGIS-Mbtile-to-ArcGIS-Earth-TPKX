@@ -8,6 +8,14 @@
 
 The demonstration compares familiar online Street and Hybrid map displays with independently prepared offline imagery viewed in **ArcGIS Earth**, and uses colored tiles to show how stored imagery can change by zoom level. It illustrates a **map-display** experience, not a duplicate of Google Maps' search, routing, Street View or online services.
 
+## Follow-along tutorial: make your own offline map
+
+**[How to Make an Offline Map with QGIS and ArcGIS Earth](https://www.youtube.com/watch?v=C71n8TAByuE)**
+
+[![Watch the Washington, DC QGIS and ArcGIS Earth tutorial](https://img.youtube.com/vi/C71n8TAByuE/hqdefault.jpg)](https://www.youtube.com/watch?v=C71n8TAByuE)
+
+The published Washington, DC video follows the actual production route: QGIS creates MBTiles, the Python converter turns the file into TPKX, and ArcGIS Earth opens the finished map.
+
 ## Illustrated workflow
 
 ![Four players: imagery source, QGIS MBTiles production, Python MBTiles-to-TPKX converter, and ArcGIS Earth](images/ChatGPT%20Image%20Sep%2027%2C%202026%2C%2010_58_45%20PM.png)
@@ -39,8 +47,8 @@ The synthetic demonstration is deliberately **not** commercial map imagery. Each
 
 The source content must genuinely include different tiles at those zooms for the resulting map to reproduce different labels and other cartographic states. The converter **does not create the differences**: it preserves the tiles that the map maker supplied.
 
-## Next: a beginner map-making tutorial
+## Start with one map
 
-The proposed follow-up starts with a modest on-screen geographic extent in QGIS, produces one compatible raster MBTiles file, converts it to TPKX, and opens it in ArcGIS Earth. Systematic district-scale production and complex geographic splitting are advanced topics, not prerequisites to making a first map.
+The Washington, DC tutorial linked above is the beginner follow-up to the Jacksonville demonstration. It shows the practical QGIS → MBTiles → Python → TPKX → ArcGIS Earth route. District-scale production and complex geographic splitting are separate advanced topics.
 
 [Return to the converter](README.md) · [Full technical record](TECHNICAL.md) · [Source-data rights and attribution](LEGAL.md)
