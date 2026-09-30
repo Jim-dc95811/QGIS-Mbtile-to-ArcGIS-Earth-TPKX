@@ -30,6 +30,22 @@ The follow-along Washington, DC video demonstrates the production workflow: crea
 
 ![MBTiles to TPKX breakthrough graphic and offline ArcGIS Earth viewer](images/ChatGPT%20Image%20Sep%2027%2C%202026%2C%2012_44_11%20PM.png)
 
+### Understanding how zoomable maps work
+
+**1. A multiresolution raster tile pyramid — one geographic area at different zoom levels.** Each closer zoom uses more tiles to cover the same territory, revealing progressively finer map detail.
+
+![Exploded multiresolution raster tile pyramid showing the same geographic area at successive zoom levels](images/ChatGPT%20Image%20Sep%2029%2C%202026%2C%2008_00_20%20PM-1.png)
+
+**2. Combining imagery and road-overlay pyramids.** Matching geographic extents and zoom levels let road lines and labels appear over satellite imagery, creating a hybrid map view.
+
+![Separate satellite imagery and road-overlay tile pyramids combining into a hybrid map](images/ChatGPT%20Image%20Sep%2029%2C%202026%2C%2008_00_22%20PM-2.png)
+
+**3. Layer order matters.** Put the road overlay above the imagery: reversing their order can hide the roads and labels.
+
+![Side-by-side diagram showing incorrect and correct imagery and road-overlay layer order](images/ChatGPT%20Image%20Sep%2029%2C%202026%2C%2008_00_24%20PM-3.png)
+
+These diagrams explain tile pyramids and map-layer compositing. They do **not** imply that this converter merges separate imagery and overlay MBTiles files; combined views can be rendered upstream when creating the input MBTiles.
+
 The illustrations explain the workflow; neither the converter nor this repository includes or grants rights to third-party map imagery. See [DEMO.md](DEMO.md) for a beginner-oriented explanation.
 
 ## Four steps, from imagery to offline map
