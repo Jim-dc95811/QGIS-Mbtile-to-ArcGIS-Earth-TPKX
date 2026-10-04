@@ -39,24 +39,32 @@ What mattered most to the owner was preserving **the original multizoom visual c
 
 ## Companion utility: Master 4 Grid Maker
 
-The repository now also includes **Master 4 Grid Maker**, an independent companion utility for repeatable geographic coverage. It does not modify or replace the MBTiles→TPKX converter.
+The repository also includes **Master 4 Grid Maker**, an independent companion utility for repeatable geographic coverage. It does not modify or replace the MBTiles→TPKX converter.
 
 Current files and SHA-256:
 
-- `Master4_Grid_Maker.py` — `87bf15b15842ec37ba6ca6ff481275c4060cddfd14a91c054ce568f447c392e6`
+- `Master4_Grid_Maker.py` — `e439100aae44245c7f5076724b001bc34159bcc57048fb58825ade3e8f3ccad2`
 - `Master4_Grid_Maker.bat` — `abb4e7dd1f1b665e1cf1b9ee4d1bffdef40e336acb746460640be0a043c20c2d`
-- `Master4_Grid_Maker.zip` — `400b281bf8fb701e7bde263830db4815e5ac4cc0bae8ea66cb14592031ffc452`
+- `Master4_Grid_Maker.zip` — `a3143a22f2049ca8dc3698cc597566fe0788a4e6535554119cc08bcf7f275a97`
 
 Input is a one-degree **Master 4** in `west, east, south, north` order, for example `82w, 81w, 30n, 31n`. The program creates in `C:\downloads`:
 
-- a 100-line QGIS extent catalog in EPSG:3857;
+- a 100-line QGIS production manifest in which every row contains the cell number, exact EPSG:3857 extent, and deterministic TPKX filename;
 - a matching 5000 × 5000 EPSG:3857 numbered GeoTIFF reference overlay with NoData=0.
+
+Example manifest row:
+
+```text
+01 -9028010.7033,-9016878.7543,3503549.8435,3516410.3983 [EPSG:3857] W082W081N031N030-001-GHY-Z20.tpkx
+```
+
+The production filename encodes the Master 4 edges in **west, east, north, south** order, using three-digit zero-padded degree values, followed by a three-digit cell number and the current fixed suffix `GHY-Z20`. The filename is attached directly to the exact extent, so selected cells can be produced in any order without a sequential batch-name dependency.
 
 The 01–100 numbering is hemisphere-aware so the first decimal digit of absolute latitude supplies the tens row and the first decimal digit of absolute longitude plus one supplies the column. The same decimal address therefore works in all four hemisphere combinations.
 
-The current build was tested with W/N, E/N, W/S and E/S master boxes, boxes touching the equator and prime meridian, ±180° longitude, and whole-degree boxes near the practical Web Mercator latitude limits. Each valid test produced exactly 100 extents and a readable EPSG:3857 GeoTIFF. Tested malformed, non-whole-degree, wrong-span and out-of-range inputs were rejected. The project owner separately demonstrated generated overlays in both QGIS and ArcGIS Earth, including adjacent master boxes.
+The naming update was programmatically tested with W/N, E/N, W/S and E/S master boxes, boxes touching the equator and prime meridian, ±180° longitude, and whole-degree boxes near the practical Web Mercator latitude limits. Each valid case produced exactly 100 manifest rows with the expected filenames. The generated GeoTIFFs were byte-for-byte identical to the pre-naming build, confirming that the grid mathematics and overlay output were not changed by this update. Earlier malformed, non-whole-degree, wrong-span and out-of-range rejection tests remain applicable. The project owner separately demonstrated generated overlays in both QGIS and ArcGIS Earth, including adjacent master boxes.
 
-See [MASTER4_GRID_MAKER.md](MASTER4_GRID_MAKER.md) for operation, numbering, validation and scope.
+See [MASTER4_GRID_MAKER.md](MASTER4_GRID_MAKER.md) for operation, numbering, filename convention, validation and scope.
 
 ## Working software: preserve this exact baseline
 

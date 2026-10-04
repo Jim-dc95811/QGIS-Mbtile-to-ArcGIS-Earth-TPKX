@@ -82,18 +82,26 @@ Files:
 
 Input is one whole-degree 1° × 1° Master 4 box in **west, east, south, north** order, for example `82w, 81w, 30n, 31n`. The generator divides that geographic box into 100 exact 0.1° × 0.1° cells, calculates shared EPSG:3857 boundaries from the geographic tenth-degree lines, and writes two files to `C:\\downloads`:
 
-- a 100-line QGIS extent catalog in `xmin,xmax,ymin,ymax [EPSG:3857]` syntax;
+- a 100-line QGIS production manifest; each row is `cell xmin,xmax,ymin,ymax [EPSG:3857] filename.tpkx`;
 - a matching 5000 × 5000 EPSG:3857 GeoTIFF reference overlay with NoData=0 and cell labels 01–100.
+
+The current deterministic filename pattern encodes **west edge + east edge + north edge + south edge + three-digit cell + fixed GHY-Z20 suffix**. Example:
+
+```text
+W082W081N031N030-054-GHY-Z20.tpkx
+```
+
+This does not rename files automatically inside QGIS; it supplies the intended production filename on the same manifest row as the exact extent, eliminating the previous dependence on sequential batch naming when selecting nonconsecutive cells.
 
 The numbering is hemisphere-aware so the first decimal digit of **absolute latitude** identifies the tens row and the first decimal digit of **absolute longitude + 1** identifies the column. The decimal address therefore remains consistent in W/N, E/N, W/S and E/S master boxes.
 
-Programmatic tests performed on the packaged build covered all four hemisphere combinations, boxes touching the equator and prime meridian, ±180° longitude, and whole-degree boxes near the usable EPSG:3857 latitude limits. Each valid test produced exactly 100 extents and a readable EPSG:3857 GeoTIFF with NoData=0. Tested malformed, non-whole-degree, wrong-span and out-of-range inputs were rejected. The owner separately demonstrated generated overlays in both QGIS and ArcGIS Earth, including adjacent master boxes.
+Programmatic tests on the naming build covered all four hemisphere combinations, boxes touching the equator and prime meridian, ±180° longitude, and whole-degree boxes near the usable EPSG:3857 latitude limits. Every valid case produced exactly 100 manifest rows; every appended filename matched the expected Master 4/cell address. The generated GeoTIFF for each test case was byte-for-byte identical to the corresponding pre-naming build, so the extent calculations, numbering, TIFF dimensions, georeferencing and NoData behavior were unchanged. Earlier malformed, non-whole-degree, wrong-span and out-of-range rejection tests remain applicable. The owner separately demonstrated generated overlays in both QGIS and ArcGIS Earth, including adjacent master boxes.
 
 Current packaged-file SHA-256 values:
 
-- `Master4_Grid_Maker.py`: `87bf15b15842ec37ba6ca6ff481275c4060cddfd14a91c054ce568f447c392e6`
+- `Master4_Grid_Maker.py`: `e439100aae44245c7f5076724b001bc34159bcc57048fb58825ade3e8f3ccad2`
 - `Master4_Grid_Maker.bat`: `abb4e7dd1f1b665e1cf1b9ee4d1bffdef40e336acb746460640be0a043c20c2d`
-- `Master4_Grid_Maker.zip`: `400b281bf8fb701e7bde263830db4815e5ac4cc0bae8ea66cb14592031ffc452`
+- `Master4_Grid_Maker.zip`: `a3143a22f2049ca8dc3698cc597566fe0788a4e6535554119cc08bcf7f275a97`
 
 The method is worldwide only within the practical latitude coverage of **EPSG:3857 / Web Mercator**; it does not cover the poles. Physical cell area varies with latitude because the reference grid is geographic.
 
