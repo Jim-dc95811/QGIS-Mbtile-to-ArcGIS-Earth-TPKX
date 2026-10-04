@@ -190,15 +190,15 @@ def make_grid_tif(path, west, east, south, north, records):
     pixel_y = (master_ymax - master_ymin) / height
 
     tiffinfo = TiffImagePlugin.ImageFileDirectory_v2()
-    tiffinfo[33550] = (pixel_x, pixel_y, 0.0)
-    tiffinfo[33922] = (0.0, 0.0, 0.0, master_xmin, master_ymax, 0.0)
+    tiffinfo[33550] = (pixel_x, pixel_y, 0.0)  # ModelPixelScaleTag
+    tiffinfo[33922] = (0.0, 0.0, 0.0, master_xmin, master_ymax, 0.0)  # ModelTiepointTag
     tiffinfo[34735] = (
         1, 1, 0, 3,
-        1024, 0, 1, 1,
-        1025, 0, 1, 1,
-        3072, 0, 1, EPSG,
+        1024, 0, 1, 1,      # GTModelTypeGeoKey = Projected
+        1025, 0, 1, 1,      # GTRasterTypeGeoKey = PixelIsArea
+        3072, 0, 1, EPSG,   # ProjectedCSTypeGeoKey = EPSG:3857
     )
-    tiffinfo[42113] = "0"
+    tiffinfo[42113] = "0"  # GDAL_NODATA: background is transparent/NoData
 
     image.save(path, format="TIFF", compression="tiff_deflate", tiffinfo=tiffinfo)
 
