@@ -37,6 +37,27 @@ What mattered most to the owner was preserving **the original multizoom visual c
 
 **ArcGIS Earth is the viewer. MBTiles is the portable production input. TPKX is the native offline output.** Do not frame QGIS as the only route or suggest the converter creates source imagery.
 
+## Companion utility: Master 4 Grid Maker
+
+The repository now also includes **Master 4 Grid Maker**, an independent companion utility for repeatable geographic coverage. It does not modify or replace the MBTiles→TPKX converter.
+
+Current files and SHA-256:
+
+- `Master4_Grid_Maker.py` — `87bf15b15842ec37ba6ca6ff481275c4060cddfd14a91c054ce568f447c392e6`
+- `Master4_Grid_Maker.bat` — `abb4e7dd1f1b665e1cf1b9ee4d1bffdef40e336acb746460640be0a043c20c2d`
+- `Master4_Grid_Maker.zip` — `400b281bf8fb701e7bde263830db4815e5ac4cc0bae8ea66cb14592031ffc452`
+
+Input is a one-degree **Master 4** in `west, east, south, north` order, for example `82w, 81w, 30n, 31n`. The program creates in `C:\downloads`:
+
+- a 100-line QGIS extent catalog in EPSG:3857;
+- a matching 5000 × 5000 EPSG:3857 numbered GeoTIFF reference overlay with NoData=0.
+
+The 01–100 numbering is hemisphere-aware so the first decimal digit of absolute latitude supplies the tens row and the first decimal digit of absolute longitude plus one supplies the column. The same decimal address therefore works in all four hemisphere combinations.
+
+The current build was tested with W/N, E/N, W/S and E/S master boxes, boxes touching the equator and prime meridian, ±180° longitude, and whole-degree boxes near the practical Web Mercator latitude limits. Each valid test produced exactly 100 extents and a readable EPSG:3857 GeoTIFF. Tested malformed, non-whole-degree, wrong-span and out-of-range inputs were rejected. The project owner separately demonstrated generated overlays in both QGIS and ArcGIS Earth, including adjacent master boxes.
+
+See [MASTER4_GRID_MAKER.md](MASTER4_GRID_MAKER.md) for operation, numbering, validation and scope.
+
 ## Working software: preserve this exact baseline
 
 - **mb2tpkx.py**: the tested Python CLI. GitHub baseline SHA-256: `c04dc9f3c1ad74b4180b11465df1189a74c500a5d5873d66a57c2d4076fb3670`.

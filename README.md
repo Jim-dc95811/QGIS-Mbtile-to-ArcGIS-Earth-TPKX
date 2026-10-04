@@ -48,6 +48,35 @@ These diagrams explain tile pyramids and map-layer compositing. They do **not** 
 
 The illustrations explain the workflow; neither the converter nor this repository includes or grants rights to third-party map imagery. See [DEMO.md](DEMO.md) for a beginner-oriented explanation.
 
+## Master 4 Grid Maker — repeatable map extents worldwide
+
+**[Download Master4_Grid_Maker.zip](Master4_Grid_Maker.zip)** · [Full guide](MASTER4_GRID_MAKER.md)
+
+The **Master 4 Grid Maker** standardizes where offline maps begin and end. Enter one whole-degree 1° × 1° master box:
+
+```text
+82w, 81w, 30n, 31n
+```
+
+The input order is **west, east, south, north**. The tool divides that master into **100 fixed 0.1° × 0.1° cells**, numbered 01–100, then writes two matching files to `C:\downloads`:
+
+```text
+Master4_82W_81W_30N_31N_Extents.txt
+Master4_82W_81W_30N_31N_Grid.tif
+```
+
+The TXT contains 100 **QGIS-ready EPSG:3857 extents**. The GeoTIFF is the matching numbered **EPSG:3857 reference overlay** with a NoData background, so a user can see the cell numbers directly over imagery in QGIS or ArcGIS Earth.
+
+The numbering is hemisphere-aware. The first decimal digit of absolute latitude gives the tens row; the first decimal digit of absolute longitude plus one gives the column. Thus `30.56N, 81.34W`, `30.56N, 10.34E`, `30.56S, 81.34W`, and `30.56S, 10.34E` all identify **cell 54**.
+
+![Master 4 decimal grid addressing and workflow](images/Master4_Grid_Maker_Overview.png)
+
+![Master 4 grid with EPSG:3857 extent catalog](images/Master4_Grid_Maker_Extent_Catalog.png)
+
+The current build was programmatically tested in all four hemisphere combinations, across the equator and prime meridian, at ±180° longitude, and near the practical Web Mercator latitude limits. Valid tests generated exactly 100 extents plus a 5000 × 5000 EPSG:3857 GeoTIFF; tested malformed/out-of-range inputs were rejected. The project owner also verified generated overlays in **QGIS** and **ArcGIS Earth**.
+
+The system is worldwide **within the practical latitude range of EPSG:3857 / Web Mercator**; the poles are outside that projection. Physical cell area changes with latitude, but the geographic address remains the same 0.1° × 0.1° pattern.
+
 ## Four steps, from imagery to offline map
 
 1. **Choose an imagery source** appropriate for your purpose, with the necessary rights for your intended use.
