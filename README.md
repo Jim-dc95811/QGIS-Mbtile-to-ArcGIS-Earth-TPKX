@@ -146,6 +146,7 @@ This project was conceived, directed, developed through hands-on experiments, an
 ## Documentation and project status
 
 - [DEMO.md](DEMO.md) — video and nontechnical four-step workflow.
+- [MASTER4_GRID_MAKER.md](MASTER4_GRID_MAKER.md) — Master 4 Grid Maker operation, numbering, validation and global Web Mercator scope.
 - [CONTINUITY.md](CONTINUITY.md) — how to resume this project and locate the authoritative files.
 - [TECHNICAL.md](TECHNICAL.md) — precise format behavior, reproducibility and test history.
 - [RELEASE_CHECKLIST.md](RELEASE_CHECKLIST.md) — testing and public-release review.
