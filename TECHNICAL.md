@@ -69,6 +69,34 @@ Preserve the verified Python and BAT files until a narrowly specified code chang
 
 The current script is a **CLI with a Windows BAT launcher, not a GUI application**. It processes one bundle at a time, rejects an existing destination file, and validates tile dimensions and image signatures. Known work remains for inputs larger or more complex than the owner-reported ~40 GB test, interrupted runs, unusual MBTiles layouts, spatially uneven zoom coverage, and mixed-format metadata.
 
+## Master 4 Grid Maker companion utility (2026-10-04)
+
+The repository also contains **Master 4 Grid Maker**, a separate companion utility for repeatable map coverage. It does not modify the MBTiles→TPKX converter.
+
+Files:
+
+- `Master4_Grid_Maker.py`
+- `Master4_Grid_Maker.bat`
+- `Master4_Grid_Maker.zip`
+- `MASTER4_GRID_MAKER.md`
+
+Input is one whole-degree 1° × 1° Master 4 box in **west, east, south, north** order, for example `82w, 81w, 30n, 31n`. The generator divides that geographic box into 100 exact 0.1° × 0.1° cells, calculates shared EPSG:3857 boundaries from the geographic tenth-degree lines, and writes two files to `C:\\downloads`:
+
+- a 100-line QGIS extent catalog in `xmin,xmax,ymin,ymax [EPSG:3857]` syntax;
+- a matching 5000 × 5000 EPSG:3857 GeoTIFF reference overlay with NoData=0 and cell labels 01–100.
+
+The numbering is hemisphere-aware so the first decimal digit of **absolute latitude** identifies the tens row and the first decimal digit of **absolute longitude + 1** identifies the column. The decimal address therefore remains consistent in W/N, E/N, W/S and E/S master boxes.
+
+Programmatic tests performed on the packaged build covered all four hemisphere combinations, boxes touching the equator and prime meridian, ±180° longitude, and whole-degree boxes near the usable EPSG:3857 latitude limits. Each valid test produced exactly 100 extents and a readable EPSG:3857 GeoTIFF with NoData=0. Tested malformed, non-whole-degree, wrong-span and out-of-range inputs were rejected. The owner separately demonstrated generated overlays in both QGIS and ArcGIS Earth, including adjacent master boxes.
+
+Current packaged-file SHA-256 values:
+
+- `Master4_Grid_Maker.py`: `87bf15b15842ec37ba6ca6ff481275c4060cddfd14a91c054ce568f447c392e6`
+- `Master4_Grid_Maker.bat`: `abb4e7dd1f1b665e1cf1b9ee4d1bffdef40e336acb746460640be0a043c20c2d`
+- `Master4_Grid_Maker.zip`: `400b281bf8fb701e7bde263830db4815e5ac4cc0bae8ea66cb14592031ffc452`
+
+The method is worldwide only within the practical latitude coverage of **EPSG:3857 / Web Mercator**; it does not cover the poles. Physical cell area varies with latitude because the reference grid is geographic.
+
 ## Technical references
 
 - [Esri Compact Cache V2](https://github.com/Esri/raster-tiles-compactcache/blob/master/CompactCacheV2.md)
