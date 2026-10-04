@@ -58,7 +58,7 @@ For example, all four of these positions identify **cell 54**:
 
 The numbering reverses physical direction as needed in different hemispheres so the decimal lookup remains consistent worldwide.
 
-![Master 4 decimal grid addressing](images/Master4_Grid_Maker_Overview.png)
+![Master 4 decimal grid addressing](images/Master4_Grid_Maker_Overview.svg)
 
 ## Why EPSG:3857 output is calculated from decimal-degree boundaries
 
@@ -68,7 +68,7 @@ It does **not** merely divide the projected Web Mercator Y distance into ten equ
 
 This also means neighboring cells reuse the same calculated boundary coordinates, preventing gaps caused by independently drawn custom extents.
 
-![Master 4 EPSG:3857 extent catalog](images/Master4_Grid_Maker_Extent_Catalog.png)
+![Master 4 EPSG:3857 extent catalog](images/Master4_Grid_Maker_Extent_Catalog.svg)
 
 ## Typical QGIS workflow
 

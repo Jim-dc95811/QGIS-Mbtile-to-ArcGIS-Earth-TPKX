@@ -69,9 +69,9 @@ The TXT contains 100 **QGIS-ready EPSG:3857 extents**. The GeoTIFF is the matchi
 
 The numbering is hemisphere-aware. The first decimal digit of absolute latitude gives the tens row; the first decimal digit of absolute longitude plus one gives the column. Thus `30.56N, 81.34W`, `30.56N, 10.34E`, `30.56S, 81.34W`, and `30.56S, 10.34E` all identify **cell 54**.
 
-![Master 4 decimal grid addressing and workflow](images/Master4_Grid_Maker_Overview.png)
+![Master 4 decimal grid addressing and workflow](images/Master4_Grid_Maker_Overview.svg)
 
-![Master 4 grid with EPSG:3857 extent catalog](images/Master4_Grid_Maker_Extent_Catalog.png)
+![Master 4 grid with EPSG:3857 extent catalog](images/Master4_Grid_Maker_Extent_Catalog.svg)
 
 The current build was programmatically tested in all four hemisphere combinations, across the equator and prime meridian, at ±180° longitude, and near the practical Web Mercator latitude limits. Valid tests generated exactly 100 extents plus a 5000 × 5000 EPSG:3857 GeoTIFF; tested malformed/out-of-range inputs were rejected. The project owner also verified generated overlays in **QGIS** and **ArcGIS Earth**.
 

@@ -1,0 +1,204 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1200" viewBox="0 0 1600 1200">
+<rect width="1600" height="1200" fill="#f8fafc"/>
+<style>
+.title{font:700 48px Georgia,serif;fill:#101828}.sub{font:600 28px Georgia,serif;fill:#475467}
+.h2{font:700 30px Georgia,serif;fill:#101828}.body{font:22px Arial,sans-serif;fill:#1f2937}
+.small{font:18px Arial,sans-serif;fill:#344054}.cell{font:700 20px Georgia,serif;fill:#101828}
+.blue{fill:#1261a0}.green{fill:#166534}.orange{fill:#c2410c}
+</style>
+<text x="800" y="62" text-anchor="middle" class="title">1° Master Box → 100 Equal Sub-Extents</text>
+<text x="800" y="105" text-anchor="middle" class="sub">Decimal grid addressing for repeatable offline map coverage</text>
+<rect x="25" y="145" width="930" height="1015" rx="18" fill="#fff" stroke="#5aa5d8" stroke-width="3"/>
+<text x="490" y="193" text-anchor="middle" class="h2">1° Master Box Subdivided into a 10 × 10 Grid</text>
+<text x="490" y="227" text-anchor="middle" class="body">Example bounds: 82°W – 81°W, 30°N – 31°N</text>
+<text x="490" y="265" text-anchor="middle" class="body">Longitude (°W)</text>
+<text x="120" y="268" class="body blue">West = 82°W</text>
+<text x="760" y="268" class="body blue">East = 81°W</text>
+<line x1="185" y1="320" x2="185" y2="940" stroke="#111827" stroke-width="3"/>
+<line x1="185" y1="320" x2="885" y2="320" stroke="#111827" stroke-width="3"/>
+<line x1="255" y1="320" x2="255" y2="940" stroke="#111827" stroke-width="1.5"/>
+<line x1="185" y1="382" x2="885" y2="382" stroke="#111827" stroke-width="1.5"/>
+<line x1="325" y1="320" x2="325" y2="940" stroke="#111827" stroke-width="1.5"/>
+<line x1="185" y1="444" x2="885" y2="444" stroke="#111827" stroke-width="1.5"/>
+<line x1="395" y1="320" x2="395" y2="940" stroke="#111827" stroke-width="1.5"/>
+<line x1="185" y1="506" x2="885" y2="506" stroke="#111827" stroke-width="1.5"/>
+<line x1="465" y1="320" x2="465" y2="940" stroke="#111827" stroke-width="1.5"/>
+<line x1="185" y1="568" x2="885" y2="568" stroke="#111827" stroke-width="1.5"/>
+<line x1="535" y1="320" x2="535" y2="940" stroke="#111827" stroke-width="1.5"/>
+<line x1="185" y1="630" x2="885" y2="630" stroke="#111827" stroke-width="1.5"/>
+<line x1="605" y1="320" x2="605" y2="940" stroke="#111827" stroke-width="1.5"/>
+<line x1="185" y1="692" x2="885" y2="692" stroke="#111827" stroke-width="1.5"/>
+<line x1="675" y1="320" x2="675" y2="940" stroke="#111827" stroke-width="1.5"/>
+<line x1="185" y1="754" x2="885" y2="754" stroke="#111827" stroke-width="1.5"/>
+<line x1="745" y1="320" x2="745" y2="940" stroke="#111827" stroke-width="1.5"/>
+<line x1="185" y1="816" x2="885" y2="816" stroke="#111827" stroke-width="1.5"/>
+<line x1="815" y1="320" x2="815" y2="940" stroke="#111827" stroke-width="1.5"/>
+<line x1="185" y1="878" x2="885" y2="878" stroke="#111827" stroke-width="1.5"/>
+<line x1="885" y1="320" x2="885" y2="940" stroke="#111827" stroke-width="3"/>
+<line x1="185" y1="940" x2="885" y2="940" stroke="#111827" stroke-width="3"/>
+<text x="185" y="302" text-anchor="middle" class="small">82.0</text>
+<text x="255" y="302" text-anchor="middle" class="small">81.9</text>
+<text x="325" y="302" text-anchor="middle" class="small">81.8</text>
+<text x="395" y="302" text-anchor="middle" class="small">81.7</text>
+<text x="465" y="302" text-anchor="middle" class="small">81.6</text>
+<text x="535" y="302" text-anchor="middle" class="small">81.5</text>
+<text x="605" y="302" text-anchor="middle" class="small">81.4</text>
+<text x="675" y="302" text-anchor="middle" class="small">81.3</text>
+<text x="745" y="302" text-anchor="middle" class="small">81.2</text>
+<text x="815" y="302" text-anchor="middle" class="small">81.1</text>
+<text x="885" y="302" text-anchor="middle" class="small">81.0</text>
+<text x="163" y="327" text-anchor="end" class="small">31.0</text>
+<text x="163" y="389" text-anchor="end" class="small">30.9</text>
+<text x="163" y="451" text-anchor="end" class="small">30.8</text>
+<text x="163" y="513" text-anchor="end" class="small">30.7</text>
+<text x="163" y="575" text-anchor="end" class="small">30.6</text>
+<text x="163" y="637" text-anchor="end" class="small">30.5</text>
+<text x="163" y="699" text-anchor="end" class="small">30.4</text>
+<text x="163" y="761" text-anchor="end" class="small">30.3</text>
+<text x="163" y="823" text-anchor="end" class="small">30.2</text>
+<text x="163" y="885" text-anchor="end" class="small">30.1</text>
+<text x="163" y="947" text-anchor="end" class="small">30.0</text>
+<text x="88" y="340" class="body blue">North = 31°N</text>
+<text x="88" y="935" class="body blue">South = 30°N</text>
+<text x="220" y="359" text-anchor="middle" class="cell">100</text>
+<text x="290" y="359" text-anchor="middle" class="cell">99</text>
+<text x="360" y="359" text-anchor="middle" class="cell">98</text>
+<text x="430" y="359" text-anchor="middle" class="cell">97</text>
+<text x="500" y="359" text-anchor="middle" class="cell">96</text>
+<text x="570" y="359" text-anchor="middle" class="cell">95</text>
+<text x="640" y="359" text-anchor="middle" class="cell">94</text>
+<text x="710" y="359" text-anchor="middle" class="cell">93</text>
+<text x="780" y="359" text-anchor="middle" class="cell">92</text>
+<text x="850" y="359" text-anchor="middle" class="cell">91</text>
+<text x="220" y="421" text-anchor="middle" class="cell">90</text>
+<text x="290" y="421" text-anchor="middle" class="cell">89</text>
+<text x="360" y="421" text-anchor="middle" class="cell">88</text>
+<text x="430" y="421" text-anchor="middle" class="cell">87</text>
+<text x="500" y="421" text-anchor="middle" class="cell">86</text>
+<text x="570" y="421" text-anchor="middle" class="cell">85</text>
+<text x="640" y="421" text-anchor="middle" class="cell">84</text>
+<text x="710" y="421" text-anchor="middle" class="cell">83</text>
+<text x="780" y="421" text-anchor="middle" class="cell">82</text>
+<text x="850" y="421" text-anchor="middle" class="cell">81</text>
+<text x="220" y="483" text-anchor="middle" class="cell">80</text>
+<text x="290" y="483" text-anchor="middle" class="cell">79</text>
+<text x="360" y="483" text-anchor="middle" class="cell">78</text>
+<text x="430" y="483" text-anchor="middle" class="cell">77</text>
+<text x="500" y="483" text-anchor="middle" class="cell">76</text>
+<text x="570" y="483" text-anchor="middle" class="cell">75</text>
+<text x="640" y="483" text-anchor="middle" class="cell">74</text>
+<text x="710" y="483" text-anchor="middle" class="cell">73</text>
+<text x="780" y="483" text-anchor="middle" class="cell">72</text>
+<text x="850" y="483" text-anchor="middle" class="cell">71</text>
+<text x="220" y="545" text-anchor="middle" class="cell">70</text>
+<text x="290" y="545" text-anchor="middle" class="cell">69</text>
+<text x="360" y="545" text-anchor="middle" class="cell">68</text>
+<text x="430" y="545" text-anchor="middle" class="cell">67</text>
+<text x="500" y="545" text-anchor="middle" class="cell">66</text>
+<text x="570" y="545" text-anchor="middle" class="cell">65</text>
+<text x="640" y="545" text-anchor="middle" class="cell">64</text>
+<text x="710" y="545" text-anchor="middle" class="cell">63</text>
+<text x="780" y="545" text-anchor="middle" class="cell">62</text>
+<text x="850" y="545" text-anchor="middle" class="cell">61</text>
+<text x="220" y="607" text-anchor="middle" class="cell">60</text>
+<text x="290" y="607" text-anchor="middle" class="cell">59</text>
+<text x="360" y="607" text-anchor="middle" class="cell">58</text>
+<text x="430" y="607" text-anchor="middle" class="cell">57</text>
+<text x="500" y="607" text-anchor="middle" class="cell">56</text>
+<text x="570" y="607" text-anchor="middle" class="cell">55</text>
+<rect x="607" y="570" width="66" height="58" fill="#e0f2fe" stroke="#1261a0" stroke-width="4"/>
+<text x="640" y="607" text-anchor="middle" class="cell">54</text>
+<text x="710" y="607" text-anchor="middle" class="cell">53</text>
+<text x="780" y="607" text-anchor="middle" class="cell">52</text>
+<text x="850" y="607" text-anchor="middle" class="cell">51</text>
+<text x="220" y="669" text-anchor="middle" class="cell">50</text>
+<text x="290" y="669" text-anchor="middle" class="cell">49</text>
+<text x="360" y="669" text-anchor="middle" class="cell">48</text>
+<text x="430" y="669" text-anchor="middle" class="cell">47</text>
+<text x="500" y="669" text-anchor="middle" class="cell">46</text>
+<text x="570" y="669" text-anchor="middle" class="cell">45</text>
+<text x="640" y="669" text-anchor="middle" class="cell">44</text>
+<text x="710" y="669" text-anchor="middle" class="cell">43</text>
+<text x="780" y="669" text-anchor="middle" class="cell">42</text>
+<text x="850" y="669" text-anchor="middle" class="cell">41</text>
+<text x="220" y="731" text-anchor="middle" class="cell">40</text>
+<text x="290" y="731" text-anchor="middle" class="cell">39</text>
+<text x="360" y="731" text-anchor="middle" class="cell">38</text>
+<text x="430" y="731" text-anchor="middle" class="cell">37</text>
+<text x="500" y="731" text-anchor="middle" class="cell">36</text>
+<text x="570" y="731" text-anchor="middle" class="cell">35</text>
+<text x="640" y="731" text-anchor="middle" class="cell">34</text>
+<text x="710" y="731" text-anchor="middle" class="cell">33</text>
+<text x="780" y="731" text-anchor="middle" class="cell">32</text>
+<text x="850" y="731" text-anchor="middle" class="cell">31</text>
+<text x="220" y="793" text-anchor="middle" class="cell">30</text>
+<text x="290" y="793" text-anchor="middle" class="cell">29</text>
+<text x="360" y="793" text-anchor="middle" class="cell">28</text>
+<text x="430" y="793" text-anchor="middle" class="cell">27</text>
+<text x="500" y="793" text-anchor="middle" class="cell">26</text>
+<text x="570" y="793" text-anchor="middle" class="cell">25</text>
+<text x="640" y="793" text-anchor="middle" class="cell">24</text>
+<text x="710" y="793" text-anchor="middle" class="cell">23</text>
+<text x="780" y="793" text-anchor="middle" class="cell">22</text>
+<text x="850" y="793" text-anchor="middle" class="cell">21</text>
+<text x="220" y="855" text-anchor="middle" class="cell">20</text>
+<text x="290" y="855" text-anchor="middle" class="cell">19</text>
+<text x="360" y="855" text-anchor="middle" class="cell">18</text>
+<text x="430" y="855" text-anchor="middle" class="cell">17</text>
+<text x="500" y="855" text-anchor="middle" class="cell">16</text>
+<text x="570" y="855" text-anchor="middle" class="cell">15</text>
+<text x="640" y="855" text-anchor="middle" class="cell">14</text>
+<text x="710" y="855" text-anchor="middle" class="cell">13</text>
+<text x="780" y="855" text-anchor="middle" class="cell">12</text>
+<text x="850" y="855" text-anchor="middle" class="cell">11</text>
+<text x="220" y="917" text-anchor="middle" class="cell">10</text>
+<text x="290" y="917" text-anchor="middle" class="cell">09</text>
+<text x="360" y="917" text-anchor="middle" class="cell">08</text>
+<text x="430" y="917" text-anchor="middle" class="cell">07</text>
+<text x="500" y="917" text-anchor="middle" class="cell">06</text>
+<text x="570" y="917" text-anchor="middle" class="cell">05</text>
+<text x="640" y="917" text-anchor="middle" class="cell">04</text>
+<text x="710" y="917" text-anchor="middle" class="cell">03</text>
+<text x="780" y="917" text-anchor="middle" class="cell">02</text>
+<text x="850" y="917" text-anchor="middle" class="cell">01</text>
+<rect x="55" y="985" width="870" height="145" rx="14" fill="#fff7ed" stroke="#f59e0b" stroke-width="2"/>
+<text x="80" y="1023" class="h2 orange" font-size="25">Example lookup: 30.56 N, 81.34 W → cell 54</text>
+<text x="82" y="1061" class="body">• Latitude .5 → 50s row</text>
+<text x="82" y="1095" class="body">• Longitude .3 + 1 → column 4</text>
+<text x="82" y="1128" class="body">• The whole-degree Master 4 identifies which 1° box you are in.</text>
+<rect x="980" y="145" width="595" height="1015" rx="18" fill="#fff" stroke="#6da56d" stroke-width="3"/>
+<text x="1278" y="193" text-anchor="middle" class="h2">Resultant Extents</text>
+<text x="1278" y="225" text-anchor="middle" class="body">Each cell becomes one QGIS-ready extent.</text>
+<rect x="1010" y="265" width="80" height="54" fill="#eef6fb" stroke="#7aa7c7"/><text x="1050" y="299" text-anchor="middle" class="small" font-weight="700">Cell</text>
+<rect x="1090" y="265" width="170" height="54" fill="#eef6fb" stroke="#7aa7c7"/><text x="1175" y="299" text-anchor="middle" class="small" font-weight="700">Longitude</text>
+<rect x="1260" y="265" width="170" height="54" fill="#eef6fb" stroke="#7aa7c7"/><text x="1345" y="299" text-anchor="middle" class="small" font-weight="700">Latitude</text>
+<rect x="1430" y="265" width="125" height="54" fill="#eef6fb" stroke="#7aa7c7"/><text x="1492.5" y="299" text-anchor="middle" class="small" font-weight="700">Location</text>
+<rect x="1010" y="319" width="80" height="60" fill="#fff" stroke="#9abbd0"/><text x="1050" y="356" text-anchor="middle" class="small" font-weight="700">01</text>
+<rect x="1090" y="319" width="170" height="60" fill="#fff" stroke="#9abbd0"/><text x="1175" y="356" text-anchor="middle" class="small" font-weight="400">81.0–81.1 W</text>
+<rect x="1260" y="319" width="170" height="60" fill="#fff" stroke="#9abbd0"/><text x="1345" y="356" text-anchor="middle" class="small" font-weight="400">30.0–30.1 N</text>
+<rect x="1430" y="319" width="125" height="60" fill="#fff" stroke="#9abbd0"/><text x="1492.5" y="356" text-anchor="middle" class="small" font-weight="400">east edge</text>
+<rect x="1010" y="379" width="80" height="60" fill="#e0f2fe" stroke="#9abbd0"/><text x="1050" y="416" text-anchor="middle" class="small" font-weight="700">54</text>
+<rect x="1090" y="379" width="170" height="60" fill="#e0f2fe" stroke="#9abbd0"/><text x="1175" y="416" text-anchor="middle" class="small" font-weight="400">81.3–81.4 W</text>
+<rect x="1260" y="379" width="170" height="60" fill="#e0f2fe" stroke="#9abbd0"/><text x="1345" y="416" text-anchor="middle" class="small" font-weight="400">30.5–30.6 N</text>
+<rect x="1430" y="379" width="125" height="60" fill="#e0f2fe" stroke="#9abbd0"/><text x="1492.5" y="416" text-anchor="middle" class="small" font-weight="400">example</text>
+<rect x="1010" y="439" width="80" height="60" fill="#fff" stroke="#9abbd0"/><text x="1050" y="476" text-anchor="middle" class="small" font-weight="700">100</text>
+<rect x="1090" y="439" width="170" height="60" fill="#fff" stroke="#9abbd0"/><text x="1175" y="476" text-anchor="middle" class="small" font-weight="400">81.9–82.0 W</text>
+<rect x="1260" y="439" width="170" height="60" fill="#fff" stroke="#9abbd0"/><text x="1345" y="476" text-anchor="middle" class="small" font-weight="400">30.9–31.0 N</text>
+<rect x="1430" y="439" width="125" height="60" fill="#fff" stroke="#9abbd0"/><text x="1492.5" y="476" text-anchor="middle" class="small" font-weight="400">west edge</text>
+<text x="1278" y="520" text-anchor="middle" class="h2">Workflow</text>
+<rect x="1020" y="555" width="515" height="120" rx="14" fill="#f8fafc" stroke="#2b8cc4" stroke-width="2"/>
+<circle cx="1060" cy="615" r="28" fill="#2b8cc4"/><text x="1060" y="625" text-anchor="middle" font-family="Arial" font-size="30" font-weight="700" fill="#fff">1</text>
+<text x="1105" y="599" class="body" font-weight="700">Define the 10 × 10 grid in decimal degrees</text>
+<text x="1105" y="633" class="small">Split the 1° × 1° master box into exact 0.1° cells.</text>
+<rect x="1020" y="710" width="515" height="120" rx="14" fill="#f8fafc" stroke="#2e7d32" stroke-width="2"/>
+<circle cx="1060" cy="770" r="28" fill="#2e7d32"/><text x="1060" y="780" text-anchor="middle" font-family="Arial" font-size="30" font-weight="700" fill="#fff">2</text>
+<text x="1105" y="754" class="body" font-weight="700">Transform shared boundaries to EPSG:3857</text>
+<text x="1105" y="788" class="small">Convert the geographic boundaries to Web Mercator.</text>
+<rect x="1020" y="865" width="515" height="120" rx="14" fill="#f8fafc" stroke="#ea580c" stroke-width="2"/>
+<circle cx="1060" cy="925" r="28" fill="#ea580c"/><text x="1060" y="935" text-anchor="middle" font-family="Arial" font-size="30" font-weight="700" fill="#fff">3</text>
+<text x="1105" y="909" class="body" font-weight="700">Use the 100 seamless extents in QGIS</text>
+<text x="1105" y="943" class="small">Reference the grid visually; use the matching TXT values.</text>
+<text x="1025" y="1045" class="body" font-weight="700">Key rule:</text>
+<text x="1025" y="1080" class="body">Neighboring cells share the exact same transformed boundaries.</text>
+<text x="1025" y="1115" class="body">No custom “about here” extents are needed.</text>
+</svg>
