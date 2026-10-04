@@ -1,0 +1,217 @@
+%PDF-1.4
+1 0 obj
+<< /Type /Catalog /Pages 2 0 R >>
+endobj
+2 0 obj
+<< /Type /Pages /Kids [6 0 R 8 0 R 10 0 R 12 0 R] /Count 4 >>
+endobj
+3 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>
+endobj
+4 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica-Bold >>
+endobj
+5 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Courier >>
+endobj
+6 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 3 0 R /F2 4 0 R /F3 5 0 R >> >> /Contents 7 0 R >>
+endobj
+7 0 obj
+<< /Length 1230 >>
+stream
+0.08 0.22 0.36 rg
+0 730 612 62 re f
+1 1 1 rg
+BT /F2 18 Tf 52 758 Td (Master 4 Grid Maker) Tj ET
+BT /F1 9 Tf 52 742 Td (Official User Manual) Tj ET
+0.08 0.22 0.36 rg
+BT /F2 13 Tf 52 704 Td (Purpose) Tj ET
+0.15 0.15 0.15 rg
+BT /F1 9.5 Tf 58 684 Td (Turn one whole-degree geographic square into a repeatable 10 x 10 system of 100 exact) Tj ET
+0.15 0.15 0.15 rg
+BT /F1 9.5 Tf 58 672 Td (map extents. The tool also creates a numbered EPSG:3857 GeoTIFF overlay and a) Tj ET
+0.15 0.15 0.15 rg
+BT /F1 9.5 Tf 58 660 Td (production manifest for QGIS batch mapping.) Tj ET
+0.08 0.22 0.36 rg
+BT /F2 13 Tf 52 640 Td (Requirements) Tj ET
+0.15 0.15 0.15 rg
+BT /F1 9.5 Tf 58 620 Td (Windows, Python 3, and Pillow.) Tj ET
+0.15 0.15 0.15 rg
+BT /F3 8.5 Tf 58 604 Td (py -3 --version) Tj ET
+0.15 0.15 0.15 rg
+BT /F3 8.5 Tf 58 588 Td (py -3 -m pip install Pillow) Tj ET
+0.08 0.22 0.36 rg
+BT /F2 13 Tf 52 568 Td (Keep these together) Tj ET
+0.15 0.15 0.15 rg
+BT /F3 8.5 Tf 58 548 Td (Master4_Grid_Maker.py) Tj ET
+0.15 0.15 0.15 rg
+BT /F3 8.5 Tf 58 532 Td (Master4_Grid_Maker.bat) Tj ET
+0.15 0.15 0.15 rg
+BT /F3 8.5 Tf 58 516 Td (Master4_Grid_Maker_User_Manual.pdf) Tj ET
+0.45 0.45 0.45 rg
+BT /F1 8 Tf 52 34 Td (Official User Manual - Page 1 of 4) Tj ET
+endstream
+endobj
+8 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 3 0 R /F2 4 0 R /F3 5 0 R >> >> /Contents 9 0 R >>
+endobj
+9 0 obj
+<< /Length 1646 >>
+stream
+0.08 0.22 0.36 rg
+0 730 612 62 re f
+1 1 1 rg
+BT /F2 18 Tf 52 758 Td (Master 4 Grid Maker) Tj ET
+BT /F1 9 Tf 52 742 Td (Official User Manual) Tj ET
+0.08 0.22 0.36 rg
+BT /F2 13 Tf 52 704 Td (Run it) Tj ET
+0.15 0.15 0.15 rg
+BT /F1 9.5 Tf 58 684 Td (Double-click Master4_Grid_Maker.bat. Enter four whole-degree edges in this exact) Tj ET
+0.15 0.15 0.15 rg
+BT /F1 9.5 Tf 58 672 Td (order: west, east, south, north.) Tj ET
+0.15 0.15 0.15 rg
+BT /F3 8.5 Tf 58 656 Td (82w, 81w, 30n, 31n) Tj ET
+0.15 0.15 0.15 rg
+BT /F1 9.5 Tf 58 640 Td (The box must be exactly 1 degree wide by 1 degree high and inside the practical) Tj ET
+0.15 0.15 0.15 rg
+BT /F1 9.5 Tf 58 628 Td (EPSG:3857 latitude range.) Tj ET
+0.08 0.22 0.36 rg
+BT /F2 13 Tf 52 608 Td (Outputs) Tj ET
+0.15 0.15 0.15 rg
+BT /F1 9.5 Tf 58 588 Td (Files are written to C:\downloads:) Tj ET
+0.15 0.15 0.15 rg
+BT /F3 8.5 Tf 58 572 Td (Master4_82W_81W_30N_31N_Extents.txt) Tj ET
+0.15 0.15 0.15 rg
+BT /F3 8.5 Tf 58 556 Td (Master4_82W_81W_30N_31N_Grid.tif) Tj ET
+0.08 0.22 0.36 rg
+BT /F2 13 Tf 52 536 Td (100-cell address) Tj ET
+0.15 0.15 0.15 rg
+BT /F1 9.5 Tf 58 516 Td (Use the first decimal digit of absolute latitude as the tens row. Use the first) Tj ET
+0.15 0.15 0.15 rg
+BT /F1 9.5 Tf 58 504 Td (decimal digit of absolute longitude plus 1 as the column. Do not round.) Tj ET
+0.15 0.15 0.15 rg
+BT /F3 8.5 Tf 58 488 Td (30.56N, 81.34W -> cell 54) Tj ET
+0.15 0.15 0.15 rg
+BT /F3 8.5 Tf 58 472 Td (30.59999N, 81.30001W -> cell 54) Tj ET
+0.15 0.15 0.15 rg
+BT /F3 8.5 Tf 58 456 Td (30.500001N, 81.399999W -> cell 54) Tj ET
+0.45 0.45 0.45 rg
+BT /F1 8 Tf 52 34 Td (Official User Manual - Page 2 of 4) Tj ET
+endstream
+endobj
+10 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 3 0 R /F2 4 0 R /F3 5 0 R >> >> /Contents 11 0 R >>
+endobj
+11 0 obj
+<< /Length 1518 >>
+stream
+0.08 0.22 0.36 rg
+0 730 612 62 re f
+1 1 1 rg
+BT /F2 18 Tf 52 758 Td (Master 4 Grid Maker) Tj ET
+BT /F1 9 Tf 52 742 Td (Official User Manual) Tj ET
+0.08 0.22 0.36 rg
+BT /F2 13 Tf 52 704 Td (Production manifest) Tj ET
+0.15 0.15 0.15 rg
+BT /F1 9.5 Tf 58 684 Td (Each row contains the cell number, exact QGIS EPSG:3857 extent, and deterministic TPKX) Tj ET
+0.15 0.15 0.15 rg
+BT /F1 9.5 Tf 58 672 Td (filename.) Tj ET
+0.15 0.15 0.15 rg
+BT /F3 8.5 Tf 58 656 Td (01 -9028010.7033,-9016878.7543,3503549.8435,3516410.3983 [EPSG:3857]) Tj ET
+0.15 0.15 0.15 rg
+BT /F3 8.5 Tf 58 640 Td (W082W081N031N030-001-GHY-Z20.tpkx) Tj ET
+0.15 0.15 0.15 rg
+BT /F1 9.5 Tf 58 624 Td (The filename identifies the Master 4 and cell, so cells can be selected in any order) Tj ET
+0.15 0.15 0.15 rg
+BT /F1 9.5 Tf 58 612 Td (without sequential batch naming.) Tj ET
+0.08 0.22 0.36 rg
+BT /F2 13 Tf 52 592 Td (Reference overlay) Tj ET
+0.15 0.15 0.15 rg
+BT /F1 9.5 Tf 58 572 Td (Load the generated _Grid.tif in QGIS or ArcGIS Earth. It displays the 01-100 cells) Tj ET
+0.15 0.15 0.15 rg
+BT /F1 9.5 Tf 58 560 Td (directly over the map; background value 0 is tagged NoData.) Tj ET
+0.08 0.22 0.36 rg
+BT /F2 13 Tf 52 540 Td (Worldwide addressing) Tj ET
+0.15 0.15 0.15 rg
+BT /F1 9.5 Tf 58 520 Td (The numbering logic is hemisphere-aware and works in W/N, E/N, W/S, and E/S boxes) Tj ET
+0.15 0.15 0.15 rg
+BT /F1 9.5 Tf 58 508 Td (within practical Web Mercator coverage.) Tj ET
+0.45 0.45 0.45 rg
+BT /F1 8 Tf 52 34 Td (Official User Manual - Page 3 of 4) Tj ET
+endstream
+endobj
+12 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 3 0 R /F2 4 0 R /F3 5 0 R >> >> /Contents 13 0 R >>
+endobj
+13 0 obj
+<< /Length 2074 >>
+stream
+0.08 0.22 0.36 rg
+0 730 612 62 re f
+1 1 1 rg
+BT /F2 18 Tf 52 758 Td (Master 4 Grid Maker) Tj ET
+BT /F1 9 Tf 52 742 Td (Official User Manual) Tj ET
+0.08 0.22 0.36 rg
+BT /F2 13 Tf 52 704 Td (QGIS batch workflow) Tj ET
+0.15 0.15 0.15 rg
+BT /F1 9.5 Tf 58 684 Td (1. Generate the Master 4 for the degree square you want.) Tj ET
+0.15 0.15 0.15 rg
+BT /F1 9.5 Tf 58 668 Td (2. Load the grid TIFF over your basemap.) Tj ET
+0.15 0.15 0.15 rg
+BT /F1 9.5 Tf 58 652 Td (3. Choose the numbered cells you need; skip cells you do not need.) Tj ET
+0.15 0.15 0.15 rg
+BT /F1 9.5 Tf 58 636 Td (4. Copy each exact extent into QGIS batch processing.) Tj ET
+0.15 0.15 0.15 rg
+BT /F1 9.5 Tf 58 620 Td (5. Use the manifest filename as that map's permanent geographic identity.) Tj ET
+0.15 0.15 0.15 rg
+BT /F1 9.5 Tf 58 604 Td (6. Produce raster MBTiles with your locked production settings.) Tj ET
+0.15 0.15 0.15 rg
+BT /F1 9.5 Tf 58 588 Td (7. Convert finished MBTiles to TPKX with mb2tpkx when ArcGIS Earth is the target) Tj ET
+0.15 0.15 0.15 rg
+BT /F1 9.5 Tf 58 576 Td (viewer.) Tj ET
+0.08 0.22 0.36 rg
+BT /F2 13 Tf 52 556 Td (Troubleshooting) Tj ET
+0.15 0.15 0.15 rg
+BT /F1 9.5 Tf 58 536 Td (Invalid coordinate: use a number followed by N, S, E, or W.) Tj ET
+0.15 0.15 0.15 rg
+BT /F1 9.5 Tf 58 520 Td (Wrong span: edges must be exactly one whole degree apart.) Tj ET
+0.15 0.15 0.15 rg
+BT /F1 9.5 Tf 58 504 Td (Non-whole-degree edge: all four Master 4 edges must be whole degrees.) Tj ET
+0.15 0.15 0.15 rg
+BT /F1 9.5 Tf 58 488 Td (Pillow is required: install it with the command on page 1.) Tj ET
+0.08 0.22 0.36 rg
+BT /F2 13 Tf 52 468 Td (Quick reference) Tj ET
+0.15 0.15 0.15 rg
+BT /F3 8.5 Tf 58 448 Td (Input: west, east, south, north) Tj ET
+0.15 0.15 0.15 rg
+BT /F3 8.5 Tf 58 432 Td (Output: 100 manifest rows + numbered GeoTIFF) Tj ET
+0.15 0.15 0.15 rg
+BT /F3 8.5 Tf 58 416 Td (Address: first decimal latitude digit + longitude digit plus 1) Tj ET
+0.15 0.15 0.15 rg
+BT /F3 8.5 Tf 58 400 Td (No rounding.) Tj ET
+0.45 0.45 0.45 rg
+BT /F1 8 Tf 52 34 Td (Official User Manual - Page 4 of 4) Tj ET
+endstream
+endobj
+xref
+0 14
+0000000000 65535 f 
+0000000009 00000 n 
+0000000058 00000 n 
+0000000135 00000 n 
+0000000205 00000 n 
+0000000280 00000 n 
+0000000348 00000 n 
+0000000494 00000 n 
+0000001775 00000 n 
+0000001921 00000 n 
+0000003618 00000 n 
+0000003766 00000 n 
+0000005336 00000 n 
+0000005484 00000 n 
+trailer
+<< /Size 14 /Root 1 0 R >>
+startxref
+7610
+%%EOF
