@@ -24,7 +24,7 @@ The follow-along Washington, DC video demonstrates the production workflow: crea
 
 [![Watch the Master 4 Grid Maker video](https://img.youtube.com/vi/zNt-I4KgAy8/hqdefault.jpg)](https://www.youtube.com/watch?v=zNt-I4KgAy8)
 
-This video introduces the Master 4 system for dividing large continuous mapping jobs into exact repeatable cells, generating QGIS-ready extents, assigning deterministic geographic filenames, and organizing large offline map libraries systematically.
+This one-take video demonstrates the full end-to-end large-area workflow: start with an empty 1° × 1° area, generate the Master 4 grid, exact QGIS-ready extents and deterministic geographic filenames, batch-build the selected maps in QGIS, create the raster MBTiles, convert the result to TPKX, and open the finished offline map in ArcGIS Earth.
 
 **New here?** [See the four-step visual explanation and video notes](DEMO.md). **Continuing the engineering project?** Start with [CONTINUITY.md](CONTINUITY.md) and the current [technical record](TECHNICAL.md).
 
