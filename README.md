@@ -1,32 +1,96 @@
-# MBTiles → TPKX: offline maps for ArcGIS Earth
+# MBTiles -> TPKX: offline maps for ArcGIS Earth
 
-**Make a native offline ArcGIS Earth map from an existing raster MBTiles file—without ArcGIS Pro or an intermediate GeoTIFF.** Bring MBTiles from QGIS or another compatible producer; the converter preserves the original map tiles at every recorded zoom level.
+**Make native offline ArcGIS Earth maps from compatible raster MBTiles, then organize large areas with the Master 4 grid system.** The converter preserves the original PNG/JPEG map tiles at every recorded zoom level. Master 4 adds repeatable geographic cells, deterministic filenames, a numbered reference overlay, and an optional synthetic TPKX that makes stored zoom levels visible before QGIS production begins.
 
 ## Watch the videos
 
-**[Google Maps OFFLINE — The Impossible Is Now Possible!](https://www.youtube.com/watch?v=8uziJNzan1g)**
+**[Google Maps OFFLINE - The Impossible Is Now Possible!](https://www.youtube.com/watch?v=8uziJNzan1g)**
 
 [![Watch the offline maps demonstration](https://img.youtube.com/vi/8uziJNzan1g/hqdefault.jpg)](https://www.youtube.com/watch?v=8uziJNzan1g)
 
-The video shows online Street and Hybrid map navigation over Jacksonville, then an offline demonstration in ArcGIS Earth. The synthetic color-tile sequence makes the separately stored zoom levels visible. **This reproduces the captured map-display experience, not Google's complete application:** search, live traffic, Street View, routing and other online services are not reproduced.
+The video shows online Street and Hybrid map navigation over Jacksonville, then an offline demonstration in ArcGIS Earth. The synthetic color-tile sequence makes separately stored zoom levels visible. **This reproduces a captured map-display experience, not Google's complete application:** search, live traffic, Street View, routing and other online services are not reproduced.
 
-### Make your own offline map — QGIS and ArcGIS Earth tutorial
+### Make your own offline map - QGIS and ArcGIS Earth tutorial
 
 **[How to Make an Offline Map with QGIS and ArcGIS Earth](https://www.youtube.com/watch?v=C71n8TAByuE)**
 
 [![Watch the Washington, DC map-making tutorial](https://img.youtube.com/vi/C71n8TAByuE/hqdefault.jpg)](https://www.youtube.com/watch?v=C71n8TAByuE)
 
-The follow-along Washington, DC video demonstrates the production workflow: create raster MBTiles in QGIS, convert the file to TPKX with this repository's Python tool, and open the map in ArcGIS Earth.
+The Washington, DC follow-along tutorial demonstrates the basic production route: create raster MBTiles in QGIS, convert the file to TPKX with this repository's Python tool, and open the finished map in ArcGIS Earth.
 
-### Master 4 Grid Maker — systematic large-area map production
+### Master 4 Grid Maker - systematic large-area map production
 
 **[Watch the Master 4 Grid Maker video](https://www.youtube.com/watch?v=zNt-I4KgAy8)**
 
 [![Watch the Master 4 Grid Maker video](https://img.youtube.com/vi/zNt-I4KgAy8/hqdefault.jpg)](https://www.youtube.com/watch?v=zNt-I4KgAy8)
 
-This one-take video demonstrates the full end-to-end large-area workflow: start with an empty 1° × 1° area, generate the Master 4 grid, exact QGIS-ready extents and deterministic geographic filenames, batch-build the selected maps in QGIS, create the raster MBTiles, convert the result to TPKX, and open the finished offline map in ArcGIS Earth.
+This one-take video demonstrates the large-area chain from an empty 1-degree x 1-degree area through Master 4, exact QGIS-ready extents, deterministic filenames, QGIS batch production, MBTiles, TPKX conversion and final viewing in ArcGIS Earth.
 
-**New here?** [See the four-step visual explanation and video notes](DEMO.md). **Continuing the engineering project?** Start with [CONTINUITY.md](CONTINUITY.md) and the current [technical record](TECHNICAL.md).
+**New here?** Start with [DEMO.md](DEMO.md). **Operating Master 4?** Use the [Master 4 guide](MASTER4_GRID_MAKER.md) and the [official PDF operator manual](Master4_Grid_Maker_User_Manual.pdf). **Continuing the engineering project?** Read [CONTINUITY.md](CONTINUITY.md) and [TECHNICAL.md](TECHNICAL.md).
+
+## Master 4 v3: where the map belongs + what zoom level you are seeing
+
+![Master 4 Cell 55 multi-zoom TPKX teaching graphic](images/Master4_Cell55_MultiZoom_TPKX.jpg)
+
+Master 4 v3 keeps the original production workflow and adds one **optional** teaching/reference product.
+
+Enter one whole-degree Master 4 box in this order:
+
+```text
+82w, 81w, 30n, 31n
+```
+
+The program always creates the two normal files first:
+
+```text
+Master4_82W_81W_30N_31N_Extents.txt
+Master4_82W_81W_30N_31N_Grid.tif
+```
+
+The TXT contains **100 cell production rows plus one final `MASTER` row** for the full 1-degree box. Each numbered row carries the exact QGIS-ready EPSG:3857 extent and deterministic production filename:
+
+```text
+01 -9028010.7033,-9016878.7543,3503549.8435,3516410.3983 [EPSG:3857] W082W081N031N030-001-GHY-Z20.tpkx
+...
+MASTER -9128198.2450,-9016878.7543,3503549.8435,3632749.1434 [EPSG:3857]
+```
+
+After those standard outputs are finished, v3 asks:
+
+```text
+Create Cell 55 colored zoom-demo TPKX (Z10-Z20)? [y/N]:
+```
+
+**The demo is opt-in. `No` is the default.** Press Enter or type `N` and the program exits normally with the standard Master 4 files already complete. Type `Y` or `Yes` only when you want the synthetic demo/reference TPKX.
+
+For the example above the optional file is named:
+
+```text
+W082W081N031N030-055-ZOOM-DEMO.tpkx
+```
+
+It contains synthetic colored raster tiles for **Z10 through Z20**, each visibly labeled with its stored zoom level and `CELL 55`. The project owner generated the current v3 package on Windows and opened it successfully in ArcGIS Earth, visually confirming multiple transitions including Z12, Z13, Z14, Z15, Z17 and Z20. The owner reported a current test file of roughly **1 GB**; size varies with latitude and PNG compression.
+
+### Why the optional TPKX exists
+
+It has three useful roles:
+
+- **Teaching:** it makes the multiresolution raster tile pyramid obvious. As ArcGIS Earth changes stored levels, the color and giant Z-number change.
+- **Pre-QGIS sanity check:** it gives a new user a real TPKX to open before any imagery production. The package is generated from the same Master 4 geography and acts as a quick check that the viewer, home grid and TPKX path are behaving as expected.
+- **Offline reference beacon:** when the online basemap is unavailable and the display loses familiar context, opening the local demo TPKX gives a known geographic anchor and visible zoom-level feedback again.
+
+The colored package uses the standard global XYZ/Web Mercator tile grid. At coarse zooms, a tile is much larger than a 0.1-degree Master 4 cell, so colored tiles can visibly extend beyond the exact Cell 55 boundary. Use the numbered GeoTIFF and manifest for exact cell boundaries; use the synthetic TPKX for geographic/zoom awareness.
+
+## Recommended ArcGIS Earth field flow
+
+1. Keep one or more **area-wide Z17 overview TPKX** maps available for broad context.
+2. When an area of interest appears, enable the **Master 4 numbered GeoTIFF overlay**.
+3. Identify the numbered cell or adjacent cells covering the area.
+4. Use the manifest rows for exact extents and filenames.
+5. Optionally open the **Cell 55 Z10-Z20 demo TPKX** as a fast TPKX/geographic sanity check before touching QGIS.
+6. Produce only the real high-resolution cells you need in QGIS, convert compatible MBTiles to TPKX, and load them over the overview map.
+
+**Permanent production rule:** reference overlays **ON while planning; OFF before production**. Leaving the numbered overlay visible during raster production can burn the grid into the finished imagery.
 
 ## Project illustrations
 
@@ -34,71 +98,41 @@ This one-take video demonstrates the full end-to-end large-area workflow: start 
 
 ![Four-step illustration: imagery source, QGIS MBTiles production, Python conversion, and offline ArcGIS Earth](images/ChatGPT%20Image%20Sep%2027%2C%202026%2C%2010_58_45%20PM.png)
 
-**The MBTiles → TPKX breakthrough:**
+**The MBTiles -> TPKX breakthrough:**
 
 ![MBTiles to TPKX breakthrough graphic and offline ArcGIS Earth viewer](images/ChatGPT%20Image%20Sep%2027%2C%202026%2C%2012_44_11%20PM.png)
 
-### Understanding how zoomable maps work
+### Understanding zoomable maps
 
-**1. A multiresolution raster tile pyramid — one geographic area at different zoom levels.** Each closer zoom uses more tiles to cover the same territory, revealing progressively finer map detail.
+**1. A multiresolution raster tile pyramid - one geographic area at different zoom levels.** Each closer zoom uses more tiles to cover the same territory, revealing progressively finer map detail.
 
-![Exploded multiresolution raster tile pyramid showing the same geographic area at successive zoom levels](images/ChatGPT%20Image%20Sep%2029%2C%202026%2C%2008_00_20%20PM-1.png)
+![Exploded multiresolution raster tile pyramid](images/ChatGPT%20Image%20Sep%2029%2C%202026%2C%2008_00_20%20PM-1.png)
 
 **2. Combining imagery and road-overlay pyramids.** Matching geographic extents and zoom levels let road lines and labels appear over satellite imagery, creating a hybrid map view.
 
 ![Separate satellite imagery and road-overlay tile pyramids combining into a hybrid map](images/ChatGPT%20Image%20Sep%2029%2C%202026%2C%2008_00_22%20PM-2.png)
 
-**3. Layer order matters.** Put the road overlay above the imagery: reversing their order can hide the roads and labels.
+**3. Layer order matters.** Put the road overlay above the imagery: reversing the order can hide the roads and labels.
 
-![Side-by-side diagram showing incorrect and correct imagery and road-overlay layer order](images/ChatGPT%20Image%20Sep%2029%2C%202026%2C%2008_00_24%20PM-3.png)
+![Correct and incorrect layer order](images/ChatGPT%20Image%20Sep%2029%2C%202026%2C%2008_00_24%20PM-3.png)
 
-These diagrams explain tile pyramids and map-layer compositing. They do **not** imply that this converter merges separate imagery and overlay MBTiles files; combined views can be rendered upstream when creating the input MBTiles.
+These diagrams explain tile pyramids and layer compositing. They do **not** imply that the converter merges separate imagery and overlay MBTiles files; combined views can be rendered upstream while creating the input MBTiles.
 
-The illustrations explain the workflow; neither the converter nor this repository includes or grants rights to third-party map imagery. See [DEMO.md](DEMO.md) for a beginner-oriented explanation.
+## Master 4 Grid Maker downloads
 
-## Master 4 Grid Maker — repeatable map extents worldwide
+**[Download Master4_Grid_Maker.zip](Master4_Grid_Maker.zip)**  
+**[Read the full Master 4 guide](MASTER4_GRID_MAKER.md)**  
+**[Open the v3 Operator Manual](Master4_Grid_Maker_User_Manual.pdf)**
 
-**[Download Master4_Grid_Maker.zip](Master4_Grid_Maker.zip)** · [Full guide](MASTER4_GRID_MAKER.md)
+The Master 4 numbering is hemisphere-aware. The first decimal digit of absolute latitude gives the tens row; the first decimal digit of absolute longitude plus one gives the column. Thus `30.56N, 81.34W`, `30.56N, 10.34E`, `30.56S, 81.34W`, and `30.56S, 10.34E` all identify **cell 54**.
 
-The **Master 4 Grid Maker** standardizes where offline maps begin and end. Enter one whole-degree 1° × 1° master box:
+The standard grid/output regression tests covered W/N, E/N, W/S and E/S boxes, the equator and prime meridian, +/-180 degrees, and whole-degree boxes near the practical Web Mercator latitude limits. The v3 update preserved the standard TXT/GeoTIFF behavior and added the optional synthetic TPKX. See [MASTER4_GRID_MAKER.md](MASTER4_GRID_MAKER.md) and [TECHNICAL.md](TECHNICAL.md) for exact scope.
 
-```text
-82w, 81w, 30n, 31n
-```
-
-The input order is **west, east, south, north**. The tool divides that master into **100 fixed 0.1° × 0.1° cells**, numbered 01–100, then writes two matching files to `C:\downloads`:
-
-```text
-Master4_82W_81W_30N_31N_Extents.txt
-Master4_82W_81W_30N_31N_Grid.tif
-```
-
-The TXT contains **100 QGIS production cell rows plus one final `MASTER` row**. Each numbered cell row contains the cell number, the exact QGIS-ready EPSG:3857 extent, and a deterministic TPKX production filename. The final `MASTER` row records the exact EPSG:3857 extent of the entire 1° × 1° Master 4 box:
-
-```text
-01 -9028010.7033,-9016878.7543,3503549.8435,3516410.3983 [EPSG:3857] W082W081N031N030-001-GHY-Z20.tpkx
-MASTER -9128198.2450,-9016878.7543,3503549.8435,3632749.1434 [EPSG:3857]
-```
-
-The filename is built from the Master 4 edges in **west, east, north, south** order, with zero-padded degrees, followed by a three-digit cell number and the current fixed production suffix `GHY-Z20`. That makes each row an independent job definition: a user can choose any cells in any order without relying on sequential batch naming or deleting unwanted jobs afterward.
-
-The GeoTIFF is the matching numbered **EPSG:3857 reference overlay** with a NoData background, so a user can see the cell numbers directly over imagery in QGIS or ArcGIS Earth.
-
-The numbering is hemisphere-aware. The first decimal digit of absolute latitude gives the tens row; the first decimal digit of absolute longitude plus one gives the column. Thus `30.56N, 81.34W`, `30.56N, 10.34E`, `30.56S, 81.34W`, and `30.56S, 10.34E` all identify **cell 54**.
-
-![Master 4 decimal grid addressing and workflow](images/Master4_Grid_Maker_Overview.svg)
-
-![Master 4 grid with EPSG:3857 extent catalog](images/Master4_Grid_Maker_Extent_Catalog.svg)
-
-The current build was regression-tested in all four hemisphere combinations, across the equator and prime meridian, at ±180° longitude, and near the practical Web Mercator latitude limits. Every valid test generated the original 100 cell rows unchanged, followed by the correct full-box `MASTER` extent row; the generated 5000 × 5000 EPSG:3857 GeoTIFFs were byte-for-byte identical to the prior build. Tested malformed/out-of-range inputs were rejected in the earlier validation set. The project owner also verified generated overlays in **QGIS** and **ArcGIS Earth**.
-
-The system is worldwide **within the practical latitude range of EPSG:3857 / Web Mercator**; the poles are outside that projection. Physical cell area changes with latitude, but the geographic address remains the same 0.1° × 0.1° pattern.
-
-## Four steps, from imagery to offline map
+## Four steps from imagery to offline map
 
 1. **Choose an imagery source** appropriate for your purpose, with the necessary rights for your intended use.
-2. **Create raster MBTiles.** QGIS is one example; the converter does not require QGIS specifically.
-3. **Convert MBTiles → TPKX** with the included Python program. It copies the original PNG/JPEG image tiles without re-encoding or rebuilding the zoom pyramid.
+2. **Create compatible raster MBTiles.** QGIS is one example; the converter does not require QGIS specifically.
+3. **Convert MBTiles -> TPKX** with `mb2tpkx.py`. The converter copies the original PNG/JPEG image tiles without re-encoding or rebuilding the zoom pyramid.
 4. **Open the TPKX in ArcGIS Earth** and navigate the captured map offline.
 
 ```mermaid
@@ -108,72 +142,73 @@ flowchart LR
     C -->|TPKX| D[ArcGIS Earth offline]
 ```
 
-## Download and use
+## Converter download and use
 
 ### First-time Windows setup
 
-1. **Install Python 3:** [Official Python downloads for Windows](https://www.python.org/downloads/windows/). Make sure the `py` command works in Command Prompt. Confirm the version with `py -3 --version`.
-2. **Install the only additional Python library, [Pillow](https://pillow.readthedocs.io/):** open Command Prompt and run:
+1. Install Python 3 and confirm `py -3 --version` works.
+2. Install the only additional Python library, Pillow:
 
-   ```powershell
-   py -3 -m pip install Pillow
-   ```
+```powershell
+py -3 -m pip install Pillow
+```
 
-   If the result says **"Requirement already satisfied,"** Pillow is already installed; you do not need to reinstall it.
-3. **Download the converter:** [Download this repository as a ZIP](https://github.com/Jim-dc95811/QGIS-Mbtile-to-ArcGIS-Earth-TPKX/archive/refs/heads/main.zip). Extract `mb2tpkx.py` and `mb2tpkx.bat` into the **same folder**.
+3. Download this repository or keep `mb2tpkx.py` and `mb2tpkx.bat` in the same folder.
 
-**Owner's confirmed Windows installation (2026-09-29):** `py -3 --version` reports **Python 3.14.5**, and `py -3 -m pip install Pillow` reports **Pillow 12.3.0 already installed**. These are the versions shown by the owner's Command Prompt, not minimum requirements or proof of compatibility testing across versions. Pip's displayed cache warnings did not prevent it from recognizing Pillow as installed.
+**Run it on Windows:** drag an existing `.mbtiles` file onto `mb2tpkx.bat`, or double-click the BAT and paste the source path when prompted.
 
-**Run it on Windows:** Drag your existing `.mbtiles` file onto `mb2tpkx.bat`, or double-click the BAT and paste the source path when prompted.
-
-**Command line (optional):**
+**Command line:**
 
 ```powershell
 py -3 mb2tpkx.py "input.mbtiles" "output.tpkx"
 ```
 
-The source file is retained. Output is created alongside it unless you specify another location, and **an existing output is not overwritten**. Allow additional disk space and time for large datasets. Open the finished `.tpkx` with ArcGIS Earth. This is a Python CLI with a Windows launcher, not a GUI program.
+The source MBTiles is retained. Existing output is not overwritten. Open the finished `.tpkx` with ArcGIS Earth.
 
-## Real-world results
+## Real-world converter results
 
-The project owner has supplied Windows Explorer screenshots and tested the converted packages interactively in ArcGIS Earth. These are **reported field tests**, not universal performance or quality guarantees.
+These are owner-reported, screenshot-supported field tests, not universal guarantees.
 
 | Example | Source MBTiles (Windows-displayed KB) | Resulting TPKX (KB) | Reported observation |
 | --- | ---: | ---: | --- |
-| First large real-data test | 4,137,400 | 4,108,022 | Loaded and navigated correctly |
-| Z20 PNG grid, Master 3-1 | 39,891,100 | 39,587,335 | Responsive viewing of a roughly 40 GB-class package |
-| Z20 JPEG/75 grid, Master 3-2 | 4,354,360 | 4,090,206 | Clear zoom-dependent hybrid cartography in the tested locations |
+| First large real-data test | 4,137,400 | 4,108,022 | Loaded and navigated correctly in ArcGIS Earth |
+| Z20 PNG grid, Master 3-1 | 39,891,100 | 39,587,335 | Responsive offline viewing |
+| Z20 JPEG/75 grid, Master 3-2 | 4,354,360 | 4,090,206 | Clear zoom-dependent hybrid cartography |
 | Jacksonville Metro Z20, JPEG/75 | 21,786,032 | 20,629,591 | Large single-file metropolitan hybrid map loaded in ArcGIS Earth |
 
-**JPEG/75 is chosen while producing MBTiles, not in the converter.** The two Master grid runs are different grids, so their substantial size difference is useful production evidence, **not** a controlled identical-source image-quality or compression benchmark. Hybrid and Street map imagery compress differently. Details and remaining test limitations are in [TECHNICAL.md](TECHNICAL.md).
+JPEG/75 is chosen while producing MBTiles, not by the converter. The PNG and JPEG examples are different production grids, so they are useful field observations rather than a controlled same-source compression benchmark.
 
-## A human–AI engineering collaboration
+## What the converter supports
 
-This project was conceived, directed, developed through hands-on experiments, and field-tested by **Jim Gaddy**, working with **OpenAI's ChatGPT** as an AI coding and documentation partner. The converter emerged through that iterative collaboration: Jim supplied the problem, technical direction, reference tests and real-world acceptance testing, while ChatGPT helped produce and refine the implementation and written materials.
+- **Input:** standard Web Mercator **raster** MBTiles with 256 x 256 PNG/JPEG image tiles using the TMS row convention; implemented tiling levels 0-23.
+- **Output:** Esri Compact Cache V2 TPKX with indexed 128 x 128 tile bundles.
+- **Image handling:** source map tile bytes are copied unchanged. A separate presentation thumbnail is generated.
+- **Scope:** it does not convert vector MBTiles, arbitrary projections, or every unconventional MBTiles layout.
+- **Testing:** a synthetic multi-bundle package was accepted by ArcGIS Earth and ArcGIS Pro; real production output has been field-tested extensively in ArcGIS Earth. Large real packages should not be described as ArcGIS Pro-validated unless separately tested there.
 
-**This is Jim's project to publish, not code taken from an AI assistant without permission.** Under [OpenAI's Terms of Use](https://openai.com/policies/terms-of-use/), as between the user and OpenAI and to the extent permitted by applicable law, the user owns the generated output; OpenAI assigns any rights it may have in that output. No separate permission from ChatGPT is needed to publish it. Jim has published the project's software under the [MIT License](LICENSE). This acknowledgment is not a claim of OpenAI sponsorship or endorsement, nor does it override any independent rights in third-party code or map imagery.
+## Documentation
 
-## What it supports
+- [00_USER_MANUALS.md](00_USER_MANUALS.md) - official PDF manuals.
+- [DEMO.md](DEMO.md) - videos and beginner/field workflow.
+- [MASTER4_GRID_MAKER.md](MASTER4_GRID_MAKER.md) - Master 4 v3 operation and optional demo TPKX.
+- [CONTINUITY.md](CONTINUITY.md) - current project handoff.
+- [TECHNICAL.md](TECHNICAL.md) - technical behavior, format invariants and current v3 record.
+- [RELEASE_CHECKLIST.md](RELEASE_CHECKLIST.md) - public-release and regression review.
+- [CREDITS.md](CREDITS.md) - specifications, dependencies and acknowledgments.
+- [LEGAL.md](LEGAL.md) - imagery-provider rights, attribution and trademark limits.
+- [CONTRIBUTING.md](CONTRIBUTING.md) / [SECURITY.md](SECURITY.md) - participation and reporting.
+- [LICENSE](LICENSE) - MIT License, copyright 2026 Jim Gaddy.
 
-- **Input:** existing standard Web Mercator **raster** MBTiles with 256 × 256 PNG/JPEG image tiles using the TMS row convention; the implemented tiling scheme covers levels 0–23. It does **not** convert vector MBTiles, arbitrary projections or every unconventional MBTiles layout.
-- **Output:** Esri Compact Cache V2 TPKX, containing indexed 128 × 128 tile bundles and the captured input zoom levels.
-- **Image handling:** map tile bytes are copied unchanged. A separate presentation thumbnail is derived from a source tile. The converter does not download imagery, create new cartography, invent missing zooms or recompress the tiles.
-- **Testing:** a multi-bundle synthetic color package was accepted by both ArcGIS Earth and ArcGIS Pro; real-data output from the distributed script has been field-tested extensively in ArcGIS Earth. See [TECHNICAL.md](TECHNICAL.md) for known limitations.
+## Human-AI engineering collaboration
 
-## Documentation and project status
+This project was conceived, directed, developed through hands-on experiments, and field-tested by **Jim Gaddy**, working with **OpenAI's ChatGPT** as an AI coding and documentation partner. Jim supplied the problem, technical direction, reference tests and real-world acceptance testing; ChatGPT assisted with implementation, technical research, regression work, diagrams and documentation.
 
-- [DEMO.md](DEMO.md) — video and nontechnical four-step workflow.
-- [MASTER4_GRID_MAKER.md](MASTER4_GRID_MAKER.md) — Master 4 Grid Maker operation, numbering, validation and global Web Mercator scope.
-- [CONTINUITY.md](CONTINUITY.md) — how to resume this project and locate the authoritative files.
-- [TECHNICAL.md](TECHNICAL.md) — precise format behavior, reproducibility and test history.
-- [RELEASE_CHECKLIST.md](RELEASE_CHECKLIST.md) — testing and public-release review.
-- [CREDITS.md](CREDITS.md) — upstream specifications, dependencies and acknowledgments.
-- [LEGAL.md](LEGAL.md) — imagery-provider rights, attribution, trademarks and intended-use limits.
-- [CONTRIBUTING.md](CONTRIBUTING.md) / [SECURITY.md](SECURITY.md) — project participation and reporting.
-- [LICENSE](LICENSE) — **MIT License**, copyright © 2026 Jim Gaddy. You may use, copy, modify and redistribute the project software under the license terms; preserve the required notice. [LICENSE_STATUS.md](LICENSE_STATUS.md) records its status and separate imagery-rights limits.
+This acknowledgment is not a claim of OpenAI sponsorship or endorsement and does not alter any rights in third-party software, specifications or imagery.
 
-### Formats and attribution
+## Formats, source rights and attribution
 
-The converter connects two documented formats: [Mapbox MBTiles](https://github.com/mapbox/mbtiles-spec) and Esri's published [Compact Cache V2](https://github.com/Esri/raster-tiles-compactcache) / [TPKX specification](https://github.com/Esri/tile-package-spec). Format specifications do not grant rights to third-party imagery. **Use only source imagery you are authorized to acquire, retain, convert and display for your intended purpose.** The current converter does not automatically propagate separate MBTiles attribution fields; users must meet each provider's credit requirements. No commercial imagery or proprietary example TPKX packages are distributed in this repository.
+The converter connects the documented [Mapbox MBTiles](https://github.com/mapbox/mbtiles-spec) format with Esri's published [Compact Cache V2](https://github.com/Esri/raster-tiles-compactcache) / [TPKX specification](https://github.com/Esri/tile-package-spec). Format specifications do not grant rights to third-party imagery.
 
-Independent project; **not affiliated with or endorsed by** Google, QGIS, Esri or Mapbox. Actual offline coverage, currency, accuracy, device operation and necessary permissions should be checked before any operational use.
+**Use only source imagery you are authorized to acquire, retain, convert and display for your intended purpose.** The converter does not automatically propagate all separate MBTiles attribution fields. The optional Master 4 color-demo TPKX contains only synthetic project-generated colored tiles; it does not download commercial imagery.
+
+Independent project; **not affiliated with or endorsed by** Google, QGIS, Esri or Mapbox. Actual map currency, alignment, coverage, device operation and permissions should be checked before operational use.

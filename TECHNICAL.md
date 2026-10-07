@@ -1,114 +1,203 @@
-# Technical continuity: MBTiles → Esri Compact Cache V2 TPKX
+# Technical continuity: raster MBTiles -> Esri Compact Cache V2 TPKX + Master 4 v3
 
-**Date:** 2026-09-27  
-**Purpose:** preserve the exact reasoning, experimental sequence and technical constraints needed to maintain the working converter. This is an engineering handoff, not a new format specification.
+**Updated:** 2026-10-07  
+**Purpose:** preserve the technical invariants, field-test boundaries and current Master 4 behavior needed to maintain the project without re-opening solved problems.
 
-## Verified result and its limits
+## 1. Direct MBTiles -> TPKX converter: verified architecture
 
-Two native ArcGIS Pro TPKX files of substantially different sizes were analyzed as reference packages. Our first experimental TPKX files were rejected in ArcGIS Earth with a tiling-scheme/spatial-reference error. Merely declaring WKID 102100 / latestWkid 3857, or adopting approximately equivalent resolution values, did **not** solve it. After reproducing the known-good package's exact tiling values, JSON conventions, binary header fields and empty-index convention, the independently generated `Color_Mirror` package opened correctly in ArcGIS Earth. `Color_2B` then verified multiple bundles at the same zoom level, zoom 14–20, and acceptance in **both ArcGIS Earth and ArcGIS Pro**. Real Bryceville PNG imagery then displayed correctly in ArcGIS Earth from a directly built TPKX. The project owner subsequently reported success opening the first real MBTiles output from the distributed `mb2tpkx.py` script in ArcGIS Earth. This is not yet proof of all-dataset or all-application compatibility.
+The converter was developed by comparing known-good ArcGIS Pro TPKX packages and Esri's published Compact Cache V2 / tile-package specifications. Early experimental packages could be opened by some generic readers but were rejected by ArcGIS Earth until the package matched the known-good tiling metadata, bundle/index conventions and JSON structure closely enough.
 
-The earlier KML super-overlay architecture also worked in Google Earth but produced approximately 3–4-second navigation lockouts in ArcGIS Earth for the tested overlays. The same symptom appeared for locally linked and HTTP-delivered KML, and with synthetic color tiles without external internet. A 5,461-GroundOverlay flat KML was worse. Wireshark established fast local HTTP responses but did not directly identify ArcGIS Earth's internal bottleneck. The TPKX work *bypasses* this workload; it did not prove the root cause of the KML issue.
+The working converter then passed synthetic multi-bundle tests and real-image tests. Large real outputs have since been used interactively in ArcGIS Earth.
 
-## Multi-gigabyte application test (2026-09-27)
+### Conversion invariants
 
-The project owner supplied screenshots showing a completed conversion with the distributed script of `3-1-1_10.mbtiles` (**4,137,400 KB in Windows Explorer**, approximately 3.94 GiB) to `3-1-1_10.tpkx` (**4,108,022 KB**). A companion screenshot shows the resulting map open in **ArcGIS Earth**. The owner reports correct operation at the specific map scene associated with the original KML navigation problem.
+1. **No imagery transformation.** Copy each accepted source PNG/JPEG tile byte-for-byte. Do not stitch, resample, recolor or recompress source tiles. A separate package thumbnail may be generated.
+2. **TMS -> XYZ rows.** Standard MBTiles `tile_row` is reversed with `xyz_row = (2**z - 1) - tile_row`.
+3. **128 x 128 bundles.** Group Esri XYZ coordinates into Compact Cache V2 128 x 128 tile blocks.
+4. **Bundle index.** Each bundle has 16,384 eight-byte index entries. The verified missing-tile sentinel is integer `4`; populated entries encode image length and image offset.
+5. **Known-good header.** Preserve the empirically validated 64-byte bundle header template and update only content-dependent fields used by the working implementation.
+6. **Known-good tiling scheme.** Preserve the tested Web Mercator origin/resolution/scale values exactly; do not substitute newly rounded/recalculated values without target-viewer regression testing.
+7. **Package structure.** `iteminfo.json`, `root.json`, `thumbnail.png`, and `tile/Lxx/*.bundle` are the proven package members.
+8. **Extent/zoom metadata.** Derive extents from source tile coordinates and advertise the stored zoom range.
 
-This was the **first multi-gigabyte real-world input** tested with the distributed script. The observed TPKX size reflects the input tile bytes and packaging; it is not evidence of a general compression ratio. The original satellite imagery is not included in the public repository because its redistribution permissions have not been established. This particular package has **not** been separately documented as accepted by ArcGIS Pro, and neither full-district coverage nor all MBTiles variants have been fully validated.
+### Converter baseline identities
 
-## Large-package and source-JPEG/75 application tests (2026-09-27)
+- `mb2tpkx.py` SHA-256: `c04dc9f3c1ad74b4180b11465df1189a74c500a5d5873d66a57c2d4076fb3670`
+- `mb2tpkx.bat` SHA-256: `078e07834b6fa45f8e63192f60033ac5c322ea236372df22cece8be8a24fda66`
+- known GitHub blob SHA for Python before the current Master 4-only update: `87ccc955944b994ad156f25488d04df9197184bd`
+- known GitHub blob SHA for BAT: `267240f9f9f634ac3d8f66bf3f93f9374973372b`
 
-The project owner next used the **same distributed converter without code changes** on additional production grid datasets. Explorer screenshots recorded the following sizes (Windows-displayed KB):
+Do not casually refactor the converter. A generic reader accepting output is useful but is not a substitute for ArcGIS Earth acceptance.
 
-| Input run | MBTiles size | Converted TPKX size | Reported application evidence |
+## 2. Real-world converter test record
+
+Owner-reported, screenshot-supported field tests include:
+
+| Test | MBTiles | TPKX | Observed result |
 | --- | ---: | ---: | --- |
-| `Master Grid 3-1 z20`, PNG tiles | 39,891,100 KB | 39,587,335 KB | Package loaded in ArcGIS Earth; owner reports responsive offline navigation, immediate display and no noticeable zoom-time pixelation |
-| `Master Grid 3-2 z20 jpg`, JPEG/75 tiles | 4,354,360 KB | 4,090,206 KB | Package loaded in ArcGIS Earth; owner supplied screenshots showing detailed Z20 hybrid graphics and legible labels |
+| First large real input | 4,137,400 KB | 4,108,022 KB | Opened and navigated in ArcGIS Earth |
+| Z20 PNG production grid | 39,891,100 KB | 39,587,335 KB | Responsive ArcGIS Earth viewing reported |
+| Separate JPEG/75 production grid | 4,354,360 KB | 4,090,206 KB | Detailed hybrid map displayed in ArcGIS Earth |
+| Jacksonville Metro Z20 JPEG/75 | 21,786,032 KB | 20,629,591 KB | Large single-file metro map displayed in ArcGIS Earth |
 
-The observed JPEG/75 run was roughly **9.2× smaller at the MBTiles stage** and **9.7× smaller at the TPKX stage** than the reported PNG run (approximately 89–90% smaller). They were **different production grids**, not a controlled encode of the exact same pixels and tile inventory. The large difference strongly motivates a controlled same-source comparison, but these two files alone cannot establish a universal JPEG/75 compression factor or equivalent pixel-level fidelity. Viewer responsiveness is based on the owner's interactive observations, not frame-time benchmarks.
+The PNG and JPEG examples are different grids. They do **not** establish a universal same-source compression ratio or identical visual fidelity. JPEG quality is selected upstream in the MBTiles producer; the converter itself does not recompress the tiles.
 
-**Mechanism:** The JPEG/75 setting belongs to the *MBTiles-producing application*. This converter copies each accepted source JPEG or PNG tile **byte-for-byte** into Esri Compact Cache V2 bundles. It does not invoke JPEG compression, regenerate the zoom pyramid, resample cartography, or change the verified binary packaging logic. A source format change therefore required **zero changes** to `mb2tpkx.py` or `mb2tpkx.bat`.
+Do not claim the large real packages were ArcGIS Pro-tested unless separately verified there. Synthetic compatibility work did include ArcGIS Pro acceptance.
 
-The screenshots and owner observations constitute a successful, substantial **~40 GB-class field test** plus a smaller, visually inspected JPEG/75 test. They do **not** establish maximum file size, tolerance for every MBTiles producer, equivalent image quality for all imagery, or formal compatibility certification. Preserve representative map tiles and exact inventories privately if a future controlled PNG/JPEG comparison is needed. Do not commit third-party imagery without permission.
+## 3. Master 4 standard production geometry
 
-## Later Jacksonville Metro and synthetic-zoom demonstrations (2026-09-28)
-
-The project owner supplied additional Windows Explorer and ArcGIS Earth screenshots after the earlier tests:
-
-- A **Jacksonville Metro JPEG/75 Z20** hybrid production run produced **21,786,032 KB MBTiles** and **20,629,591 KB TPKX** (Windows-displayed figures). A subsequent screenshot shows the produced package selected and displayed in ArcGIS Earth. The owner reported responsive map viewing. This is a single-file, metro-scale application test; no exact frame-time benchmarks or generalized size guarantee were collected.
-- A **Jacksonville Street map** produced separately for the metro experiment was also loaded in ArcGIS Earth. The owner reported an approximately 5 GB result for a street Z20 run; no authoritative paired file-size inventory has been entered here.
-- The **synthetic colored Jacksonville demonstration** was requested for an input map canvas EPSG:3857 extent approximately `[-9108536.3879, -9070925.6713] × [3519992.6675, 3564928.7271]`. Each distinct recorded zoom is visually labeled and differently colored. An initial generated color package was interrupted and only covered the northern part; it was corrected. The owner subsequently showed the full-color Z12–Z18 test map and separately retained the partial package to demonstrate borders and zoom transitions. This is a valuable *visual* check of stored zoom-level selection, not a benchmark for raster content compression.
-
-The converter remained at the **same original Python/BAT baseline** throughout these tests. User-supplied images support that output packages opened in ArcGIS Earth. This documentation does not assert formal GIS validation of the complete raster imagery, licensing rights to all source data, or acceptance of the newly created large files by ArcGIS Pro.
-
-The public demonstration video is now available: **[Google Maps OFFLINE — The Impossible Is Now Possible!](https://www.youtube.com/watch?v=8uziJNzan1g)**. Its map-display comparison is separate from a claim to duplicate the entire Google Maps application. Refer to [DEMO.md](DEMO.md) for the intended explanation.
-
-## Conversion invariants
-
-1. **No imagery transformation.** Copy each input tile's exact PNG or JPEG bytes. Do not stitch, resample, recolor or recompress. A separate `thumbnail.png` can be generated for package presentation.
-2. **Coordinate direction.** Standard MBTiles stores TMS `tile_row` from the bottom. Convert to Esri XYZ row with `row = (2**z - 1) - tile_row`. Preserve column and zoom.
-3. **Bundle partitioning.** For each zoom, group tiles into blocks of **128 × 128**: `bundle_row = (xyz_row // 128)*128`, `bundle_col = (column // 128)*128`. Emit `tile/L{zoom:02d}/R{bundle_row:04x}C{bundle_col:04x}.bundle` as the reference packages do.
-4. **Index.** Each bundle contains **16,384 eight-byte entries**. The accepted references use the integer `4` for absent tiles. For a populated tile, `entry = (image_length << 40) | image_offset` and the stored image is preceded by its four-byte length. Check bounds and source-byte round trips.
-5. **Bundle header.** Mirror the known-good 64-byte header, changing the file-length field at byte offset **24** and the observed image-size-related field at byte offset **8**. Across inspected reference bundles the latter equaled `max(131092, largest_stored_image_size)`. Do not replace the reference's byte-4 and byte-48 fields with superficially equivalent values taken from generic documentation; that was one of the differences observed in rejected experiments. *These are empirical compatibility observations, not a universal guarantee.*
-6. **Tiling scheme.** Copy the tested ArcGIS Pro `root.json` Web Mercator tile origin, level resolutions and scales exactly. Do not substitute recalculated values that differ in the last few decimals: our first packages did so and ArcGIS Earth rejected them. The origin in the reference is X = -20037508.342787 and Y = 20037508.342787.
-7. **Package structure.** The verified package includes `iteminfo.json`, `root.json`, `thumbnail.png`, and `tile/Lxx/*.bundle`. Keep their proven ZIP packaging conventions. The zero-byte `.bundle.done` marker seen in a separate cache directory was **not** required in our accepted TPKX.
-8. **Extent and zoom metadata.** Compute extents from source tile coordinates with the reference tiling scheme. Advertise source min/max zooms. Current script uses the finest available zoom to set the package display extent; validate uneven multizoom geographic coverage before claiming generality.
-
-## Known-working baselines and identities
-
-- **mb2tpkx.py SHA-256**: `c04dc9f3c1ad74b4180b11465df1189a74c500a5d5873d66a57c2d4076fb3670`
-- **mb2tpkx.bat SHA-256**: `078e07834b6fa45f8e63192f60033ac5c322ea236372df22cece8be8a24fda66`
-- **mb2tpkx.zip SHA-256**: `76c8fbf9eae534db8e79a9ad0768ea30b9327cd69406b4d2ec064ed9c276acb7`
-- Color 2B accepted demonstration SHA-256: `f5c9d8b7976290d2a63b010ecab0a6d7bf9129ff388718a41a350a78a415400a`
-- Bryce accepted demonstration SHA-256: `f33bf93e9a655e7b7fbefa55cc10138bb845a2d2860b4145d29c4eafe0c2699d`
-
-**Do not commit actual commercial satellite imagery, proprietary reference packages or user Wireshark traffic without explicit permission.** Hashes allow private reference packages to be identified without redistributing them.
-
-## Regression requirements
-
-Preserve the verified Python and BAT files until a narrowly specified code change is needed; change one functional behavior at a time. Before publishing a changed converter, verify every tile's output bytes against the input, run a multiple-bundle test, compare JSON and bundle header/index invariants, and obtain acceptance of the **exact newly generated output** in ArcGIS Earth and ideally ArcGIS Pro. A GDAL reader accepting a package is useful but was **not sufficient**: GDAL opened some early TPKX files that ArcGIS Earth rejected.
-
-The current script is a **CLI with a Windows BAT launcher, not a GUI application**. It processes one bundle at a time, rejects an existing destination file, and validates tile dimensions and image signatures. Known work remains for inputs larger or more complex than the owner-reported ~40 GB test, interrupted runs, unusual MBTiles layouts, spatially uneven zoom coverage, and mixed-format metadata.
-
-## Master 4 Grid Maker companion utility (2026-10-04)
-
-The repository also contains **Master 4 Grid Maker**, a separate companion utility for repeatable map coverage. It does not modify the MBTiles→TPKX converter.
-
-Files:
-
-- `Master4_Grid_Maker.py`
-- `Master4_Grid_Maker.bat`
-- `Master4_Grid_Maker.zip`
-- `MASTER4_GRID_MAKER.md`
-
-Input is one whole-degree 1° × 1° Master 4 box in **west, east, south, north** order, for example `82w, 81w, 30n, 31n`. The generator divides that geographic box into 100 exact 0.1° × 0.1° cells, calculates shared EPSG:3857 boundaries from the geographic tenth-degree lines, and writes two files to `C:\\downloads`:
-
-- a 100-line QGIS production manifest; each row is `cell xmin,xmax,ymin,ymax [EPSG:3857] filename.tpkx`;
-- a matching 5000 × 5000 EPSG:3857 GeoTIFF reference overlay with NoData=0 and cell labels 01–100.
-
-The current deterministic filename pattern encodes **west edge + east edge + north edge + south edge + three-digit cell + fixed GHY-Z20 suffix**. Example:
+Master 4 defines one whole-degree geographic box in:
 
 ```text
-W082W081N031N030-054-GHY-Z20.tpkx
+west, east, south, north
 ```
 
-This does not rename files automatically inside QGIS; it supplies the intended production filename on the same manifest row as the exact extent, eliminating the previous dependence on sequential batch naming when selecting nonconsecutive cells.
+Example:
 
-The numbering is hemisphere-aware so the first decimal digit of **absolute latitude** identifies the tens row and the first decimal digit of **absolute longitude + 1** identifies the column. The decimal address therefore remains consistent in W/N, E/N, W/S and E/S master boxes.
+```text
+82w, 81w, 30n, 31n
+```
 
-Programmatic tests on the naming build covered all four hemisphere combinations, boxes touching the equator and prime meridian, ±180° longitude, and whole-degree boxes near the usable EPSG:3857 latitude limits. Every valid case produced exactly 100 manifest rows; every appended filename matched the expected Master 4/cell address. The generated GeoTIFF for each test case was byte-for-byte identical to the corresponding pre-naming build, so the extent calculations, numbering, TIFF dimensions, georeferencing and NoData behavior were unchanged. Earlier malformed, non-whole-degree, wrong-span and out-of-range rejection tests remain applicable. The owner separately demonstrated generated overlays in both QGIS and ArcGIS Earth, including adjacent master boxes.
+The box is divided into 100 exact geographic cells, each 0.1 degree x 0.1 degree before projection. Web Mercator X/Y values are calculated from the exact geographic tenth-degree boundaries; projected Y is not naively divided into equal pieces.
 
-Current packaged-file SHA-256 values:
+### Cell addressing
 
-- `Master4_Grid_Maker.py`: `e439100aae44245c7f5076724b001bc34159bcc57048fb58825ade3e8f3ccad2`
-- `Master4_Grid_Maker.bat`: `abb4e7dd1f1b665e1cf1b9ee4d1bffdef40e336acb746460640be0a043c20c2d`
-- `Master4_Grid_Maker.zip`: `a3143a22f2049ca8dc3698cc597566fe0788a4e6535554119cc08bcf7f275a97`
+The cell number uses the first decimal digit of absolute latitude as the tens row and the first decimal digit of absolute longitude plus one as the column. Truncate; do not round.
 
-The method is worldwide only within the practical latitude coverage of **EPSG:3857 / Web Mercator**; it does not cover the poles. Physical cell area varies with latitude because the reference grid is geographic.
+This addressing rule is implemented hemisphere-aware so it remains consistent in W/N, E/N, W/S and E/S Master 4 boxes.
 
-## Technical references
+### Standard v3 outputs
+
+The program writes:
+
+```text
+Master4_<box>_Extents.txt
+Master4_<box>_Grid.tif
+```
+
+The TXT contains 100 production rows plus a final full-parent row:
+
+```text
+MASTER xmin,xmax,ymin,ymax [EPSG:3857]
+```
+
+Example for 82W-81W / 30N-31N:
+
+```text
+MASTER -9128198.2450,-9016878.7543,3503549.8435,3632749.1434 [EPSG:3857]
+```
+
+The numbered GeoTIFF is 5000 x 5000, EPSG:3857, with background NoData=0.
+
+Current production filename pattern:
+
+```text
+W082W081N031N030-055-GHY-Z20.tpkx
+```
+
+## 4. Master 4 v3 optional Cell 55 Z10-Z20 TPKX
+
+### User-facing behavior
+
+The optional package is generated only after the standard TXT and GeoTIFF are complete. Prompt:
+
+```text
+Create Cell 55 colored zoom-demo TPKX (Z10-Z20)? [y/N]:
+```
+
+No is the default. Enter/N skips the demo without affecting standard output. Y/Yes creates a file such as:
+
+```text
+W082W081N030N029-055-ZOOM-DEMO.tpkx
+```
+
+### Format behavior
+
+The v3 generator uses the same verified Compact Cache V2 structural conventions as the converter's TPKX work, but it manufactures synthetic PNG tiles rather than reading MBTiles.
+
+- target cell: fixed Cell 55
+- stored zooms: Z10-Z20
+- tile size: 256 x 256 PNG
+- color/label: unique color per zoom, large `Zxx`, smaller `CELL 55`
+- Esri bundle packet size: 128
+- output: ZIP64-capable TPKX with `iteminfo.json`, `root.json`, `thumbnail.png`, and `tile/Lxx/*.bundle`
+- existing output: not overwritten
+
+### Coarse-zoom footprint nuance
+
+The package chooses every standard global XYZ tile that intersects Cell 55. It does **not** clip the colored raster within edge tiles.
+
+At coarse zooms, one XYZ tile is larger than a 0.1-degree Master 4 cell. Therefore colored coverage can extend beyond the exact Cell 55 geographic boundary. This is expected and is why the demo must be described as a teaching/geographic sanity tool rather than an exact boundary raster.
+
+The exact cell extent remains authoritative in the Master 4 manifest and GeoTIFF.
+
+### Current v3 identities
+
+- `Master4_Grid_Maker.py` SHA-256: `16a42784005743728837d3dfdc2f3295b30071d5ed37ccbddbb9b9ee23e58888`
+- `Master4_Grid_Maker.bat` SHA-256: `abb4e7dd1f1b665e1cf1b9ee4d1bffdef40e336acb746460640be0a043c20c2d`
+- `Master4_Grid_Maker.zip` SHA-256: `408ba3e129f912b3b4ef0a7df0d6ccc478ff8935ffec9cb235232505e872e158`
+
+## 5. v3 validation boundary
+
+Before delivery, the standard Master 4 TXT and GeoTIFF behavior was regression-checked against the prior build across representative hemisphere/boundary cases. The demo TPKX package structure, bundle indexes, tile counts, metadata and PNG members were checked programmatically.
+
+The project owner then performed the target-viewer acceptance test on Windows:
+
+- generated a Cell 55 Z10-Z20 package;
+- opened it successfully in ArcGIS Earth;
+- supplied screenshots showing visible stored-level transitions at Z12, Z13, Z14, Z15, Z17 and Z20;
+- reported the resulting TPKX at roughly 1 GB.
+
+This is the field evidence for the current v3 feature. The exact v3 teaching package has not been separately documented as accepted by ArcGIS Pro, so do not claim that.
+
+## 6. Operational interpretation
+
+A practical ArcGIS Earth library can use:
+
+- **area-wide Z17 TPKX** for overview context;
+- **Master 4 GeoTIFF** for cell identification;
+- **high-resolution production TPKX cells** for detail;
+- **optional Cell 55 synthetic TPKX** for teaching, TPKX sanity checking, and offline geographic/zoom reference.
+
+The owner observed that opening the local synthetic package while offline restores a known geographic anchor and obvious zoom-level feedback when familiar online basemap context is unavailable.
+
+**Production rule:** reference overlays ON while planning; OFF before production.
+
+## 7. Historical route that should not be restarted without a new reason
+
+The project previously explored KML SuperOverlay approaches. Google Earth handled them well, but tested ArcGIS Earth KML navigation showed multi-second delays. Local HTTP delivery and synthetic tile experiments did not eliminate the behavior. TPKX bypassed the problem and became the successful native offline route.
+
+Do not restart KML work or rewrite the working converter merely because another representation is theoretically possible. Any new change should answer a specific user need and preserve known-good behavior.
+
+## 8. Regression requirements
+
+### Converter
+
+Before publishing a converter change:
+
+- verify source tile bytes survive unchanged;
+- verify TMS -> XYZ coordinates;
+- run multi-bundle tests;
+- inspect bundle indexes/headers and JSON metadata;
+- obtain acceptance of the exact new output in ArcGIS Earth;
+- ideally test ArcGIS Pro separately before claiming Pro compatibility.
+
+### Master 4
+
+Before publishing a Master 4 change:
+
+- compare standard TXT rows against the previous build;
+- verify the final `MASTER` full-box row;
+- compare GeoTIFF georeferencing/appearance;
+- verify hemisphere/boundary behavior for geometry-related changes;
+- verify the opt-out path does not create a TPKX;
+- verify the opt-in demo TPKX structure;
+- obtain ArcGIS Earth acceptance for TPKX-related changes.
+
+## 9. Technical references
 
 - [Esri Compact Cache V2](https://github.com/Esri/raster-tiles-compactcache/blob/master/CompactCacheV2.md)
 - [Esri TPKX specification](https://github.com/Esri/tile-package-spec/blob/master/README.md)
 - [MBTiles 1.3](https://github.com/mapbox/mbtiles-spec/blob/master/1.3/spec.md)
 
-**Scope and attribution:** Esri created Compact Cache V2. This project developed and validated a direct byte-preserving conversion workflow and its empirically tested compatibility packaging. No technical method changes the source imagery's license terms.
+**Scope and attribution:** Esri created Compact Cache V2 and the TPKX specification. This project developed and field-tested its direct conversion/manufacturing workflow. No technical method changes the source imagery's license terms.
