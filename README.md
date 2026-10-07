@@ -18,6 +18,14 @@ The video shows online Street and Hybrid map navigation over Jacksonville, then 
 
 The follow-along Washington, DC video demonstrates the production workflow: create raster MBTiles in QGIS, convert the file to TPKX with this repository's Python tool, and open the map in ArcGIS Earth.
 
+### Master 4 Grid Maker — systematic large-area map production
+
+**[Watch the Master 4 Grid Maker video](https://www.youtube.com/watch?v=zNt-I4KgAy8)**
+
+[![Watch the Master 4 Grid Maker video](https://img.youtube.com/vi/zNt-I4KgAy8/hqdefault.jpg)](https://www.youtube.com/watch?v=zNt-I4KgAy8)
+
+This video introduces the Master 4 system for dividing large continuous mapping jobs into exact repeatable cells, generating QGIS-ready extents, assigning deterministic geographic filenames, and organizing large offline map libraries systematically.
+
 **New here?** [See the four-step visual explanation and video notes](DEMO.md). **Continuing the engineering project?** Start with [CONTINUITY.md](CONTINUITY.md) and the current [technical record](TECHNICAL.md).
 
 ## Project illustrations
