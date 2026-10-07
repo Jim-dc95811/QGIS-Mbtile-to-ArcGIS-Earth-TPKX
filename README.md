@@ -73,10 +73,11 @@ Master4_82W_81W_30N_31N_Extents.txt
 Master4_82W_81W_30N_31N_Grid.tif
 ```
 
-The TXT is a 100-line **QGIS production manifest**. Every row now contains the cell number, the exact QGIS-ready EPSG:3857 extent, and a deterministic TPKX production filename:
+The TXT contains **100 QGIS production cell rows plus one final `MASTER` row**. Each numbered cell row contains the cell number, the exact QGIS-ready EPSG:3857 extent, and a deterministic TPKX production filename. The final `MASTER` row records the exact EPSG:3857 extent of the entire 1° × 1° Master 4 box:
 
 ```text
 01 -9028010.7033,-9016878.7543,3503549.8435,3516410.3983 [EPSG:3857] W082W081N031N030-001-GHY-Z20.tpkx
+MASTER -9128198.2450,-9016878.7543,3503549.8435,3632749.1434 [EPSG:3857]
 ```
 
 The filename is built from the Master 4 edges in **west, east, north, south** order, with zero-padded degrees, followed by a three-digit cell number and the current fixed production suffix `GHY-Z20`. That makes each row an independent job definition: a user can choose any cells in any order without relying on sequential batch naming or deleting unwanted jobs afterward.
@@ -89,7 +90,7 @@ The numbering is hemisphere-aware. The first decimal digit of absolute latitude 
 
 ![Master 4 grid with EPSG:3857 extent catalog](images/Master4_Grid_Maker_Extent_Catalog.svg)
 
-The current build was programmatically tested in all four hemisphere combinations, across the equator and prime meridian, at ±180° longitude, and near the practical Web Mercator latitude limits. Valid tests generated exactly 100 manifest rows plus a 5000 × 5000 EPSG:3857 GeoTIFF; every appended filename was checked against the expected Master 4/cell address, and the generated GeoTIFFs were byte-for-byte unchanged from the pre-naming build. Tested malformed/out-of-range inputs were rejected in the earlier validation set. The project owner also verified generated overlays in **QGIS** and **ArcGIS Earth**.
+The current build was regression-tested in all four hemisphere combinations, across the equator and prime meridian, at ±180° longitude, and near the practical Web Mercator latitude limits. Every valid test generated the original 100 cell rows unchanged, followed by the correct full-box `MASTER` extent row; the generated 5000 × 5000 EPSG:3857 GeoTIFFs were byte-for-byte identical to the prior build. Tested malformed/out-of-range inputs were rejected in the earlier validation set. The project owner also verified generated overlays in **QGIS** and **ArcGIS Earth**.
 
 The system is worldwide **within the practical latitude range of EPSG:3857 / Web Mercator**; the poles are outside that projection. Physical cell area changes with latitude, but the geographic address remains the same 0.1° × 0.1° pattern.
 
