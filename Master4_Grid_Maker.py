@@ -215,7 +215,7 @@ def map_filename(master_label, cell_id):
     return f"{west}{east}{north}{south}-{cell_id:03d}-GHY-Z20.tpkx"
 
 
-def write_extent_txt(path, records, master_label):
+def write_extent_txt(path, records, master_label, west, east, south, north):
     with path.open("w", encoding="utf-8", newline="\n") as f:
         for cell_id, xmin, xmax, ymin, ymax in records:
             label = f"{cell_id:02d}" if cell_id < 100 else "100"
@@ -223,6 +223,11 @@ def write_extent_txt(path, records, master_label):
             f.write(
                 f"{label} {xmin:.4f},{xmax:.4f},{ymin:.4f},{ymax:.4f} [EPSG:{EPSG}] {filename}\n"
             )
+
+        f.write(
+            f"MASTER {mercator_x(west):.4f},{mercator_x(east):.4f},"
+            f"{mercator_y(south):.4f},{mercator_y(north):.4f} [EPSG:{EPSG}]\n"
+        )
 
 
 def build_outputs(master4_text, output_dir=OUTPUT_DIR):
@@ -234,7 +239,7 @@ def build_outputs(master4_text, output_dir=OUTPUT_DIR):
     tif_path = output_dir / f"Master4_{master_label}_Grid.tif"
 
     records = cell_records(west, east, south, north)
-    write_extent_txt(txt_path, records, master_label)
+    write_extent_txt(txt_path, records, master_label, west, east, south, north)
     make_grid_tif(tif_path, west, east, south, north, records)
     return txt_path, tif_path
 
