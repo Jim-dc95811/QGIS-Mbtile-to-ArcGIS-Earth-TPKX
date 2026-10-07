@@ -4,9 +4,16 @@ This document describes this project's intended practices and **known limitation
 
 ## What the project does and does not do
 
-This independent, public-safety-motivated project converts an existing raster MBTiles database into an Esri Compact Cache V2 TPKX package. It relies on published format descriptions and comparisons with legitimately created example packages. It is **not affiliated with or endorsed by** Esri, QGIS, Google, Mapbox, imagery providers, or any government agency unless authorization is separately documented.
+This independent, public-safety-motivated project now contains two related tools:
 
-The converter does not download tiles from a provider, evade an access control, or alter the map image bytes. It does create a **new thumbnail derived from an input tile**. Neither technical access to a provider nor possession of an MBTiles file establishes permission to copy, cache, repackage, use offline, or redistribute its contents.
+- the **MBTiles -> TPKX converter**, which repackages an existing compatible raster MBTiles database into an Esri Compact Cache V2 TPKX package while preserving the source PNG/JPEG map-tile bytes; and
+- **Master 4 Grid Maker**, which creates repeatable geographic extents, a numbered reference GeoTIFF, deterministic production filenames, and an optional synthetic Cell 55 Z10-Z20 TPKX made from project-generated colored teaching tiles.
+
+Neither tool downloads commercial map imagery from a provider. The converter does not evade an access control or alter the source map image bytes; it does create a **new thumbnail derived from an input tile**. The optional Master 4 colored TPKX is generated locally from synthetic project-created graphics and does not require third-party imagery.
+
+The project relies on published format descriptions and comparisons with legitimately created example packages. It is **not affiliated with or endorsed by** Esri, QGIS, Google, Mapbox, imagery providers, or any government agency unless authorization is separately documented.
+
+Technical access to a provider, possession of an MBTiles file, or the ability to make a TPKX does not establish permission to copy, cache, repackage, use offline, or redistribute third-party map content.
 
 ## Imagery-provider rights
 
@@ -18,11 +25,11 @@ This converter is format-neutral: imagery from different sources may be technica
 - [Google Map Tiles API policies](https://developers.google.com/maps/documentation/tile/policies)
 - The applicable contract or service terms for **the actual Esri imagery source**, not merely Esri's TPKX format documentation.
 
-The repository intentionally does **not** publish downloaded commercial imagery, third-party licensed reference TPKX packages, credentials, or agency operational data. Inclusion of any future sample data requires documented permission or original/synthetic provenance.
+The repository intentionally does **not** publish downloaded commercial imagery, third-party licensed reference TPKX packages, credentials, or agency operational data. Inclusion of any future sample data requires documented permission or original/synthetic provenance. The Master 4 Cell 55 colored demo is synthetic project-generated content and is documented separately from real imagery.
 
-## Attribution limitation of the current code
+## Attribution limitation of the current converter
 
-The current code preserves any copyright markings already **inside the image pixels** because the tile image bytes are copied unchanged. It currently transfers only the MBTiles **dataset name** into package metadata; it does **not** propagate separate source attribution, provider copyright strings, license URLs, required logos, or service-specific credits. It separately generates a thumbnail from a source tile.
+The current converter preserves any copyright markings already **inside the image pixels** because the tile image bytes are copied unchanged. It currently transfers only the MBTiles **dataset name** into package metadata; it does **not** propagate separate source attribution, provider copyright strings, license URLs, required logos, or service-specific credits. It separately generates a thumbnail from a source tile.
 
 **Do not treat a successful conversion as a fully attributed map.** Review the source's credit requirements and ensure attribution is properly preserved and displayed in the resulting application and in any shared files, documentation, or downstream products. If you cannot satisfy a source's obligations in the destination application, do not use that source in the workflow without permission.
 
@@ -48,7 +55,9 @@ The project owner's public-safety employment is context for the project's motiva
 
 ## Reliability and operational safeguards
 
-This experimental converter and its output are provided without a representation of fitness for emergency response, navigation, or any life-safety purpose. Satellite imagery may be incomplete, inaccurate, outdated or geospatially misaligned; output quality and permissions cannot exceed the input. Independently confirm map currency, coverage, coordinates, multi-zoom transitions, device operation and offline functionality before operational deployment. Maintain authorized fallback maps and procedures.
+These experimental map-production tools and their outputs are provided without a representation of fitness for emergency response, navigation, or any life-safety purpose. Satellite imagery may be incomplete, inaccurate, outdated or geospatially misaligned; output quality and permissions cannot exceed the real imagery input. Independently confirm map currency, coverage, coordinates, multi-zoom transitions, device operation and offline functionality before operational deployment. Maintain authorized fallback maps and procedures.
+
+The synthetic Cell 55 TPKX is a teaching/reference aid. Its low-zoom whole-tile footprint may extend beyond the exact Cell 55 boundary, and it is not a substitute for an authoritative offline basemap or navigation product.
 
 ## Rights-holder concerns and corrections
 
