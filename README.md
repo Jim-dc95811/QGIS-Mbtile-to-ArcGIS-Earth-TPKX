@@ -26,6 +26,14 @@ The Washington, DC follow-along tutorial demonstrates the basic production route
 
 This one-take video demonstrates the large-area chain from an empty 1-degree x 1-degree area through Master 4, exact QGIS-ready extents, deterministic filenames, QGIS batch production, MBTiles, TPKX conversion and final viewing in ArcGIS Earth.
 
+### ArcGIS Earth Mobile - using offline TPKX maps
+
+**[Watch the ArcGIS Earth Mobile offline map-use video](https://www.youtube.com/watch?v=_FT3GOyjL5Y)**
+
+[![Watch the ArcGIS Earth Mobile offline map-use video](https://img.youtube.com/vi/_FT3GOyjL5Y/hqdefault.jpg)](https://www.youtube.com/watch?v=_FT3GOyjL5Y)
+
+This companion video demonstrates using the offline TPKX map workflow in ArcGIS Earth Mobile on Android.
+
 **New here?** Start with [DEMO.md](DEMO.md). **Operating Master 4?** Use the [Master 4 guide](MASTER4_GRID_MAKER.md) and the [official PDF operator manual](Master4_Grid_Maker_User_Manual.pdf). **Continuing the engineering project?** Read [CONTINUITY.md](CONTINUITY.md) and [TECHNICAL.md](TECHNICAL.md).
 
 ## Master 4 v3: where the map belongs + what zoom level you are seeing
