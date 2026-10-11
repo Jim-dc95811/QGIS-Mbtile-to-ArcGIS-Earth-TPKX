@@ -10,6 +10,12 @@ The repository includes these project illustrations:
 - [Master 4 Grid Maker - decimal grid addressing and workflow](Master4_Grid_Maker_Overview.svg)
 - [Master 4 Grid Maker - EPSG:3857 extent catalog](Master4_Grid_Maker_Extent_Catalog.svg)
 - [Master 4 Cell 55 - Z10-Z20 multi-zoom TPKX teaching/reference graphic](Master4_Cell55_MultiZoom_TPKX.jpg)
+- [Enhanced Z17 grid visual tour](Enhanced_Z17_Grid_Visual_Tour.webp)
+- [Google Maps Offline and Improved - field-use infographic](Google_Maps_Offline_Improved.webp)
+- [Find the layer - click View details to reach the service URL](Find_Layer_Step_1.webp)
+- [Copy the service URL and load it in QGIS](Find_Layer_Step_2.webp)
+- [Find the URLs, load the layers - end-to-end web-service workflow](Find_URLs_Load_Layers.webp)
+- [Building an offline operational map - many live sources into one offline map](Building_Offline_Operational_Map.webp)
 
 The illustrations are embedded in the [repository homepage](../README.md), [video guide](../DEMO.md), or [Master 4 Grid Maker guide](../MASTER4_GRID_MAKER.md) as appropriate.
 
