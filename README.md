@@ -10,6 +10,14 @@
 
 The video shows online Street and Hybrid map navigation over Jacksonville, then an offline demonstration in ArcGIS Earth. The synthetic color-tile sequence makes separately stored zoom levels visible. **This reproduces a captured map-display experience, not Google's complete application:** search, live traffic, Street View, routing and other online services are not reproduced.
 
+### Creating maps that behave like they were online
+
+**[Watch the offline zoomable-map video](https://www.youtube.com/watch?v=GjqZQIU8Ru0)**
+
+[![Watch the offline zoomable-map video](https://img.youtube.com/vi/GjqZQIU8Ru0/hqdefault.jpg)](https://www.youtube.com/watch?v=GjqZQIU8Ru0)
+
+This video focuses on the idea behind the project: modern users expect maps to pan, zoom, and reveal more detail as they move closer. It shows how QGIS-built multiresolution raster maps, MBTiles, TPKX conversion, and ArcGIS Earth can preserve that web-like zoomable-map experience completely offline.
+
 ### Make your own offline map - QGIS and ArcGIS Earth tutorial
 
 **[How to Make an Offline Map with QGIS and ArcGIS Earth](https://www.youtube.com/watch?v=C71n8TAByuE)**
