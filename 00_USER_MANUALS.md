@@ -5,7 +5,7 @@ The two Python utilities in this repository each have a matching **Official PDF 
 | Tool | Python script | Windows launcher | Official PDF manual |
 | --- | --- | --- | --- |
 | **MBTiles to TPKX Converter** | [`mb2tpkx.py`](mb2tpkx.py) | [`mb2tpkx.bat`](mb2tpkx.bat) | **[`mb2tpkx_User_Manual.pdf`](mb2tpkx_User_Manual.pdf)** |
-| **Master 4 Grid Maker v3** | [`Master4_Grid_Maker.py`](Master4_Grid_Maker.py) | [`Master4_Grid_Maker.bat`](Master4_Grid_Maker.bat) | **[`Master4_Grid_Maker_User_Manual.pdf`](Master4_Grid_Maker_User_Manual.pdf)** |
+| **Master 4 Grid Maker v3.1** | [`Master4_Grid_Maker.py`](Master4_Grid_Maker.py) | [`Master4_Grid_Maker.bat`](Master4_Grid_Maker.bat) | **[`Master4_Grid_Maker_User_Manual.pdf`](Master4_Grid_Maker_User_Manual.pdf)** |
 
 Both tools require **Python 3** and **Pillow**. Install Pillow once with:
 
@@ -15,7 +15,7 @@ py -3 -m pip install Pillow
 
 The converter manual covers compatible raster MBTiles, direct conversion, output behavior, common errors, and the QGIS-to-ArcGIS-Earth workflow.
 
-The **Master 4 v3 Operator Manual** covers:
+The **Master 4 v3 Operator Manual** applies unchanged to v3.1 (see [MASTER4_V3.1_CHANGES.md](MASTER4_V3.1_CHANGES.md) for what v3.1 adds). It covers:
 
 - the 1-degree / 100-cell system;
 - exact input order and no-rounding decimal cell lookup;

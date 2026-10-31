@@ -1,8 +1,23 @@
+"""Master 4 Grid Maker v3.1
+
+v3.1 hardening (grid geometry, cell numbering, georeferencing, filenames and
+demo tiles unchanged from v3):
+- the Cell 55 demo TPKX is built as "<name>.tpkx.partial" and renamed only on
+  success; a failed or cancelled build removes the partial file
+- whole degrees typed as decimals or with leading zeros (82.0w, 082w) are named
+  the same as 82w instead of crashing or producing a second naming
+- an input mistake shows the error and asks again; a blank entry quits;
+  Ctrl+C prints "Cancelled." instead of a traceback
+- the TXT and TIF are written under temporary names and swapped in together,
+  with a plain message if a file is locked by another program
+"""
+import contextlib
 import copy
 import datetime
 import io
 import json
 import math
+import os
 import re
 import shutil
 import struct
@@ -18,6 +33,7 @@ except ImportError:
         "Pillow is required. Install it with: py -3 -m pip install Pillow"
     )
 
+VERSION = "3.1"
 EPSG = 3857
 EARTH_RADIUS = 6378137.0
 OUTPUT_DIR = Path(r"C:\downloads")
@@ -102,7 +118,14 @@ def parse_master4(text):
     if south <= -WEB_MERCATOR_MAX_LAT or north >= WEB_MERCATOR_MAX_LAT:
         raise ValueError("Latitude is outside the usable EPSG:3857 Web Mercator range.")
 
-    label = "_".join(p.upper().replace(" ", "") for p in parts)
+    # Name files from the parsed whole-degree values so 82w, 82.0w and 082w
+    # all produce the same "82W" label used by every output filename.
+    label = "_".join(
+        f"{int(round(abs(value)))}{direction}"
+        for value, direction in (
+            (west, west_dir), (east, east_dir), (south, south_dir), (north, north_dir)
+        )
+    )
     return west, east, south, north, label
 
 
@@ -271,8 +294,27 @@ def build_outputs(master4_text, output_dir=OUTPUT_DIR):
     tif_path = output_dir / f"Master4_{master_label}_Grid.tif"
 
     records = cell_records(west, east, south, north)
-    write_extent_txt(txt_path, records, master_label, west, east, south, north)
-    make_grid_tif(tif_path, west, east, south, north, records)
+
+    # Write both files under temporary names first so a failure never leaves a
+    # new TXT beside an old or missing TIF.
+    txt_partial = txt_path.with_name(txt_path.name + ".partial")
+    tif_partial = tif_path.with_name(tif_path.name + ".partial")
+    try:
+        write_extent_txt(txt_partial, records, master_label, west, east, south, north)
+        make_grid_tif(tif_partial, west, east, south, north, records)
+        # TIF first: it is the file most likely to be held open by ArcGIS Earth.
+        for partial, final in ((tif_partial, tif_path), (txt_partial, txt_path)):
+            try:
+                os.replace(partial, final)
+            except PermissionError:
+                raise PermissionError(
+                    f"Could not replace {final.name} - it may be open in ArcGIS Earth "
+                    "or another program. Close it and try again."
+                ) from None
+    finally:
+        for partial in (txt_partial, tif_partial):
+            with contextlib.suppress(OSError):
+                partial.unlink()
     return txt_path, tif_path
 
 
@@ -352,8 +394,29 @@ def demo_tile_range(xmin, xmax, ymin, ymax, zoom, resolution, origin):
 def make_cell55_zoom_demo_tpkx(path, records, master_label):
     path = Path(path)
     if path.exists():
-        raise FileExistsError(f"Output already exists: {path}")
+        raise FileExistsError(
+            f"Output already exists: {path} - delete or rename it to create a new demo."
+        )
 
+    # Build under a temporary name so an interrupted build never leaves a
+    # complete-looking but incomplete demo TPKX behind.
+    partial = path.with_name(path.name + ".partial")
+    try:
+        written, bundle_count = _build_cell55_zoom_demo(partial, records, master_label)
+        if path.exists():
+            raise FileExistsError(f"Output appeared during the build: {path} - nothing was overwritten.")
+        partial.replace(path)
+    except BaseException:
+        with contextlib.suppress(OSError):
+            partial.unlink()
+        raise
+    print(
+        f"Cell 55 zoom demo complete: {written} tiles, {bundle_count} bundles -> {path}"
+    )
+    return path
+
+
+def _build_cell55_zoom_demo(path, records, master_label):
     cell = next(record for record in records if record[0] == DEMO_CELL)
     _, xmin, xmax, ymin, ymax = cell
 
@@ -463,25 +526,36 @@ def make_cell55_zoom_demo_tpkx(path, records, master_label):
 
             print(f"Z{zoom}: {zoom_written} colored tiles complete", flush=True)
 
-    print(
-        f"Cell 55 zoom demo complete: {written} tiles, {bundle_count} bundles -> {path}"
-    )
-    return path
+    return written, bundle_count
 
 
 def main():
-    print("Master 4 Grid Maker")
+    try:
+        run()
+    except (KeyboardInterrupt, EOFError):
+        print("\nCancelled.")
+        raise SystemExit(1)
+
+
+def run():
+    print(f"Master 4 Grid Maker v{VERSION}")
     print("Example: 82w, 81w, 30n, 31n")
     print("East example: 10e, 11e, 30n, 31n")
     print("South example: 82w, 81w, 31s, 30s")
     print()
-    master4_text = input("Enter Master 4: ").strip()
 
-    try:
-        txt_path, tif_path = build_outputs(master4_text)
-    except Exception as exc:
-        print(f"\nERROR: {exc}")
-        raise SystemExit(1)
+    # A mistake asks again instead of closing the program; a blank entry quits.
+    while True:
+        master4_text = input("Enter Master 4 (blank to quit): ").strip()
+        if not master4_text:
+            print("No Master 4 entered - nothing created.")
+            return
+        try:
+            txt_path, tif_path = build_outputs(master4_text)
+            break
+        except Exception as exc:
+            print(f"\nERROR: {exc}")
+            print("Try again, or press Enter on a blank line to quit.\n")
 
     print("\nCreated:")
     print(txt_path)

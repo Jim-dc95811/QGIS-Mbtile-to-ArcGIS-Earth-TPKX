@@ -5,8 +5,8 @@
 ### **⬇️ [DOWNLOAD MBTILES -> TPKX CONVERTER v1.1](mb2tpkx.zip)**
 Convert compatible raster MBTiles directly into native offline TPKX packages for ArcGIS Earth. v1.1 adds safer failure handling and clearer error messages; conversion output is unchanged ([v1.1 changes](MB2TPKX_V1.1_CHANGES.md)).
 
-### **⬇️ [DOWNLOAD MASTER 4 GRID MAKER](Master4_Grid_Maker.zip)**
-Create repeatable 1-degree production grids, numbered cells, exact QGIS-ready extents, and deterministic filenames.
+### **⬇️ [DOWNLOAD MASTER 4 GRID MAKER v3.1](Master4_Grid_Maker.zip)**
+Create repeatable 1-degree production grids, numbered cells, exact QGIS-ready extents, and deterministic filenames. v3.1 adds safer input and file handling; grid output is unchanged ([v3.1 changes](MASTER4_V3.1_CHANGES.md)).
 
 **Make native offline ArcGIS Earth maps from compatible raster MBTiles, then organize large areas with the Master 4 grid system.** The converter preserves the original PNG/JPEG map tiles at every recorded zoom level. Master 4 adds repeatable geographic cells, deterministic filenames, a numbered reference overlay, and an optional synthetic TPKX that makes stored zoom levels visible before QGIS production begins.
 
@@ -228,6 +228,7 @@ JPEG/75 is chosen while producing MBTiles, not by the converter. The PNG and JPE
 
 - [00_USER_MANUALS.md](00_USER_MANUALS.md) - official PDF manuals.
 - [MB2TPKX_V1.1_CHANGES.md](MB2TPKX_V1.1_CHANGES.md) - converter v1.1 change document and verification record.
+- [MASTER4_V3.1_CHANGES.md](MASTER4_V3.1_CHANGES.md) - Master 4 Grid Maker v3.1 change document and verification record.
 - [DEMO.md](DEMO.md) - videos and beginner/field workflow.
 - [MASTER4_GRID_MAKER.md](MASTER4_GRID_MAKER.md) - Master 4 v3 operation and optional demo TPKX.
 - [CONTINUITY.md](CONTINUITY.md) - current project handoff.

@@ -1,4 +1,6 @@
-# Master 4 Grid Maker v3
+# Master 4 Grid Maker v3.1
+
+**v3.1 (2026-10-31)** is a hardening release: a typo now asks again instead of closing, `82.0w`/`082w` are accepted as `82w`, an interrupted demo build leaves nothing behind, and the TXT/TIF pair is replaced together. Grid output is identical to v3. See [MASTER4_V3.1_CHANGES.md](MASTER4_V3.1_CHANGES.md).
 
 **Master 4 Grid Maker** is a companion utility for manufacturing repeatable offline-map coverage. Give it the four whole-degree edges of one 1-degree x 1-degree geographic master box and it creates:
 
@@ -48,6 +50,8 @@ Example:
 ```
 
 The four edges must be whole degrees and must describe exactly one 1-degree x 1-degree box.
+
+If an entry is invalid, the program explains why and asks again. Press Enter on a blank line to quit.
 
 ## Standard output
 
@@ -224,21 +228,23 @@ The v3 Cell 55 package was structurally checked before delivery, then generated 
 
 The program does not overwrite an existing demo TPKX; move, rename or delete an old demo before intentionally regenerating the same output name.
 
+v3.1 was regression-tested byte-for-byte against v3 and live-accepted in ArcGIS Earth; see [MASTER4_V3.1_CHANGES.md](MASTER4_V3.1_CHANGES.md).
+
 ## Geographic scope
 
 The Master 4 production system is intended for Web Mercator workflows. Physical ground area changes with latitude because the grid is geographic. See [TECHNICAL.md](TECHNICAL.md) for projection/format details.
 
-## Current file checksums
+## Current file checksums (v3.1)
 
 ```text
 Master4_Grid_Maker.py
-SHA-256 16a42784005743728837d3dfdc2f3295b30071d5ed37ccbddbb9b9ee23e58888
+SHA-256 5ca38785a5b5e9537dc1b3d2d79c829414efe86816f7bc0f7407fdc3cbe632e7
 
 Master4_Grid_Maker.bat
 SHA-256 abb4e7dd1f1b665e1cf1b9ee4d1bffdef40e336acb746460640be0a043c20c2d
 
 Master4_Grid_Maker.zip
-SHA-256 408ba3e129f912b3b4ef0a7df0d6ccc478ff8935ffec9cb235232505e872e158
+SHA-256 1c8da1c228aa360696136dfcaa1d2e36e2f1c9eedfc4c0642c864a4001a39ff3
 ```
 
 The project [MIT License](LICENSE) applies to the software. Source-imagery rights remain separate. The synthetic color demo does not download or redistribute third-party imagery.

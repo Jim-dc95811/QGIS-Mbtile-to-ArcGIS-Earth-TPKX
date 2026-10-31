@@ -135,11 +135,12 @@ At coarse zooms, one XYZ tile is larger than a 0.1-degree Master 4 cell. Therefo
 
 The exact cell extent remains authoritative in the Master 4 manifest and GeoTIFF.
 
-### Current v3 identities
+### Current identities - Master 4 v3.1 (2026-10-31; hardening only, output identical to v3 - see [MASTER4_V3.1_CHANGES.md](MASTER4_V3.1_CHANGES.md))
 
-- `Master4_Grid_Maker.py` SHA-256: `16a42784005743728837d3dfdc2f3295b30071d5ed37ccbddbb9b9ee23e58888`
+- `Master4_Grid_Maker.py` SHA-256: `5ca38785a5b5e9537dc1b3d2d79c829414efe86816f7bc0f7407fdc3cbe632e7`
 - `Master4_Grid_Maker.bat` SHA-256: `abb4e7dd1f1b665e1cf1b9ee4d1bffdef40e336acb746460640be0a043c20c2d`
-- `Master4_Grid_Maker.zip` SHA-256: `408ba3e129f912b3b4ef0a7df0d6ccc478ff8935ffec9cb235232505e872e158`
+- `Master4_Grid_Maker.zip` SHA-256: `1c8da1c228aa360696136dfcaa1d2e36e2f1c9eedfc4c0642c864a4001a39ff3`
+- Previous v3: `.py` `16a42784005743728837d3dfdc2f3295b30071d5ed37ccbddbb9b9ee23e58888`, `.zip` `408ba3e129f912b3b4ef0a7df0d6ccc478ff8935ffec9cb235232505e872e158`
 
 ## 5. v3 validation boundary
 

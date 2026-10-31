@@ -94,11 +94,12 @@ Current production filename pattern:
 W082W081N031N030-055-GHY-Z20.tpkx
 ```
 
-Current Master 4 v3 SHA-256 values:
+Current Master 4 **v3.1** SHA-256 values (2026-10-31 hardening release; grid output identical to v3, live-accepted in ArcGIS Earth; see `MASTER4_V3.1_CHANGES.md`):
 
-- `Master4_Grid_Maker.py`: `16a42784005743728837d3dfdc2f3295b30071d5ed37ccbddbb9b9ee23e58888`
+- `Master4_Grid_Maker.py`: `5ca38785a5b5e9537dc1b3d2d79c829414efe86816f7bc0f7407fdc3cbe632e7`
 - `Master4_Grid_Maker.bat`: `abb4e7dd1f1b665e1cf1b9ee4d1bffdef40e336acb746460640be0a043c20c2d`
-- `Master4_Grid_Maker.zip`: `408ba3e129f912b3b4ef0a7df0d6ccc478ff8935ffec9cb235232505e872e158`
+- `Master4_Grid_Maker.zip`: `1c8da1c228aa360696136dfcaa1d2e36e2f1c9eedfc4c0642c864a4001a39ff3`
+- Previous v3: `.py` `16a42784005743728837d3dfdc2f3295b30071d5ed37ccbddbb9b9ee23e58888`, `.zip` `408ba3e129f912b3b4ef0a7df0d6ccc478ff8935ffec9cb235232505e872e158`
 
 ## v3 optional Cell 55 Z10-Z20 teaching/reference TPKX
 
