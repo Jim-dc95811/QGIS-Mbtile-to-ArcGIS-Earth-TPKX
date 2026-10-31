@@ -22,10 +22,14 @@ The working converter then passed synthetic multi-bundle tests and real-image te
 
 ### Converter baseline identities
 
-- `mb2tpkx.py` SHA-256: `c04dc9f3c1ad74b4180b11465df1189a74c500a5d5873d66a57c2d4076fb3670`
-- `mb2tpkx.bat` SHA-256: `078e07834b6fa45f8e63192f60033ac5c322ea236372df22cece8be8a24fda66`
-- known GitHub blob SHA for Python before the current Master 4-only update: `87ccc955944b994ad156f25488d04df9197184bd`
-- known GitHub blob SHA for BAT: `267240f9f9f634ac3d8f66bf3f93f9374973372b`
+Current: **mb2tpkx v1.1** (2026-10-31, hardening release; conversion core unchanged from v1.0 - see [MB2TPKX_V1.1_CHANGES.md](MB2TPKX_V1.1_CHANGES.md)).
+
+- `mb2tpkx.py` v1.1 SHA-256: `b2efa752a6f386b6bada84532efe8ee56fed3c9863fa3c6dd76f51129e85f785`
+- `mb2tpkx.py` v1.1 GitHub blob SHA: `c44c8e23fb1253e9b19faf83be63fdc1bc2b7a27`
+- `mb2tpkx.bat` SHA-256 (unchanged since v1.0): `078e07834b6fa45f8e63192f60033ac5c322ea236372df22cece8be8a24fda66`
+- `mb2tpkx.bat` GitHub blob SHA: `267240f9f9f634ac3d8f66bf3f93f9374973372b`
+
+Previous v1.0 identities: `mb2tpkx.py` SHA-256 `c04dc9f3c1ad74b4180b11465df1189a74c500a5d5873d66a57c2d4076fb3670`, blob `87ccc955944b994ad156f25488d04df9197184bd`.
 
 Do not casually refactor the converter. A generic reader accepting output is useful but is not a substitute for ArcGIS Earth acceptance.
 

@@ -7,7 +7,15 @@ Requirement: Pillow (python -m pip install pillow).
 Based on the exact TPKX structure tested successfully in ArcGIS Earth and ArcGIS Pro.
 The imagery tiles themselves are never modified, resized, or recompressed.
 Standard Web Mercator MBTiles use TMS tile-row indexing; output uses Esri XYZ rows.
+
+v1.1 hardening (no change to tile copying or bundle structure):
+- output is written to "<name>.tpkx.partial" and renamed only after full success;
+  a failed or cancelled run removes the partial file
+- the source path is escaped so names containing #, % or ? open correctly, read-only
+- common problems are reported as one plain ERROR line instead of a traceback
+- the database connection is closed explicitly
 """
+import contextlib
 import copy
 import datetime
 import io
@@ -19,10 +27,16 @@ import sqlite3
 import struct
 import sys
 import tempfile
+import urllib.parse
 import uuid
 import zipfile
 
-from PIL import Image
+try:
+    from PIL import Image, UnidentifiedImageError
+except ImportError:
+    sys.exit("ERROR: Pillow is not installed. Install it with: py -3 -m pip install Pillow")
+
+VERSION = "1.1"
 
 # Metadata and bundle-header bytes extracted from the Bryce TPKX accepted by
 # both ArcGIS Earth and ArcGIS Pro. Only content-dependent values change.
@@ -46,10 +60,30 @@ def zip_entry(name, now, ntfs_extra):
 def convert(source, destination):
     if source.resolve() == destination.resolve():
         raise ValueError("Input and output paths cannot be the same.")
+    if not source.is_file():
+        raise FileNotFoundError(f"MBTiles file not found: {source}")
     if destination.exists():
-        raise FileExistsError(f"Output already exists: {destination}")
+        raise FileExistsError(f"Output already exists: {destination} - delete or rename it and run again.")
 
-    with sqlite3.connect(f"file:{source.resolve().as_posix()}?mode=ro", uri=True) as db:
+    # Build under a temporary name so a failed or cancelled run never leaves a
+    # complete-looking but incomplete .tpkx behind.
+    partial = destination.with_name(destination.name + ".partial")
+    try:
+        written, bundles = _build(source, partial)
+        if destination.exists():
+            raise FileExistsError(f"Output appeared during conversion: {destination} - nothing was overwritten.")
+        partial.replace(destination)
+    except BaseException:
+        with contextlib.suppress(OSError):
+            partial.unlink()
+        raise
+    print(f"SUCCESS: {written} original tiles, {bundles} bundles -> {destination}")
+
+
+def _build(source, destination):
+    # Escape the path so characters such as # % ? cannot truncate it or drop mode=ro.
+    uri = "file:" + urllib.parse.quote(source.resolve().as_posix(), safe="/:") + "?mode=ro"
+    with contextlib.closing(sqlite3.connect(uri, uri=True)) as db:
         details = dict(db.execute("SELECT name, value FROM metadata"))
         min_z, max_z, tile_count = db.execute(
             "SELECT MIN(zoom_level), MAX(zoom_level), COUNT(*) FROM tiles"
@@ -186,12 +220,28 @@ def convert(source, destination):
                 print(f"z{z} {filename} complete", flush=True)
         if written != tile_count:
             raise ValueError(f"Tile count mismatch: source={tile_count}, written={written}")
-    print(f"SUCCESS: {written} original tiles, {len(groups)} bundles -> {destination}")
+    return written, len(groups)
 
 
-if __name__ == "__main__":
+def main():
     if len(sys.argv) not in (2, 3):
         sys.exit("Usage: python mb2tpkx.py input.mbtiles [output.tpkx]")
     source = pathlib.Path(sys.argv[1])
     output = pathlib.Path(sys.argv[2]) if len(sys.argv) == 3 else source.with_suffix(".tpkx")
-    convert(source, output)
+    print(f"mb2tpkx {VERSION}", flush=True)
+    try:
+        convert(source, output)
+    except KeyboardInterrupt:
+        sys.exit("CANCELLED: no output file was kept.")
+    except (FileNotFoundError, FileExistsError, ValueError) as error:
+        sys.exit(f"ERROR: {error}")
+    except UnidentifiedImageError:
+        sys.exit("ERROR: A tile is not a readable PNG/JPEG image. No output file was kept.")
+    except sqlite3.Error as error:
+        sys.exit(f"ERROR: Could not read {source.name} as an MBTiles database ({error}).")
+    except OSError as error:
+        sys.exit(f"ERROR: File problem - {error}. No output file was kept.")
+
+
+if __name__ == "__main__":
+    main()

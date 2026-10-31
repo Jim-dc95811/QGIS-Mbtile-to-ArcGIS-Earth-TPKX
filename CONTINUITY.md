@@ -54,12 +54,14 @@ Key files:
 
 The MBTiles converter remains the working byte-preserving bridge. Do not casually refactor or mix new Master 4 behavior into it.
 
-Known baseline identities:
+Known baseline identities - **mb2tpkx v1.1** (2026-10-31; hardening only, conversion core unchanged from v1.0, live-accepted in ArcGIS Earth; see `MB2TPKX_V1.1_CHANGES.md`):
 
-- `mb2tpkx.py` blob SHA: `87ccc955944b994ad156f25488d04df9197184bd`
-- `mb2tpkx.py` SHA-256: `c04dc9f3c1ad74b4180b11465df1189a74c500a5d5873d66a57c2d4076fb3670`
-- `mb2tpkx.bat` blob SHA: `267240f9f9f634ac3d8f66bf3f93f9374973372b`
-- `mb2tpkx.bat` SHA-256: `078e07834b6fa45f8e63192f60033ac5c322ea236372df22cece8be8a24fda66`
+- `mb2tpkx.py` blob SHA: `c44c8e23fb1253e9b19faf83be63fdc1bc2b7a27`
+- `mb2tpkx.py` SHA-256: `b2efa752a6f386b6bada84532efe8ee56fed3c9863fa3c6dd76f51129e85f785`
+- `mb2tpkx.bat` blob SHA: `267240f9f9f634ac3d8f66bf3f93f9374973372b` (unchanged)
+- `mb2tpkx.bat` SHA-256: `078e07834b6fa45f8e63192f60033ac5c322ea236372df22cece8be8a24fda66` (unchanged)
+
+Previous v1.0 `mb2tpkx.py`: blob `87ccc955944b994ad156f25488d04df9197184bd`, SHA-256 `c04dc9f3c1ad74b4180b11465df1189a74c500a5d5873d66a57c2d4076fb3670`.
 
 The converter accepts compatible 256 x 256 PNG/JPEG Web Mercator raster MBTiles, reverses TMS rows to XYZ, groups tiles into Esri Compact Cache V2 128 x 128 bundles, and copies source image bytes unchanged. It does not download imagery, create missing zooms, or promise vector/arbitrary MBTiles support.
 
