@@ -10,6 +10,35 @@ Create repeatable 1-degree production grids, numbered cells, exact QGIS-ready ex
 
 **Make native offline ArcGIS Earth maps from compatible raster MBTiles, then organize large areas with the Master 4 grid system.** The converter preserves the original PNG/JPEG map tiles at every recorded zoom level. Master 4 adds repeatable geographic cells, deterministic filenames, a numbered reference overlay, and an optional synthetic TPKX that makes stored zoom levels visible before QGIS production begins.
 
+## Quick start
+
+1. Install Python 3 and confirm `py -3 --version` works.
+2. Install the only additional Python library, Pillow:
+
+```powershell
+py -3 -m pip install Pillow
+```
+
+3. Keep `mb2tpkx.py` and `mb2tpkx.bat` in the same folder.
+4. Drag an existing `.mbtiles` file onto `mb2tpkx.bat`, or double-click the BAT and paste the source path when prompted.
+5. Open the finished `.tpkx` with ArcGIS Earth.
+
+The source MBTiles is retained. Existing output is not overwritten.
+
+## Four steps from imagery to offline map
+
+1. **Choose an imagery source** appropriate for your purpose, with the necessary rights for your intended use.
+2. **Create compatible raster MBTiles.** QGIS is one example; the converter does not require QGIS specifically.
+3. **Convert MBTiles -> TPKX** with `mb2tpkx.py`. The converter copies the original PNG/JPEG image tiles without re-encoding or rebuilding the zoom pyramid.
+4. **Open the TPKX in ArcGIS Earth** and navigate the captured map offline.
+
+```mermaid
+flowchart LR
+    A[Imagery source] --> B[Raster MBTiles producer]
+    B -->|MBTiles| C[Python converter]
+    C -->|TPKX| D[ArcGIS Earth offline]
+```
+
 ## Watch the videos
 
 **[Google Maps OFFLINE - The Impossible Is Now Possible!](https://www.youtube.com/watch?v=8uziJNzan1g)**
@@ -142,9 +171,8 @@ The colored package uses the standard global XYZ/Web Mercator tile grid. At coar
 
 These diagrams explain tile pyramids and layer compositing. They do **not** imply that the converter merges separate imagery and overlay MBTiles files; combined views can be rendered upstream while creating the input MBTiles.
 
-## Master 4 Grid Maker downloads
+## Master 4 Grid Maker guides
 
-**[Download Master4_Grid_Maker.zip](Master4_Grid_Maker.zip)**  
 **[Read the full Master 4 guide](MASTER4_GRID_MAKER.md)**  
 **[Open the v3 Operator Manual](Master4_Grid_Maker_User_Manual.pdf)**
 
@@ -152,23 +180,7 @@ The Master 4 numbering is hemisphere-aware. The first decimal digit of absolute 
 
 The standard grid/output regression tests covered W/N, E/N, W/S and E/S boxes, the equator and prime meridian, +/-180 degrees, and whole-degree boxes near the practical Web Mercator latitude limits. The v3 update preserved the standard TXT/GeoTIFF behavior and added the optional synthetic TPKX. See [MASTER4_GRID_MAKER.md](MASTER4_GRID_MAKER.md) and [TECHNICAL.md](TECHNICAL.md) for exact scope.
 
-## Four steps from imagery to offline map
-
-1. **Choose an imagery source** appropriate for your purpose, with the necessary rights for your intended use.
-2. **Create compatible raster MBTiles.** QGIS is one example; the converter does not require QGIS specifically.
-3. **Convert MBTiles -> TPKX** with `mb2tpkx.py`. The converter copies the original PNG/JPEG image tiles without re-encoding or rebuilding the zoom pyramid.
-4. **Open the TPKX in ArcGIS Earth** and navigate the captured map offline.
-
-```mermaid
-flowchart LR
-    A[Imagery source] --> B[Raster MBTiles producer]
-    B -->|MBTiles| C[Python converter]
-    C -->|TPKX| D[ArcGIS Earth offline]
-```
-
-## Converter download and use
-
-**[Download mb2tpkx.zip](mb2tpkx.zip)**
+## Converter setup and use
 
 ### First-time Windows setup
 
