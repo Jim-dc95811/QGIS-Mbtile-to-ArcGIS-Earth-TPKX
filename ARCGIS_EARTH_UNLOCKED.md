@@ -4,11 +4,11 @@ This repository is the **foundation-map production** branch of the broader ArcGI
 
 Master system map:
 
-https://github.com/Jim-dc95811/Earth-Beacon/blob/main/ARCGIS_EARTH_UNLOCKED.md
+https://github.com/Jim-dc95811/ArcGIS-Earth-Unlocked
 
 Current object-authoring center:
 
-https://github.com/Jim-dc95811/Earth-Beacon
+https://github.com/Jim-dc95811/ArcGIS-Earth-Object-Factory
 
 Project role:
 
