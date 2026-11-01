@@ -12,9 +12,9 @@
 ## Download
 
 **[Download Master4_Grid_Maker.zip](Master4_Grid_Maker.zip)**  
-**[Open the official v3 Operator Manual](Master4_Grid_Maker_User_Manual.pdf)**
+**[Open the printable v3.1 manual (PDF)](Master4_Grid_Maker_User_Manual.pdf)** - this page as a PDF
 
-Keep these two files together after extracting the ZIP:
+Extract the ZIP into a folder of its own (it holds the two files directly, not a subfolder) and keep them together:
 
 ```text
 Master4_Grid_Maker.py
@@ -24,7 +24,7 @@ Master4_Grid_Maker.bat
 Requirements:
 
 - Windows
-- Python 3
+- Python 3 from python.org, with the `py` launcher
 - Pillow
 
 Install Pillow if needed:
@@ -35,7 +35,7 @@ py -3 -m pip install Pillow
 
 ## Input
 
-Run `Master4_Grid_Maker.bat` and enter the Master 4 in this exact order:
+Double-click `Master4_Grid_Maker.bat`. At the prompt `Enter Master 4 (blank to quit):`, type the Master 4 in this exact order:
 
 ```text
 west longitude, east longitude, south latitude, north latitude
@@ -47,13 +47,13 @@ Example:
 82w, 81w, 30n, 31n
 ```
 
-The four edges must be whole degrees and must describe exactly one 1-degree x 1-degree box.
+The four edges must be whole degrees and must describe exactly one 1-degree x 1-degree box. East and south work the same way, for example `10e, 11e, 30n, 31n` or `82w, 81w, 31s, 30s`.
 
 If an entry is invalid, the program explains why and asks again. Press Enter on a blank line to quit.
 
 ## Standard output
 
-The program always creates the normal Master 4 outputs first. For the example above:
+The program always creates the normal Master 4 outputs first, in `C:\downloads` (created if it does not exist). It prints their full paths under `Created:`. For the example above:
 
 ```text
 C:\downloads\Master4_82W_81W_30N_31N_Extents.txt
@@ -81,6 +81,8 @@ The final line records the full Master 4 extent:
 ```text
 MASTER -9128198.2450,-9016878.7543,3503549.8435,3632749.1434 [EPSG:3857]
 ```
+
+Running the same Master 4 again replaces its TXT and TIF together; a file that is open in another program is reported instead of half-replaced.
 
 This gives the operator both levels of the system in one file: **100 exact production cells + the exact 1-degree parent box**.
 
@@ -148,7 +150,7 @@ Create Cell 55 colored zoom-demo TPKX (Z10-Z20)? [y/N]:
 
 The standard Master 4 outputs are not dependent on this choice.
 
-If the operator answers `Y` or `Yes`, the program creates a file such as:
+If the operator answers `Y` or `Yes`, the program prints one line per finished zoom level and creates a file in `C:\downloads` such as:
 
 ```text
 W082W081N031N030-055-ZOOM-DEMO.tpkx

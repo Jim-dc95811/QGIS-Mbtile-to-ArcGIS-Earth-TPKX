@@ -1,11 +1,11 @@
-# Official User Manuals
+# User Manuals
 
-The two Python utilities in this repository each have a matching **Official PDF User Manual**. Keep the manual with its script and Windows launcher.
+The two Python utilities in this repository each have a user manual, on GitHub and as a printable PDF. Both PDFs were regenerated for the current versions on 2026-11-01; the earlier v1.0 and v3 PDFs remain in the repository's Git history.
 
-| Tool | Python script | Windows launcher | Official PDF manual |
+| Tool | Python script | Windows launcher | User manual |
 | --- | --- | --- | --- |
-| **MBTiles to TPKX Converter** | [`mb2tpkx.py`](mb2tpkx.py) | [`mb2tpkx.bat`](mb2tpkx.bat) | **[`mb2tpkx_User_Manual.pdf`](mb2tpkx_User_Manual.pdf)** |
-| **Master 4 Grid Maker v3.1** | [`Master4_Grid_Maker.py`](Master4_Grid_Maker.py) | [`Master4_Grid_Maker.bat`](Master4_Grid_Maker.bat) | **[`Master4_Grid_Maker_User_Manual.pdf`](Master4_Grid_Maker_User_Manual.pdf)** |
+| **MBTiles to TPKX Converter v1.1** | [`mb2tpkx.py`](mb2tpkx.py) | [`mb2tpkx.bat`](mb2tpkx.bat) | **[Manual](MB2TPKX_USER_MANUAL.md)** / [PDF](mb2tpkx_User_Manual.pdf) |
+| **Master 4 Grid Maker v3.1** | [`Master4_Grid_Maker.py`](Master4_Grid_Maker.py) | [`Master4_Grid_Maker.bat`](Master4_Grid_Maker.bat) | **[Manual](MASTER4_GRID_MAKER.md)** / [PDF](Master4_Grid_Maker_User_Manual.pdf) |
 
 Both tools require **Python 3** and **Pillow**. Install Pillow once with:
 
@@ -13,9 +13,9 @@ Both tools require **Python 3** and **Pillow**. Install Pillow once with:
 py -3 -m pip install Pillow
 ```
 
-The converter manual covers compatible raster MBTiles, direct conversion, output behavior, common errors, and the QGIS-to-ArcGIS-Earth workflow.
+The converter manual covers compatible raster MBTiles, direct conversion, safe output, every error message, and the QGIS-to-ArcGIS-Earth workflow.
 
-The **Master 4 v3 Operator Manual** applies unchanged to v3.1 (see [MASTER4_V3.1_CHANGES.md](MASTER4_V3.1_CHANGES.md) for what v3.1 adds). It covers:
+The **Master 4 v3.1 manual** (see [MASTER4_V3.1_CHANGES.md](MASTER4_V3.1_CHANGES.md) for what v3.1 adds) covers:
 
 - the 1-degree / 100-cell system;
 - exact input order and no-rounding decimal cell lookup;

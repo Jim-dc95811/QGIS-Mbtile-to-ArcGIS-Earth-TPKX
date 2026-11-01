@@ -91,7 +91,7 @@ This one-take video demonstrates the large-area chain from an empty 1-degree x 1
 
 This companion video demonstrates using the offline TPKX map workflow in ArcGIS Earth Mobile on Android.
 
-**New here?** Start with [DEMO.md](DEMO.md). **Operating Master 4?** Use the [Master 4 guide](MASTER4_GRID_MAKER.md) and the [official PDF operator manual](Master4_Grid_Maker_User_Manual.pdf). **Continuing the engineering project?** Read [CONTINUITY.md](CONTINUITY.md) and [TECHNICAL.md](TECHNICAL.md).
+**New here?** Start with [DEMO.md](DEMO.md). **Operating Master 4?** Use the [Master 4 guide](MASTER4_GRID_MAKER.md) and the [printable PDF manual](Master4_Grid_Maker_User_Manual.pdf). **Continuing the engineering project?** Read [CONTINUITY.md](CONTINUITY.md) and [TECHNICAL.md](TECHNICAL.md).
 
 ## Master 4 v3: where the map belongs + what zoom level you are seeing
 
@@ -184,7 +184,7 @@ These diagrams explain tile pyramids and layer compositing. They do **not** impl
 ## Master 4 Grid Maker guides
 
 **[Read the full Master 4 guide](MASTER4_GRID_MAKER.md)**  
-**[Open the v3 Operator Manual](Master4_Grid_Maker_User_Manual.pdf)**
+**[Open the v3.1 manual as a PDF](Master4_Grid_Maker_User_Manual.pdf)**
 
 The Master 4 numbering is hemisphere-aware. The first decimal digit of absolute latitude gives the tens row; the first decimal digit of absolute longitude plus one gives the column. Thus `30.56N, 81.34W`, `30.56N, 10.34E`, `30.56S, 81.34W`, and `30.56S, 10.34E` all identify **cell 54**.
 
@@ -236,7 +236,7 @@ JPEG/75 is chosen while producing MBTiles, not by the converter. The PNG and JPE
 
 ## Documentation
 
-- [00_USER_MANUALS.md](00_USER_MANUALS.md) - official PDF manuals.
+- [00_USER_MANUALS.md](00_USER_MANUALS.md) - user manuals and their PDFs.
 - [MB2TPKX_V1.1_CHANGES.md](MB2TPKX_V1.1_CHANGES.md) - converter v1.1 change document and verification record.
 - [MASTER4_V3.1_CHANGES.md](MASTER4_V3.1_CHANGES.md) - Master 4 Grid Maker v3.1 change document and verification record.
 - [DEMO.md](DEMO.md) - videos and beginner/field workflow.

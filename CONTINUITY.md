@@ -43,7 +43,7 @@ Key files:
 - `mb2tpkx.py` / `mb2tpkx.bat` - working direct raster MBTiles -> TPKX converter.
 - `Master4_Grid_Maker.py` / `Master4_Grid_Maker.bat` - current Master 4 v3 utility.
 - `Master4_Grid_Maker.zip` - current packaged Master 4 program.
-- `Master4_Grid_Maker_User_Manual.pdf` - current v3 operator manual.
+- `Master4_Grid_Maker_User_Manual.pdf` - v3.1 manual, generated from `MASTER4_GRID_MAKER.md` (2026-11-01).
 - `MASTER4_GRID_MAKER.md` - current Master 4 operation/field guide.
 - `README.md` - public landing page.
 - `TECHNICAL.md` - technical invariants and current validation record.

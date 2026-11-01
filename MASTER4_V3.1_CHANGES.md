@@ -61,4 +61,4 @@ ERROR: Could not replace Master4_82W_81W_30N_31N_Grid.tif - it may be open in Ar
 | `Master4_Grid_Maker.bat` | `abb4e7dd1f1b665e1cf1b9ee4d1bffdef40e336acb746460640be0a043c20c2d` | unchanged |
 | `Master4_Grid_Maker.zip` | `408ba3e129f912b3b4ef0a7df0d6ccc478ff8935ffec9cb235232505e872e158` | `1c8da1c228aa360696136dfcaa1d2e36e2f1c9eedfc4c0642c864a4001a39ff3` |
 
-The v3 PDF Operator Manual still applies: its workflow, outputs and demo instructions are unchanged. v3 remains available in the repository history.
+The workflow, outputs and demo instructions are unchanged from v3. The manual PDF was regenerated for v3.1 on 2026-11-01 (it previously listed v3 checksums); v3 and its manual remain available in the repository history.
