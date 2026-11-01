@@ -3,9 +3,13 @@
 ## Download the tools
 
 ### **⬇️ [DOWNLOAD MBTILES -> TPKX CONVERTER v1.1](mb2tpkx.zip)**
+**📖 [User manual (PDF)](mb2tpkx_User_Manual.pdf)**
+
 Convert compatible raster MBTiles directly into native offline TPKX packages for ArcGIS Earth. v1.1 adds safer failure handling and clearer error messages; conversion output is unchanged ([v1.1 changes](MB2TPKX_V1.1_CHANGES.md)).
 
 ### **⬇️ [DOWNLOAD MASTER 4 GRID MAKER v3.1](Master4_Grid_Maker.zip)**
+**📖 [User manual (PDF)](Master4_Grid_Maker_User_Manual.pdf)**
+
 Create repeatable 1-degree production grids, numbered cells, exact QGIS-ready extents, and deterministic filenames. v3.1 adds safer input and file handling; grid output is unchanged ([v3.1 changes](MASTER4_V3.1_CHANGES.md)).
 
 **Make native offline ArcGIS Earth maps from compatible raster MBTiles, then organize large areas with the Master 4 grid system.** The converter preserves the original PNG/JPEG map tiles at every recorded zoom level. Master 4 adds repeatable geographic cells, deterministic filenames, a numbered reference overlay, and an optional synthetic TPKX that makes stored zoom levels visible before QGIS production begins.
