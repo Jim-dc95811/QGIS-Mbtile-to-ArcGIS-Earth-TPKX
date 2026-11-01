@@ -7,10 +7,18 @@
 
 Convert compatible raster MBTiles directly into native offline TPKX packages for ArcGIS Earth. v1.1 adds safer failure handling and clearer error messages; conversion output is unchanged ([v1.1 changes](MB2TPKX_V1.1_CHANGES.md)).
 
+[![A converted TPKX open offline in ArcGIS Earth: Bryceville, Florida, imagery with roads and place labels](images/mb2tpkx_bryceville_tpkx_arcgis_earth.jpg)](https://www.youtube.com/watch?v=C71n8TAByuE)
+
+*A QGIS MBTiles map of Bryceville, Florida, converted to TPKX and open offline in ArcGIS Earth. ▶️ [Watch the how-to video](https://www.youtube.com/watch?v=C71n8TAByuE) (YouTube).*
+
 ### **⬇️ [DOWNLOAD MASTER 4 GRID MAKER v3.1](Master4_Grid_Maker.zip)**
 **📖 [User manual (PDF)](Master4_Grid_Maker_User_Manual.pdf)**
 
 Create repeatable 1-degree production grids, numbered cells, exact QGIS-ready extents, and deterministic filenames. v3.1 adds safer input and file handling; grid output is unchanged ([v3.1 changes](MASTER4_V3.1_CHANGES.md)).
+
+<a href="https://www.youtube.com/watch?v=zNt-I4KgAy8"><img src="images/master4_grid_jacksonville_arcgis_earth.jpg" width="520" alt="Master 4 grid in ArcGIS Earth: a 1-degree box over Jacksonville, Florida, split into 100 numbered cells"></a>
+
+*A 1-degree Master 4 box over Jacksonville, Florida, split into 100 numbered cells in ArcGIS Earth. ▶️ [Watch the Master 4 video](https://www.youtube.com/watch?v=zNt-I4KgAy8) (YouTube).*
 
 **Make native offline ArcGIS Earth maps from compatible raster MBTiles, then organize large areas with the Master 4 grid system.** The converter preserves the original PNG/JPEG map tiles at every recorded zoom level. Master 4 adds repeatable geographic cells, deterministic filenames, a numbered reference overlay, and an optional synthetic TPKX that makes stored zoom levels visible before QGIS production begins.
 
