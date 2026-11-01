@@ -1,6 +1,8 @@
 # Project continuity handoff
 
-**Current snapshot: 2026-10-10.** Read this file together with the live repository before resuming. Later user instructions and actual field tests supersede older notes in Git history.
+**Current snapshot: 2026-10-10**, with dated updates since (latest 2026-11-01). Read this file together with the live repository before resuming.
+
+**2026-11-01 update:** the front page follows the family-wide layout (download link, user manual link, one line, screenshot that opens the video). Screenshots: `images/mb2tpkx_bryceville_tpkx_arcgis_earth.jpg` (opens video `C71n8TAByuE`) and `images/master4_grid_jacksonville_arcgis_earth.jpg` (opens `zNt-I4KgAy8`). Manuals: new `MB2TPKX_USER_MANUAL.md` and `MASTER4_GRID_MAKER.md`; both PDFs are generated from them (generator: `tools/md2pdf.py` in ArcGIS-Earth-Unlocked). Five corrupt images were removed (see the visual-library note below). Later user instructions and actual field tests supersede older notes in Git history.
 
 ## Current mission
 
@@ -41,7 +43,7 @@ Current main after the latest infographic upload:
 Key files:
 
 - `mb2tpkx.py` / `mb2tpkx.bat` - working direct raster MBTiles -> TPKX converter.
-- `Master4_Grid_Maker.py` / `Master4_Grid_Maker.bat` - current Master 4 v3 utility.
+- `Master4_Grid_Maker.py` / `Master4_Grid_Maker.bat` - current Master 4 v3.1 utility.
 - `Master4_Grid_Maker.zip` - current packaged Master 4 program.
 - `Master4_Grid_Maker_User_Manual.pdf` - v3.1 manual, generated from `MASTER4_GRID_MAKER.md` (2026-11-01).
 - `MASTER4_GRID_MAKER.md` - current Master 4 operation/field guide.
