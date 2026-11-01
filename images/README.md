@@ -9,11 +9,8 @@ The repository includes these project illustrations:
 - [Why map layer order matters](ChatGPT%20Image%20Sep%2029%2C%202026%2C%2008_00_24%20PM-3.png)
 - [Master 4 Grid Maker - decimal grid addressing and workflow](Master4_Grid_Maker_Overview.svg)
 - [Master 4 Grid Maker - EPSG:3857 extent catalog](Master4_Grid_Maker_Extent_Catalog.svg)
-- [Master 4 Cell 55 - Z10-Z20 multi-zoom TPKX teaching/reference graphic](Master4_Cell55_MultiZoom_TPKX.jpg)
-- [Enhanced Z17 grid visual tour](Enhanced_Z17_Grid_Visual_Tour.webp)
-- [Google Maps Offline and Improved - field-use infographic](Google_Maps_Offline_Improved.webp)
-- [Find the layer - click View details to reach the service URL](Find_Layer_Step_1.webp)
-- [Copy the service URL and load it in QGIS](Find_Layer_Step_2.webp)
+- [Converted Bryceville TPKX open offline in ArcGIS Earth](mb2tpkx_bryceville_tpkx_arcgis_earth.jpg)
+- [Master 4 grid over Jacksonville in ArcGIS Earth](master4_grid_jacksonville_arcgis_earth.jpg)
 - [Find the URLs, load the layers - end-to-end web-service workflow](Find_URLs_Load_Layers.webp)
 - [Building an offline operational map - many live sources into one offline map](Building_Offline_Operational_Map.webp)
 

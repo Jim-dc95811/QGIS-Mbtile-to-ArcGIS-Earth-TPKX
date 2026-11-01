@@ -26,8 +26,6 @@ This one-take video starts with an empty 1-degree area and follows the chain thr
 
 ## Master 4 v3: make the stored zoom levels visible
 
-![Master 4 Cell 55 multi-zoom TPKX teaching graphic](images/Master4_Cell55_MultiZoom_TPKX.jpg)
-
 Master 4 v3 can optionally manufacture a synthetic **Cell 55 Z10-Z20 TPKX** after the standard grid and extent files are complete.
 
 The prompt is:

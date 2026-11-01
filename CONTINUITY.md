@@ -433,6 +433,8 @@ The following new project graphics were added under `images/` in commit `8cf823d
 
 `images/README.md` was updated to index them.
 
+**2026-11-01:** four of these files (`Enhanced_Z17_Grid_Visual_Tour`, `Google_Maps_Offline_Improved`, `Find_Layer_Step_1`, `Find_Layer_Step_2`), plus `Master4_Cell55_MultiZoom_TPKX.jpg`, were found corrupt (unreadable data, about 15 KB each, never valid in Git history) and removed at Jim's request, along with their links. Re-add them only from the originals.
+
 The graphics summarize several months of project development and are useful video teaching aids, but generated artwork must not be treated as authoritative technical geometry or proof where exact numbers matter.
 
 ## Evidence and rights discipline

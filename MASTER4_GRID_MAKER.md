@@ -9,8 +9,6 @@
 3. one final `MASTER` row containing the exact EPSG:3857 extent of the entire 1-degree box; and
 4. **optionally**, a synthetic Cell 55 TPKX containing colored Z10-Z20 tiles for teaching, TPKX sanity checks, and offline geographic/zoom reference.
 
-![Master 4 Cell 55 multi-zoom TPKX teaching graphic](images/Master4_Cell55_MultiZoom_TPKX.jpg)
-
 ## Download
 
 **[Download Master4_Grid_Maker.zip](Master4_Grid_Maker.zip)**  

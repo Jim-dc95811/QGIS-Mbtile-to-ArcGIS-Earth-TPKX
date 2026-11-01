@@ -95,8 +95,6 @@ This companion video demonstrates using the offline TPKX map workflow in ArcGIS 
 
 ## Master 4 v3: where the map belongs + what zoom level you are seeing
 
-![Master 4 Cell 55 multi-zoom TPKX teaching graphic](images/Master4_Cell55_MultiZoom_TPKX.jpg)
-
 Master 4 v3 keeps the original production workflow and adds one **optional** teaching/reference product.
 
 Enter one whole-degree Master 4 box in this order:
