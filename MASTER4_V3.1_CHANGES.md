@@ -62,3 +62,12 @@ ERROR: Could not replace Master4_82W_81W_30N_31N_Grid.tif - it may be open in Ar
 | `Master4_Grid_Maker.zip` | `408ba3e129f912b3b4ef0a7df0d6ccc478ff8935ffec9cb235232505e872e158` | `1c8da1c228aa360696136dfcaa1d2e36e2f1c9eedfc4c0642c864a4001a39ff3` |
 
 The workflow, outputs and demo instructions are unchanged from v3. The manual PDF was regenerated for v3.1 on 2026-11-01 (it previously listed v3 checksums); v3 and its manual remain available in the repository history.
+
+## v3.1.1 - launcher update (2026-11-02)
+
+`Master4_Grid_Maker.py` is unchanged (v3.1). Only `Master4_Grid_Maker.bat` changed: it finds Python through `py -3` or `python`, installs Pillow once if it is missing (or prints the command for IT if the install fails), then runs the program as before. Live-tested by Jim Gaddy on Windows, 2026-11-02.
+
+| File | v3.1.1 SHA-256 |
+|---|---|
+| `Master4_Grid_Maker.bat` | `c87e58f352d6d6b188453757ed4a3924affb1dc3e5e83b930545aede764c92fd` |
+| `Master4_Grid_Maker.zip` | `d36d84f041e1534bd677bd8d9c87ac74dba0bba8b00d961f725b0e3c459cc4fa` |

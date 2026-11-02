@@ -6,23 +6,23 @@
 
 **2. ⬇️ [Python 3](https://www.python.org/downloads/windows/)** - free; install with the default options.
 
-**3. Pillow** - one free Python add-on. After installing Python, open Command Prompt and type: `py -3 -m pip install Pillow`
+**3. Pillow** - one free Python add-on. **Installs automatically** the first time you run either tool (needs internet once). By hand: `py -3 -m pip install Pillow`
 
 **4. ⬇️ [ArcGIS Earth](https://www.esri.com/en-us/arcgis/products/arcgis-earth/downloads)** - free 3D globe from Esri (Windows desktop version); it opens the finished TPKX maps.
 
-### **⬇️ [5. DOWNLOAD MBTILES -> TPKX CONVERTER v1.1](mb2tpkx.zip)**
+### **⬇️ [5. DOWNLOAD MBTILES -> TPKX CONVERTER v1.1.1](mb2tpkx.zip)**
 **📖 [User manual (PDF)](mb2tpkx_User_Manual.pdf)**
 
-Convert compatible raster MBTiles directly into native offline TPKX packages for ArcGIS Earth. v1.1 adds safer failure handling and clearer error messages; conversion output is unchanged ([v1.1 changes](MB2TPKX_V1.1_CHANGES.md)).
+Convert compatible raster MBTiles directly into native offline TPKX packages for ArcGIS Earth. v1.1 adds safer failure handling and clearer error messages; conversion output is unchanged ([v1.1 changes](MB2TPKX_V1.1_CHANGES.md)). v1.1.1: the launcher installs Pillow by itself if it is missing.
 
 [![A converted TPKX open offline in ArcGIS Earth: Bryceville, Florida, imagery with roads and place labels](images/mb2tpkx_bryceville_tpkx_arcgis_earth.jpg)](https://www.youtube.com/watch?v=C71n8TAByuE)
 
 *A QGIS MBTiles map of Bryceville, Florida, converted to TPKX and open offline in ArcGIS Earth. ▶️ [Watch the how-to video](https://www.youtube.com/watch?v=C71n8TAByuE) (YouTube).*
 
-### **⬇️ [6. DOWNLOAD MASTER 4 GRID MAKER v3.1](Master4_Grid_Maker.zip)**
+### **⬇️ [6. DOWNLOAD MASTER 4 GRID MAKER v3.1.1](Master4_Grid_Maker.zip)**
 **📖 [User manual (PDF)](Master4_Grid_Maker_User_Manual.pdf)**
 
-Create repeatable 1-degree production grids, numbered cells, exact QGIS-ready extents, and deterministic filenames. v3.1 adds safer input and file handling; grid output is unchanged ([v3.1 changes](MASTER4_V3.1_CHANGES.md)).
+Create repeatable 1-degree production grids, numbered cells, exact QGIS-ready extents, and deterministic filenames. v3.1 adds safer input and file handling; grid output is unchanged ([v3.1 changes](MASTER4_V3.1_CHANGES.md)). v3.1.1: the launcher installs Pillow by itself if it is missing.
 
 <a href="https://www.youtube.com/watch?v=zNt-I4KgAy8"><img src="images/master4_grid_jacksonville_arcgis_earth.jpg" width="520" alt="Master 4 grid in ArcGIS Earth: a 1-degree box over Jacksonville, Florida, split into 100 numbered cells"></a>
 
@@ -33,7 +33,7 @@ Create repeatable 1-degree production grids, numbered cells, exact QGIS-ready ex
 ## Quick start
 
 1. Install Python 3 and confirm `py -3 --version` works.
-2. Install the only additional Python library, Pillow:
+2. The only additional Python library, Pillow, installs automatically the first time you run the BAT. To install it by hand:
 
 ```powershell
 py -3 -m pip install Pillow
@@ -203,7 +203,7 @@ The standard grid/output regression tests covered W/N, E/N, W/S and E/S boxes, t
 ### First-time Windows setup
 
 1. Install Python 3 and confirm `py -3 --version` works.
-2. Install the only additional Python library, Pillow:
+2. The only additional Python library, Pillow, installs automatically the first time you run the BAT. To install it by hand:
 
 ```powershell
 py -3 -m pip install Pillow

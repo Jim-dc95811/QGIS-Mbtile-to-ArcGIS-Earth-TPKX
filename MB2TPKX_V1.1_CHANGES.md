@@ -56,3 +56,18 @@ Unexpected internal errors still show a full traceback, so real bugs remain diag
 | `mb2tpkx.bat` | `078e07834b6fa45f8e63192f60033ac5c322ea236372df22cece8be8a24fda66` | unchanged |
 
 v1.0 remains available in the repository history.
+
+## v1.1.1 - launcher update (2026-11-02)
+
+`mb2tpkx.py` is unchanged (v1.1, SHA-256 above). Only `mb2tpkx.bat` changed:
+
+- finds Python through `py -3`, or `python` when the `py` launcher is not installed, and says so plainly if neither exists
+- if Pillow is missing, installs it once (`Pillow is not installed yet. Installing it now - one time only...`); if that fails, prints the command to give to IT and stops
+- then runs the converter exactly as before (drag-and-drop or typed path)
+
+Live-tested by Jim Gaddy on Windows, 2026-11-02 (including the one-time install after uninstalling Pillow).
+
+| File | v1.1.1 SHA-256 |
+|---|---|
+| `mb2tpkx.bat` | `7321c148bc3c41ea1f1646ab7f8c84168f08baf1bd36dd06b28b88ae4b90172e` |
+| `mb2tpkx.zip` | `3ff8dfa6e0b00a17e6c51fe2adf968f75b2b9ce9233baf1ca6e4bf04a992e9fb` |

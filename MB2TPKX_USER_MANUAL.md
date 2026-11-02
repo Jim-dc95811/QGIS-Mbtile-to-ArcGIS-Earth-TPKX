@@ -1,4 +1,4 @@
-# MBTiles to TPKX Converter v1.1 - User Manual
+# MBTiles to TPKX Converter v1.1.1 - User Manual
 
 A printable copy of this manual is available as [mb2tpkx_User_Manual.pdf](mb2tpkx_User_Manual.pdf).
 
@@ -12,10 +12,10 @@ Source PNG/JPEG map tiles are copied unchanged. The converter does not download 
 
 - Windows
 - Python 3 from python.org, with the `py` launcher
-- Pillow (one extra Python library)
+- Pillow (one extra Python library; `mb2tpkx.bat` installs it automatically the first time, since v1.1.1)
 - An existing compatible raster MBTiles file
 
-Check Python and install Pillow once from a Command Prompt:
+The first time you run `mb2tpkx.bat` without Pillow, it says `Pillow is not installed yet. Installing it now - one time only...`, installs it (internet needed once) and carries on. If your network blocks the download, it prints the command to give to IT. To check Python and install Pillow by hand from a Command Prompt:
 
 ```text
 py -3 --version
@@ -81,7 +81,8 @@ Problems are reported as one plain `ERROR:` line, followed by `Conversion failed
 
 | Message | What to do |
 |---|---|
-| `ERROR: Pillow is not installed...` | Run `py -3 -m pip install Pillow`. |
+| `Pillow could not be installed automatically.` or `ERROR: Pillow is not installed...` | Run `py -3 -m pip install Pillow`, or ask IT if your network blocks downloads. |
+| `Python 3 was not found.` | Install Python 3 from python.org with the default options. |
 | `MBTiles file not found` | Check the path, or drag the file onto the BAT. |
 | `Output already exists ... delete or rename it and run again.` | Move, rename or delete the old TPKX. |
 | `Input and output paths cannot be the same.` | Give the output a `.tpkx` name. |
@@ -106,7 +107,7 @@ Allow enough time and free disk space: because the tiles are copied unchanged, t
 ## Quick reference
 
 ```text
-Install:  py -3 -m pip install Pillow
+Install:  automatic on first run (by hand: py -3 -m pip install Pillow)
 Run:      drag input.mbtiles onto mb2tpkx.bat
 Output:   input.tpkx beside input.mbtiles
 ```

@@ -1,6 +1,8 @@
 # Project continuity handoff
 
-**Current snapshot: 2026-10-10**, with dated updates since (latest 2026-11-01). Read this file together with the live repository before resuming.
+**Current snapshot: 2026-10-10**, with dated updates since (latest 2026-11-02). Read this file together with the live repository before resuming.
+
+**2026-11-02 update:** launcher-only releases **mb2tpkx v1.1.1** and **Master 4 v3.1.1**: the `.bat` files find Python (`py -3`, then `python`) and install Pillow automatically if missing; both `.py` files are unchanged (protected baselines). Live-tested by Jim. Front page has a 'Get everything you need' block (QGIS, Python, Pillow, ArcGIS Earth).
 
 **2026-11-01 update:** the front page follows the family-wide layout (download link, user manual link, one line, screenshot that opens the video). Screenshots: `images/mb2tpkx_bryceville_tpkx_arcgis_earth.jpg` (opens video `C71n8TAByuE`) and `images/master4_grid_jacksonville_arcgis_earth.jpg` (opens `zNt-I4KgAy8`). Manuals: new `MB2TPKX_USER_MANUAL.md` and `MASTER4_GRID_MAKER.md`; both PDFs are generated from them (generator: `tools/md2pdf.py` in ArcGIS-Earth-Unlocked). Five corrupt images were removed (see the visual-library note below). Later user instructions and actual field tests supersede older notes in Git history.
 

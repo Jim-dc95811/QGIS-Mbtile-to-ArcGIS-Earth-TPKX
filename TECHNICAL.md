@@ -24,7 +24,7 @@ The working converter then passed synthetic multi-bundle tests and real-image te
 
 Current: **mb2tpkx v1.1** (2026-10-31, hardening release; conversion core unchanged from v1.0 - see [MB2TPKX_V1.1_CHANGES.md](MB2TPKX_V1.1_CHANGES.md)).
 
-- `mb2tpkx.py` v1.1 SHA-256: `b2efa752a6f386b6bada84532efe8ee56fed3c9863fa3c6dd76f51129e85f785`
+- `mb2tpkx.py` v1.1 SHA-256: `b2efa752a6f386b6bada84532efe8ee56fed3c9863fa3c6dd76f51129e85f785` (unchanged in package v1.1.1, 2026-11-02, whose `mb2tpkx.bat` `7321c148bc3c41ea1f1646ab7f8c84168f08baf1bd36dd06b28b88ae4b90172e` installs Pillow automatically)
 - `mb2tpkx.py` v1.1 GitHub blob SHA: `c44c8e23fb1253e9b19faf83be63fdc1bc2b7a27`
 - `mb2tpkx.bat` SHA-256 (unchanged since v1.0): `078e07834b6fa45f8e63192f60033ac5c322ea236372df22cece8be8a24fda66`
 - `mb2tpkx.bat` GitHub blob SHA: `267240f9f9f634ac3d8f66bf3f93f9374973372b`

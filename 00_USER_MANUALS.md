@@ -4,10 +4,10 @@ The two Python utilities in this repository each have a user manual, on GitHub a
 
 | Tool | Python script | Windows launcher | User manual |
 | --- | --- | --- | --- |
-| **MBTiles to TPKX Converter v1.1** | [`mb2tpkx.py`](mb2tpkx.py) | [`mb2tpkx.bat`](mb2tpkx.bat) | **[Manual](MB2TPKX_USER_MANUAL.md)** / [PDF](mb2tpkx_User_Manual.pdf) |
-| **Master 4 Grid Maker v3.1** | [`Master4_Grid_Maker.py`](Master4_Grid_Maker.py) | [`Master4_Grid_Maker.bat`](Master4_Grid_Maker.bat) | **[Manual](MASTER4_GRID_MAKER.md)** / [PDF](Master4_Grid_Maker_User_Manual.pdf) |
+| **MBTiles to TPKX Converter v1.1.1** | [`mb2tpkx.py`](mb2tpkx.py) | [`mb2tpkx.bat`](mb2tpkx.bat) | **[Manual](MB2TPKX_USER_MANUAL.md)** / [PDF](mb2tpkx_User_Manual.pdf) |
+| **Master 4 Grid Maker v3.1.1** | [`Master4_Grid_Maker.py`](Master4_Grid_Maker.py) | [`Master4_Grid_Maker.bat`](Master4_Grid_Maker.bat) | **[Manual](MASTER4_GRID_MAKER.md)** / [PDF](Master4_Grid_Maker_User_Manual.pdf) |
 
-Both tools require **Python 3** and **Pillow**. Install Pillow once with:
+Both tools require **Python 3** and **Pillow**. Since v1.1.1 / v3.1.1 the launchers install Pillow automatically the first time. To install it by hand:
 
 ```powershell
 py -3 -m pip install Pillow

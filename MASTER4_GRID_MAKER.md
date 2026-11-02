@@ -1,4 +1,6 @@
-# Master 4 Grid Maker v3.1
+# Master 4 Grid Maker v3.1.1
+
+**v3.1.1 (2026-11-02):** launcher update only. `Master4_Grid_Maker.bat` installs Pillow automatically the first time if it is missing, and finds Python through `py -3` or `python`. The program and its output are unchanged from v3.1.
 
 **v3.1 (2026-10-31)** is a hardening release: a typo now asks again instead of closing, `82.0w`/`082w` are accepted as `82w`, an interrupted demo build leaves nothing behind, and the TXT/TIF pair is replaced together. Grid output is identical to v3. See [MASTER4_V3.1_CHANGES.md](MASTER4_V3.1_CHANGES.md).
 
@@ -27,7 +29,7 @@ Requirements:
 - Python 3 from python.org, with the `py` launcher
 - Pillow
 
-Install Pillow if needed:
+Pillow installs automatically the first time you run `Master4_Grid_Maker.bat` (internet needed once). To install it by hand:
 
 ```powershell
 py -3 -m pip install Pillow
@@ -234,17 +236,17 @@ v3.1 was regression-tested byte-for-byte against v3 and live-accepted in ArcGIS 
 
 The Master 4 production system is intended for Web Mercator workflows. Physical ground area changes with latitude because the grid is geographic. See [TECHNICAL.md](TECHNICAL.md) for projection/format details.
 
-## Current file checksums (v3.1)
+## Current file checksums (v3.1.1)
 
 ```text
 Master4_Grid_Maker.py
 SHA-256 5ca38785a5b5e9537dc1b3d2d79c829414efe86816f7bc0f7407fdc3cbe632e7
 
 Master4_Grid_Maker.bat
-SHA-256 abb4e7dd1f1b665e1cf1b9ee4d1bffdef40e336acb746460640be0a043c20c2d
+SHA-256 c87e58f352d6d6b188453757ed4a3924affb1dc3e5e83b930545aede764c92fd
 
 Master4_Grid_Maker.zip
-SHA-256 1c8da1c228aa360696136dfcaa1d2e36e2f1c9eedfc4c0642c864a4001a39ff3
+SHA-256 d36d84f041e1534bd677bd8d9c87ac74dba0bba8b00d961f725b0e3c459cc4fa
 ```
 
 The project [MIT License](LICENSE) applies to the software. Source-imagery rights remain separate. The synthetic color demo does not download or redistribute third-party imagery.
