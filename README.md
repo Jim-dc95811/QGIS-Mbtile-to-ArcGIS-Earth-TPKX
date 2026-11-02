@@ -1,8 +1,16 @@
 # MBTiles -> TPKX: offline maps for ArcGIS Earth
 
-## Download the tools
+## Get everything you need
 
-### **⬇️ [DOWNLOAD MBTILES -> TPKX CONVERTER v1.1](mb2tpkx.zip)**
+**1. ⬇️ [QGIS](https://qgis.org/download/)** - free mapping program; it makes the MBTiles imagery files.
+
+**2. ⬇️ [Python 3](https://www.python.org/downloads/windows/)** - free; install with the default options.
+
+**3. Pillow** - one free Python add-on. After installing Python, open Command Prompt and type: `py -3 -m pip install Pillow`
+
+**4. ⬇️ [ArcGIS Earth](https://www.esri.com/en-us/arcgis/products/arcgis-earth/downloads)** - free 3D globe from Esri (Windows desktop version); it opens the finished TPKX maps.
+
+### **⬇️ [5. DOWNLOAD MBTILES -> TPKX CONVERTER v1.1](mb2tpkx.zip)**
 **📖 [User manual (PDF)](mb2tpkx_User_Manual.pdf)**
 
 Convert compatible raster MBTiles directly into native offline TPKX packages for ArcGIS Earth. v1.1 adds safer failure handling and clearer error messages; conversion output is unchanged ([v1.1 changes](MB2TPKX_V1.1_CHANGES.md)).
@@ -11,7 +19,7 @@ Convert compatible raster MBTiles directly into native offline TPKX packages for
 
 *A QGIS MBTiles map of Bryceville, Florida, converted to TPKX and open offline in ArcGIS Earth. ▶️ [Watch the how-to video](https://www.youtube.com/watch?v=C71n8TAByuE) (YouTube).*
 
-### **⬇️ [DOWNLOAD MASTER 4 GRID MAKER v3.1](Master4_Grid_Maker.zip)**
+### **⬇️ [6. DOWNLOAD MASTER 4 GRID MAKER v3.1](Master4_Grid_Maker.zip)**
 **📖 [User manual (PDF)](Master4_Grid_Maker_User_Manual.pdf)**
 
 Create repeatable 1-degree production grids, numbered cells, exact QGIS-ready extents, and deterministic filenames. v3.1 adds safer input and file handling; grid output is unchanged ([v3.1 changes](MASTER4_V3.1_CHANGES.md)).
