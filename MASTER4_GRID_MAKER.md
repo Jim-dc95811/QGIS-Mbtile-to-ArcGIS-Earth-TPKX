@@ -35,6 +35,10 @@ Pillow installs automatically the first time you run `Master4_Grid_Maker.bat` (i
 py -3 -m pip install Pillow
 ```
 
+## What's in the zip
+
+![What's in the Master 4 Grid Maker folder: Master4_Grid_Maker.bat makes the grid, the .py is the program, and it saves a Grid.tif and an Extents.txt in C:\downloads](images/master4_grid_maker_whats_in_the_zip.png)
+
 ## Input
 
 Double-click `Master4_Grid_Maker.bat`. At the prompt `Enter Master 4 (blank to quit):`, type the Master 4 in this exact order:

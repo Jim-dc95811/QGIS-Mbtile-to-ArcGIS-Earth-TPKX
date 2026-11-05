@@ -17,6 +17,7 @@
 
 ### **⬇️ [5. DOWNLOAD MBTILES -> TPKX CONVERTER v1.1.1](mb2tpkx.zip)**
 **📖 [User manual (PDF)](mb2tpkx_User_Manual.pdf)**
+**🗂️ [What's in the zip - every file explained](images/mb2tpkx_whats_in_the_zip_full.png)**
 
 Convert compatible raster MBTiles directly into native offline TPKX packages for ArcGIS Earth. v1.1 adds safer failure handling and clearer error messages; conversion output is unchanged ([v1.1 changes](MB2TPKX_V1.1_CHANGES.md)). v1.1.1: the launcher installs Pillow by itself if it is missing.
 
@@ -26,6 +27,7 @@ Convert compatible raster MBTiles directly into native offline TPKX packages for
 
 ### **⬇️ [6. DOWNLOAD MASTER 4 GRID MAKER v3.1.1](Master4_Grid_Maker.zip)**
 **📖 [User manual (PDF)](Master4_Grid_Maker_User_Manual.pdf)**
+**🗂️ [What's in the zip - every file explained](images/master4_grid_maker_whats_in_the_zip_full.png)**
 
 Create repeatable 1-degree production grids, numbered cells, exact QGIS-ready extents, and deterministic filenames. v3.1 adds safer input and file handling; grid output is unchanged ([v3.1 changes](MASTER4_V3.1_CHANGES.md)). v3.1.1: the launcher installs Pillow by itself if it is missing.
 

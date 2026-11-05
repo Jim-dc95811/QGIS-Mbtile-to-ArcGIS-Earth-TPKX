@@ -28,6 +28,10 @@ py -3 -m pip install Pillow
 2. Extract it into a folder of its own. The zip holds `mb2tpkx.py` and `mb2tpkx.bat` directly, not a subfolder.
 3. Keep the two files together.
 
+## What's in the zip
+
+![What's in the MBTiles to TPKX folder: drag an MBTiles file onto mb2tpkx.bat, mb2tpkx.py is the program, and the TPKX is saved next to the MBTiles](images/mb2tpkx_whats_in_the_zip.png)
+
 ## Run it
 
 1. Drag your `.mbtiles` file onto `mb2tpkx.bat`, or double-click the BAT and paste the full path when asked:
