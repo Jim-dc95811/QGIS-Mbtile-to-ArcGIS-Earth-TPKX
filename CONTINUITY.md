@@ -1,5 +1,7 @@
 # Project continuity handoff
 
+**2026-11-04 update (Claude):** 'What's in the zip' sheet `images/mb2tpkx_whats_in_the_zip*.png` and `images/master4_grid_maker_whats_in_the_zip*.png` - every file in the download explained in plain words (Jim's idea), linked under the download heading on the README and the front page and shown in the user manual (PDF rebuilt). Made by `tools/graphics/make_zip_sheets.py` in ArcGIS-Earth-Unlocked; **if the zip contents change, update its card list there and re-render.**
+
 **Current snapshot: 2026-10-10**, with dated updates since (latest 2026-11-02). Read this file together with the live repository before resuming.
 
 **2026-11-02 update:** launcher-only releases **mb2tpkx v1.1.1** and **Master 4 v3.1.1**: the `.bat` files find Python (`py -3`, then `python`) and install Pillow automatically if missing; both `.py` files are unchanged (protected baselines). Live-tested by Jim. Front page has a 'Get everything you need' block (QGIS, Python, Pillow, ArcGIS Earth).
