@@ -266,9 +266,9 @@ JPEG/75 is chosen while producing MBTiles, not by the converter. The PNG and JPE
 
 ## Human-AI engineering collaboration
 
-This project was conceived, directed, developed through hands-on experiments, and field-tested by **Jim Gaddy**, working with **OpenAI's ChatGPT** as an AI coding and documentation partner. Jim supplied the problem, technical direction, reference tests and real-world acceptance testing; ChatGPT assisted with implementation, technical research, regression work, diagrams and documentation.
+This project was conceived, directed, developed through hands-on experiments, and field-tested by **Jim Gaddy**, working with **OpenAI's ChatGPT** and **Anthropic's Claude** as AI coding and documentation partners. Jim supplied the problem, technical direction, reference tests and real-world acceptance testing; ChatGPT assisted with the original implementation, technical research, regression work, diagrams and documentation; Claude built the hardening releases (mb2tpkx v1.1, Master 4 v3.1) and the self-installing launchers (v1.1.1 / v3.1.1), with byte-for-byte regression tests, and wrote the converter user manual and the 'What's in the zip' sheets.
 
-This acknowledgment is not a claim of OpenAI sponsorship or endorsement and does not alter any rights in third-party software, specifications or imagery.
+This acknowledgment is not a claim of OpenAI or Anthropic sponsorship or endorsement and does not alter any rights in third-party software, specifications or imagery.
 
 ## Formats, source rights and attribution
 

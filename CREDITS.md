@@ -14,9 +14,9 @@ This project appreciates the authors and communities that make interoperable map
 
 ## Human-AI project collaboration
 
-**Jim Gaddy** conceived and directed the project, supplied real-world engineering requirements, conducted the mapping experiments and field-tested the output. **OpenAI's ChatGPT** served as the AI-assisted coding, research, regression, illustration and documentation collaborator.
+**Jim Gaddy** conceived and directed the project, supplied real-world engineering requirements, conducted the mapping experiments and field-tested the output. **OpenAI's ChatGPT** served as the AI-assisted coding, research, regression, illustration and documentation collaborator for the original tools. **Anthropic's Claude** built the hardening releases (mb2tpkx v1.1, Master 4 v3.1) and the self-installing launchers (v1.1.1 / v3.1.1), ran the byte-for-byte regression tests, and wrote the converter user manual and the 'What's in the zip' sheets.
 
-The project owner elected to distribute the software under the [MIT License](LICENSE). This acknowledgment is not a claim of OpenAI sponsorship or endorsement and does not affect third-party code, software, specification or imagery rights.
+The project owner elected to distribute the software under the [MIT License](LICENSE). This acknowledgment is not a claim of OpenAI or Anthropic sponsorship or endorsement and does not affect third-party code, software, specification or imagery rights.
 
 ## What is included
 
