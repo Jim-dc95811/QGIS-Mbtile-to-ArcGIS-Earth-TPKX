@@ -22,12 +22,12 @@ The working converter then passed synthetic multi-bundle tests and real-image te
 
 ### Converter baseline identities
 
-Current: **mb2tpkx v1.1** (2026-10-31, hardening release; conversion core unchanged from v1.0 - see [MB2TPKX_V1.1_CHANGES.md](MB2TPKX_V1.1_CHANGES.md)).
+Current: **mb2tpkx v1.1.1** (package; program v1.1, 2026-10-31, hardening release; conversion core unchanged from v1.0 - see [MB2TPKX_V1.1_CHANGES.md](MB2TPKX_V1.1_CHANGES.md)).
 
 - `mb2tpkx.py` v1.1 SHA-256: `b2efa752a6f386b6bada84532efe8ee56fed3c9863fa3c6dd76f51129e85f785` (unchanged in package v1.1.1, 2026-11-02, whose `mb2tpkx.bat` `7321c148bc3c41ea1f1646ab7f8c84168f08baf1bd36dd06b28b88ae4b90172e` installs Pillow automatically)
 - `mb2tpkx.py` v1.1 GitHub blob SHA: `c44c8e23fb1253e9b19faf83be63fdc1bc2b7a27`
-- `mb2tpkx.bat` SHA-256 (unchanged since v1.0): `078e07834b6fa45f8e63192f60033ac5c322ea236372df22cece8be8a24fda66`
-- `mb2tpkx.bat` GitHub blob SHA: `267240f9f9f634ac3d8f66bf3f93f9374973372b`
+- `mb2tpkx.bat` v1.1.1 SHA-256: `7321c148bc3c41ea1f1646ab7f8c84168f08baf1bd36dd06b28b88ae4b90172e`, GitHub blob SHA: `744d2a91fe6f2e9a67a60a44ca8b92a5523d08b5`
+- `mb2tpkx.bat` v1.0-v1.1 (before the Pillow auto-install): SHA-256 `078e07834b6fa45f8e63192f60033ac5c322ea236372df22cece8be8a24fda66`, blob `267240f9f9f634ac3d8f66bf3f93f9374973372b`
 
 Previous v1.0 identities: `mb2tpkx.py` SHA-256 `c04dc9f3c1ad74b4180b11465df1189a74c500a5d5873d66a57c2d4076fb3670`, blob `87ccc955944b994ad156f25488d04df9197184bd`.
 
@@ -135,11 +135,12 @@ At coarse zooms, one XYZ tile is larger than a 0.1-degree Master 4 cell. Therefo
 
 The exact cell extent remains authoritative in the Master 4 manifest and GeoTIFF.
 
-### Current identities - Master 4 v3.1 (2026-10-31; hardening only, output identical to v3 - see [MASTER4_V3.1_CHANGES.md](MASTER4_V3.1_CHANGES.md))
+### Current identities - Master 4 v3.1.1 (2026-11-02; launcher only - the program is v3.1, 2026-10-31, hardening only, output identical to v3 - see [MASTER4_V3.1_CHANGES.md](MASTER4_V3.1_CHANGES.md))
 
-- `Master4_Grid_Maker.py` SHA-256: `5ca38785a5b5e9537dc1b3d2d79c829414efe86816f7bc0f7407fdc3cbe632e7`
-- `Master4_Grid_Maker.bat` SHA-256: `abb4e7dd1f1b665e1cf1b9ee4d1bffdef40e336acb746460640be0a043c20c2d`
-- `Master4_Grid_Maker.zip` SHA-256: `1c8da1c228aa360696136dfcaa1d2e36e2f1c9eedfc4c0642c864a4001a39ff3`
+- `Master4_Grid_Maker.py` SHA-256 (v3.1, unchanged in v3.1.1): `5ca38785a5b5e9537dc1b3d2d79c829414efe86816f7bc0f7407fdc3cbe632e7`
+- `Master4_Grid_Maker.bat` SHA-256 (v3.1.1, installs Pillow automatically): `c87e58f352d6d6b188453757ed4a3924affb1dc3e5e83b930545aede764c92fd`
+- `Master4_Grid_Maker.zip` SHA-256 (v3.1.1): `d36d84f041e1534bd677bd8d9c87ac74dba0bba8b00d961f725b0e3c459cc4fa`
+- v3.1 (before the launcher update): `.bat` `abb4e7dd1f1b665e1cf1b9ee4d1bffdef40e336acb746460640be0a043c20c2d`, `.zip` `1c8da1c228aa360696136dfcaa1d2e36e2f1c9eedfc4c0642c864a4001a39ff3`
 - Previous v3: `.py` `16a42784005743728837d3dfdc2f3295b30071d5ed37ccbddbb9b9ee23e58888`, `.zip` `408ba3e129f912b3b4ef0a7df0d6ccc478ff8935ffec9cb235232505e872e158`
 
 ## 5. v3 validation boundary
