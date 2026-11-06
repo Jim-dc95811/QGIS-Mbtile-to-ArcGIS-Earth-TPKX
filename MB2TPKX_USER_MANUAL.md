@@ -1,4 +1,4 @@
-# MBTiles to TPKX Converter v1.1.1 - User Manual
+# MBTiles to TPKX Converter v1.1.2 - User Manual
 
 A printable copy of this manual is available as [mb2tpkx_User_Manual.pdf](mb2tpkx_User_Manual.pdf).
 
@@ -25,12 +25,12 @@ py -3 -m pip install Pillow
 ## Get the converter
 
 1. Download [`mb2tpkx.zip`](mb2tpkx.zip).
-2. Extract it into a folder of its own. The zip holds `mb2tpkx.py` and `mb2tpkx.bat` directly, not a subfolder.
-3. Keep the two files together.
+2. Right-click it > **Extract All**. You get a `mb2tpkx_v1.1.2` folder holding just `mb2tpkx.bat` and `System Files` (the program - leave it alone).
+3. Keep the two together.
 
 ## What's in the zip
 
-![What's in the MBTiles to TPKX folder: drag an MBTiles file onto mb2tpkx.bat, mb2tpkx.py is the program, and the TPKX is saved next to the MBTiles](images/mb2tpkx_whats_in_the_zip.png)
+![What's in the MBTiles to TPKX folder: drag an MBTiles file onto mb2tpkx.bat, System Files holds the program, and the TPKX is saved next to the MBTiles](images/mb2tpkx_whats_in_the_zip.png)
 
 ## Run it
 
@@ -52,6 +52,8 @@ py -3 -m pip install Pillow
 5. Open the TPKX in ArcGIS Earth and check the map.
 
 ## Command line
+
+From the `System Files` folder:
 
 ```text
 py -3 mb2tpkx.py "input.mbtiles" "output.tpkx"

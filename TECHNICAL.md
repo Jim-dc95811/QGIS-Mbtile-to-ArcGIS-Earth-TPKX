@@ -22,7 +22,7 @@ The working converter then passed synthetic multi-bundle tests and real-image te
 
 ### Converter baseline identities
 
-Current: **mb2tpkx v1.1.1** (package; program v1.1, 2026-10-31, hardening release; conversion core unchanged from v1.0 - see [MB2TPKX_V1.1_CHANGES.md](MB2TPKX_V1.1_CHANGES.md)).
+Current: **mb2tpkx v1.1.2** (package, 2026-11-06: `mb2tpkx.bat` + `System Files/mb2tpkx.py`, zip SHA-256 `a07ff6b2ade88c1cabcf0d055d2d7749f21571d13f00a50c735fa6ae896e250d`, bat `2c578dace3eadafde6444af0cff5248283bccf76fad6aa03788d58457db25d17`; before that v1.1.1 program v1.1, 2026-10-31, hardening release; conversion core unchanged from v1.0 - see [MB2TPKX_V1.1_CHANGES.md](MB2TPKX_V1.1_CHANGES.md)).
 
 - `mb2tpkx.py` v1.1 SHA-256: `b2efa752a6f386b6bada84532efe8ee56fed3c9863fa3c6dd76f51129e85f785` (unchanged in package v1.1.1, 2026-11-02, whose `mb2tpkx.bat` `7321c148bc3c41ea1f1646ab7f8c84168f08baf1bd36dd06b28b88ae4b90172e` installs Pillow automatically)
 - `mb2tpkx.py` v1.1 GitHub blob SHA: `c44c8e23fb1253e9b19faf83be63fdc1bc2b7a27`
@@ -135,7 +135,7 @@ At coarse zooms, one XYZ tile is larger than a 0.1-degree Master 4 cell. Therefo
 
 The exact cell extent remains authoritative in the Master 4 manifest and GeoTIFF.
 
-### Current identities - Master 4 v3.1.1 (2026-11-02; launcher only - the program is v3.1, 2026-10-31, hardening only, output identical to v3 - see [MASTER4_V3.1_CHANGES.md](MASTER4_V3.1_CHANGES.md))
+### Current identities - Master 4 v3.1.2 (2026-11-06: `Master4_Grid_Maker.bat` + `System Files/Master4_Grid_Maker.py`, zip SHA-256 `0b1dd9551b1caee5846063a2404a3d407033b1c4aa8b6412218536da8cb55854`, bat `d848bbdae165324f4da7a20847ed41ef13d4eab541d6ab015a5ae1f007dcbba5`; v3.1.1 2026-11-02: launcher only - the program is v3.1, 2026-10-31, hardening only, output identical to v3 - see [MASTER4_V3.1_CHANGES.md](MASTER4_V3.1_CHANGES.md))
 
 - `Master4_Grid_Maker.py` SHA-256 (v3.1, unchanged in v3.1.1): `5ca38785a5b5e9537dc1b3d2d79c829414efe86816f7bc0f7407fdc3cbe632e7`
 - `Master4_Grid_Maker.bat` SHA-256 (v3.1.1, installs Pillow automatically): `c87e58f352d6d6b188453757ed4a3924affb1dc3e5e83b930545aede764c92fd`

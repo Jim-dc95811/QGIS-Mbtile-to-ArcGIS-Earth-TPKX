@@ -41,7 +41,7 @@ if not exist "%input%" (
     pause
     exit /b 1
 )
-%PYEXE% "%~dp0mb2tpkx.py" "%input%"
+%PYEXE% "%~dp0System Files\mb2tpkx.py" "%input%"
 if errorlevel 1 (
     echo Conversion failed. Check the error above.
 ) else (

@@ -1,4 +1,6 @@
-# Master 4 Grid Maker v3.1.1
+# Master 4 Grid Maker v3.1.2
+
+**v3.1.2 (2026-11-06):** a tidy folder - the zip holds a `Master4_Grid_Maker_v3.1.2` folder with `Master4_Grid_Maker.bat` (double-click this) and `System Files` (the program). Program and output unchanged.
 
 **v3.1.1 (2026-11-02):** launcher update only. `Master4_Grid_Maker.bat` installs Pillow automatically the first time if it is missing, and finds Python through `py -3` or `python`. The program and its output are unchanged from v3.1.
 
@@ -16,11 +18,11 @@
 **[Download Master4_Grid_Maker.zip](Master4_Grid_Maker.zip)**  
 **[Open the printable v3.1 manual (PDF)](Master4_Grid_Maker_User_Manual.pdf)** - this page as a PDF
 
-Extract the ZIP into a folder of its own (it holds the two files directly, not a subfolder) and keep them together:
+Right-click the ZIP > **Extract All**. The folder holds just two things - keep them together:
 
 ```text
-Master4_Grid_Maker.py
 Master4_Grid_Maker.bat
+System Files\      (the program - leave it alone)
 ```
 
 Requirements:
@@ -37,7 +39,7 @@ py -3 -m pip install Pillow
 
 ## What's in the zip
 
-![What's in the Master 4 Grid Maker folder: Master4_Grid_Maker.bat makes the grid, the .py is the program, and it saves a Grid.tif and an Extents.txt in C:\downloads](images/master4_grid_maker_whats_in_the_zip.png)
+![What's in the Master 4 Grid Maker folder: Master4_Grid_Maker.bat makes the grid, System Files holds the program, and it saves a Grid.tif and an Extents.txt in C:\downloads](images/master4_grid_maker_whats_in_the_zip.png)
 
 ## Input
 
@@ -240,17 +242,17 @@ v3.1 was regression-tested byte-for-byte against v3 and live-accepted in ArcGIS 
 
 The Master 4 production system is intended for Web Mercator workflows. Physical ground area changes with latitude because the grid is geographic. See [TECHNICAL.md](TECHNICAL.md) for projection/format details.
 
-## Current file checksums (v3.1.1)
+## Current file checksums (v3.1.2)
 
 ```text
-Master4_Grid_Maker.py
+System Files/Master4_Grid_Maker.py   (v3.1 program, unchanged)
 SHA-256 5ca38785a5b5e9537dc1b3d2d79c829414efe86816f7bc0f7407fdc3cbe632e7
 
 Master4_Grid_Maker.bat
-SHA-256 c87e58f352d6d6b188453757ed4a3924affb1dc3e5e83b930545aede764c92fd
+SHA-256 d848bbdae165324f4da7a20847ed41ef13d4eab541d6ab015a5ae1f007dcbba5
 
 Master4_Grid_Maker.zip
-SHA-256 d36d84f041e1534bd677bd8d9c87ac74dba0bba8b00d961f725b0e3c459cc4fa
+SHA-256 0b1dd9551b1caee5846063a2404a3d407033b1c4aa8b6412218536da8cb55854
 ```
 
 The project [MIT License](LICENSE) applies to the software. Source-imagery rights remain separate. The synthetic color demo does not download or redistribute third-party imagery.

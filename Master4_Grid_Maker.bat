@@ -30,7 +30,7 @@ if errorlevel 1 (
     echo Pillow installed.
     echo.
 )
-%PYEXE% Master4_Grid_Maker.py
+%PYEXE% "System Files\Master4_Grid_Maker.py"
 if errorlevel 1 echo.
 echo.
 echo Press any key to close...

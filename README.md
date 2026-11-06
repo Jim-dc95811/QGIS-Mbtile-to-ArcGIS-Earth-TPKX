@@ -15,21 +15,21 @@
 > 2. **Windows security warning:** Windows may warn about any program downloaded from the internet. Click **More info > Run anyway** (blue "Windows protected your PC" screen) or **Run**. To avoid the warning, right-click the zip > **Properties** > tick **Unblock** > **OK** before extracting.
 > 3. **Installing Python:** if the installer shows **"Add python.exe to PATH"**, tick it.
 
-### **⬇️ [5. DOWNLOAD MBTILES -> TPKX CONVERTER v1.1.1](mb2tpkx.zip)**
+### **⬇️ [5. DOWNLOAD MBTILES -> TPKX CONVERTER v1.1.2](mb2tpkx.zip)**
 **📖 [User manual (PDF)](mb2tpkx_User_Manual.pdf)**
 **🗂️ [What's in the zip - every file explained](images/mb2tpkx_whats_in_the_zip_full.png)**
 
-Convert compatible raster MBTiles directly into native offline TPKX packages for ArcGIS Earth. v1.1 adds safer failure handling and clearer error messages; conversion output is unchanged ([v1.1 changes](MB2TPKX_V1.1_CHANGES.md)). v1.1.1: the launcher installs Pillow by itself if it is missing.
+Convert compatible raster MBTiles directly into native offline TPKX packages for ArcGIS Earth. v1.1 adds safer failure handling and clearer error messages; conversion output is unchanged ([v1.1 changes](MB2TPKX_V1.1_CHANGES.md)). v1.1.1: the launcher installs Pillow by itself if it is missing. v1.1.2: a tidy folder - `mb2tpkx.bat` plus `System Files`.
 
 [![A converted TPKX open offline in ArcGIS Earth: Bryceville, Florida, imagery with roads and place labels](images/mb2tpkx_bryceville_tpkx_arcgis_earth.jpg)](https://www.youtube.com/watch?v=C71n8TAByuE)
 
 *A QGIS MBTiles map of Bryceville, Florida, converted to TPKX and open offline in ArcGIS Earth. ▶️ [Watch the how-to video](https://www.youtube.com/watch?v=C71n8TAByuE) (YouTube).*
 
-### **⬇️ [6. DOWNLOAD MASTER 4 GRID MAKER v3.1.1](Master4_Grid_Maker.zip)**
+### **⬇️ [6. DOWNLOAD MASTER 4 GRID MAKER v3.1.2](Master4_Grid_Maker.zip)**
 **📖 [User manual (PDF)](Master4_Grid_Maker_User_Manual.pdf)**
 **🗂️ [What's in the zip - every file explained](images/master4_grid_maker_whats_in_the_zip_full.png)**
 
-Create repeatable 1-degree production grids, numbered cells, exact QGIS-ready extents, and deterministic filenames. v3.1 adds safer input and file handling; grid output is unchanged ([v3.1 changes](MASTER4_V3.1_CHANGES.md)). v3.1.1: the launcher installs Pillow by itself if it is missing.
+Create repeatable 1-degree production grids, numbered cells, exact QGIS-ready extents, and deterministic filenames. v3.1 adds safer input and file handling; grid output is unchanged ([v3.1 changes](MASTER4_V3.1_CHANGES.md)). v3.1.1: the launcher installs Pillow by itself if it is missing. v3.1.2: a tidy folder - `Master4_Grid_Maker.bat` plus `System Files`.
 
 <a href="https://www.youtube.com/watch?v=zNt-I4KgAy8"><img src="images/master4_grid_jacksonville_arcgis_earth.jpg" width="520" alt="Master 4 grid in ArcGIS Earth: a 1-degree box over Jacksonville, Florida, split into 100 numbered cells"></a>
 
@@ -46,7 +46,7 @@ Create repeatable 1-degree production grids, numbered cells, exact QGIS-ready ex
 py -3 -m pip install Pillow
 ```
 
-3. Keep `mb2tpkx.py` and `mb2tpkx.bat` in the same folder.
+3. Extract `mb2tpkx.zip`: you get a folder with `mb2tpkx.bat` and `System Files` (the program). Keep them together.
 4. Drag an existing `.mbtiles` file onto `mb2tpkx.bat`, or double-click the BAT and paste the source path when prompted.
 5. Open the finished `.tpkx` with ArcGIS Earth.
 
@@ -216,11 +216,13 @@ The standard grid/output regression tests covered W/N, E/N, W/S and E/S boxes, t
 py -3 -m pip install Pillow
 ```
 
-3. Download this repository or keep `mb2tpkx.py` and `mb2tpkx.bat` in the same folder.
+3. Download `mb2tpkx.zip` and extract it (or download this repository, which has the same layout: `mb2tpkx.bat` next to `System Files/mb2tpkx.py`).
 
 **Run it on Windows:** drag an existing `.mbtiles` file onto `mb2tpkx.bat`, or double-click the BAT and paste the source path when prompted.
 
 **Command line:**
+
+From the `System Files` folder:
 
 ```powershell
 py -3 mb2tpkx.py "input.mbtiles" "output.tpkx"
