@@ -1,5 +1,7 @@
 # MBTiles -> TPKX: offline maps for ArcGIS Earth
 
+> 🤖 **Using AI assistance?** Have the agent read the [CLAUDE.md](https://github.com/Jim-dc95811/ArcGIS-Earth-Unlocked/blob/main/CLAUDE.md) file first.
+
 ## Get everything you need
 
 **1. ⬇️ [QGIS](https://qgis.org/download/)** - free mapping program; it makes the MBTiles imagery files.
