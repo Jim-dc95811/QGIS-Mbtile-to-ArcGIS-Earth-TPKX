@@ -11,7 +11,7 @@ Source PNG/JPEG map tiles are copied unchanged. The converter does not download 
 ## Requirements
 
 - Windows
-- Python 3 from python.org, with the `py` launcher
+- Python 3 and Pillow - `mb2tpkx.bat` installs both for you if they are missing (answer **Y**; no admin needed)
 - Pillow (one extra Python library; `mb2tpkx.bat` installs it automatically the first time, since v1.1.1)
 - An existing compatible raster MBTiles file
 
@@ -88,7 +88,7 @@ Problems are reported as one plain `ERROR:` line, followed by `Conversion failed
 | Message | What to do |
 |---|---|
 | `Pillow could not be installed automatically.` or `ERROR: Pillow is not installed...` | Run `py -3 -m pip install Pillow`, or ask IT if your network blocks downloads. |
-| `Python 3 was not found.` | Install Python 3 from python.org with the default options. |
+| `Python 3.9 or newer is not installed.` | Answer **Y** to let the .bat install it for you. On a work computer that blocks it, ask IT to install Python 3 from python.org. |
 | `MBTiles file not found` | Check the path, or drag the file onto the BAT. |
 | `Output already exists ... delete or rename it and run again.` | Move, rename or delete the old TPKX. |
 | `Input and output paths cannot be the same.` | Give the output a `.tpkx` name. |

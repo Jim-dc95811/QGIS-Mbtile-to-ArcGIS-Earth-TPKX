@@ -28,7 +28,7 @@ System Files\      (the program - leave it alone)
 Requirements:
 
 - Windows
-- Python 3 from python.org, with the `py` launcher
+- Python 3 and Pillow - `Master4_Grid_Maker.bat` installs both for you if they are missing (answer **Y**; no admin needed)
 - Pillow
 
 Pillow installs automatically the first time you run `Master4_Grid_Maker.bat` (internet needed once). To install it by hand:

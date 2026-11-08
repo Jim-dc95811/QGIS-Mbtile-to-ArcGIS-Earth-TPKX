@@ -1,37 +1,24 @@
 @echo off
 setlocal
 cd /d "%~dp0"
-rem --- Find Python 3 (py launcher first, then python) ---
-set "PYEXE=py -3"
-where py >nul 2>nul || set "PYEXE=python"
-%PYEXE% --version >nul 2>nul
-if errorlevel 1 (
-    echo Python 3 was not found. Install it from https://www.python.org/downloads/windows/
-    echo using the default options, then run this again.
-    pause
-    exit /b 1
-)
-rem --- Pillow: install it once if it is missing ---
-%PYEXE% -c "import PIL" >nul 2>nul
-if errorlevel 1 (
-    echo Pillow is not installed yet. Installing it now - one time only...
-    echo.
-    %PYEXE% -m pip install Pillow
-    %PYEXE% -c "import PIL" >nul 2>nul
-    if errorlevel 1 (
-        echo.
-        echo Pillow could not be installed automatically.
-        echo Open Command Prompt and run:  py -3 -m pip install Pillow
-        echo If your network blocks downloads, ask IT to install Pillow for Python 3.
-        pause
-        exit /b 1
-    )
-    echo.
-    echo Pillow installed.
-    echo.
-)
-%PYEXE% "System Files\Master4_Grid_Maker.py"
+title Master 4 Grid Maker 3.1.3
+echo Starting Ready to Fly - on an older PC this first step can take a few minutes, please wait...
+echo (Windows Defender may check the files first and slow the PC. That is normal - do not close this window.)
+powershell -NoProfile -ExecutionPolicy Bypass -File "%~dp0System Files\Ready_To_Fly.ps1" -Folder "%~dp0System Files" -Tool "Master 4 Grid Maker" -Packages "Pillow" -Imports "PIL"
+if errorlevel 1 goto rtf_stopped
+set "PYEXE="
+set /p PYEXE=<"%~dp0System Files\python_path.txt"
+if not defined PYEXE goto rtf_stopped
+"%PYEXE%" "System Files\Master4_Grid_Maker.py"
 if errorlevel 1 echo.
 echo.
 echo Press any key to close...
 pause >nul
+exit /b 0
+
+:rtf_stopped
+echo.
+echo Master 4 Grid Maker did not start - read the message above.
+echo A log is in System Files\Ready_To_Fly_log.txt
+pause
+exit /b 1
