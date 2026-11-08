@@ -1,5 +1,7 @@
 # Project continuity handoff
 
+**2026-11-08 (Claude) - 2.0 Reference:** Jim moved the whole family to 2.0. `mb2tpkx.zip` (folder `mb2tpkx_v2.0`) and `Master4_Grid_Maker.zip` (folder `Master4_Grid_Maker_v2.0`) keep their download names; the programs are v1.1 / v3.1 with only the VERSION line changed (diff-checked), so the protected baselines' behaviour is unchanged but their file hashes are new - see the Unlocked `REFERENCE_2.0.md`. The previous zips are in `archive/` as `mb2tpkx_v1.1.3.zip` and `Master4_Grid_Maker_v3.1.3.zip`. Tag `v2.0-reference`.
+
 **2026-11-04 update (Claude):** 'What's in the zip' sheet `images/mb2tpkx_whats_in_the_zip*.png` and `images/master4_grid_maker_whats_in_the_zip*.png` - every file in the download explained in plain words (Jim's idea), linked under the download heading on the README and the front page and shown in the user manual (PDF rebuilt). Made by `tools/graphics/make_zip_sheets.py` in ArcGIS-Earth-Unlocked; **if the zip contents change, update its card list there and re-render.**
 
 **Current snapshot: 2026-10-10**, with dated updates since (latest 2026-11-02). Read this file together with the live repository before resuming.

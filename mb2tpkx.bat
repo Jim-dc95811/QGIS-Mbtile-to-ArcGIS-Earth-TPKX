@@ -1,7 +1,7 @@
 @echo off
 setlocal
 cd /d "%~dp0"
-title mb2tpkx 1.1.3 - MBTiles to TPKX
+title mb2tpkx 2.0 - MBTiles to TPKX
 echo Starting Ready to Fly - on an older PC this first step can take a few minutes, please wait...
 echo (Windows Defender may check the files first and slow the PC. That is normal - do not close this window.)
 powershell -NoProfile -ExecutionPolicy Bypass -File "%~dp0System Files\Ready_To_Fly.ps1" -Folder "%~dp0System Files" -Tool "mb2tpkx" -Packages "Pillow" -Imports "PIL"

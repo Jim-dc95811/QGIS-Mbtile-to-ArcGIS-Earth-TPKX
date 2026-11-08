@@ -1,4 +1,4 @@
-# Master 4 Grid Maker v3.1.3
+# Master 4 Grid Maker 2.0
 
 <!-- install-blurb:start -->
 > ### Installing Master 4 Grid Maker - read this first
@@ -12,6 +12,8 @@
 > Something stops it? The window says what to do in plain words, and keeps a log in `System Files\Ready_To_Fly_log.txt`. On a work computer that blocks installs, ask IT to install Python 3 from python.org.
 <!-- install-blurb:end -->
 
+
+**2.0 (2026-11-08):** the whole ArcGIS Earth Unlocked family moved to 2.0 as one reference point. The zip holds a `Master4_Grid_Maker_v2.0` folder; the program is v3.1 and the console says `Master 4 Grid Maker v2.0`. Grid output unchanged.
 
 **v3.1.2 (2026-11-06):** a tidy folder - the zip holds a `Master4_Grid_Maker_v3.1.2` folder with `Master4_Grid_Maker.bat` (double-click this) and `System Files` (the program). Program and output unchanged.
 
@@ -29,7 +31,7 @@
 ## Download
 
 **[Download Master4_Grid_Maker.zip](Master4_Grid_Maker.zip)**  
-**[Open the printable v3.1 manual (PDF)](Master4_Grid_Maker_User_Manual.pdf)** - this page as a PDF
+**[Open the printable 2.0 manual (PDF)](Master4_Grid_Maker_User_Manual.pdf)** - this page as a PDF
 
 Right-click the ZIP > **Extract All**. The folder holds just three things - keep them together:
 
@@ -256,17 +258,8 @@ v3.1 was regression-tested byte-for-byte against v3 and live-accepted in ArcGIS 
 
 The Master 4 production system is intended for Web Mercator workflows. Physical ground area changes with latitude because the grid is geographic. See [TECHNICAL.md](TECHNICAL.md) for projection/format details.
 
-## Current file checksums (v3.1.2)
+## Current file checksums (2.0)
 
-```text
-System Files/Master4_Grid_Maker.py   (v3.1 program, unchanged)
-SHA-256 5ca38785a5b5e9537dc1b3d2d79c829414efe86816f7bc0f7407fdc3cbe632e7
-
-Master4_Grid_Maker.bat
-SHA-256 d848bbdae165324f4da7a20847ed41ef13d4eab541d6ab015a5ae1f007dcbba5
-
-Master4_Grid_Maker.zip
-SHA-256 0b1dd9551b1caee5846063a2404a3d407033b1c4aa8b6412218536da8cb55854
-```
+Every file's SHA-256 in the 2.0 Reference is listed on one page: [REFERENCE_2.0.md](https://github.com/Jim-dc95811/ArcGIS-Earth-Unlocked/blob/main/REFERENCE_2.0.md). The program is v3.1 with only its version line changed.
 
 The project [MIT License](LICENSE) applies to the software. Source-imagery rights remain separate. The synthetic color demo does not download or redistribute third-party imagery.

@@ -1,4 +1,4 @@
-# MBTiles to TPKX Converter v1.1.3 - User Manual
+# MBTiles to TPKX Converter 2.0 - User Manual
 
 <!-- install-blurb:start -->
 > ### Installing the MBTiles to TPKX Converter - read this first
@@ -39,7 +39,7 @@ py -3 -m pip install Pillow
 ## Get the converter
 
 1. Download [`mb2tpkx.zip`](mb2tpkx.zip).
-2. Right-click it > **Extract All**. You get a `mb2tpkx_v1.1.3` folder holding just `mb2tpkx.bat`, this manual as a PDF (`mb2tpkx_User_Manual.pdf`) and `System Files` (the program - leave it alone).
+2. Right-click it > **Extract All**. You get a `mb2tpkx_v2.0` folder holding just `mb2tpkx.bat`, this manual as a PDF (`mb2tpkx_User_Manual.pdf`) and `System Files` (the program - leave it alone).
 3. Keep the two together.
 
 ## What's in the zip
@@ -54,7 +54,7 @@ py -3 -m pip install Pillow
    Enter the full path to your MBTiles file:
    ```
 
-2. The console shows `mb2tpkx 1.1`, then one line per finished tile bundle, for example `z20 tile/L20/R69480C45b00.bundle complete`.
+2. The console shows `mb2tpkx 2.0` (the v1.1 program; the family moved to 2.0 on 8 Nov 2026), then one line per finished tile bundle, for example `z20 tile/L20/R69480C45b00.bundle complete`.
 3. Wait for the `SUCCESS` line, for example:
 
    ```text
