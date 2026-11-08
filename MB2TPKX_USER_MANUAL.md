@@ -1,4 +1,18 @@
-# MBTiles to TPKX Converter v1.1.2 - User Manual
+# MBTiles to TPKX Converter v1.1.3 - User Manual
+
+<!-- install-blurb:start -->
+> ### Installing the MBTiles to TPKX Converter - read this first
+>
+> 1. **Extract All first:** right-click the downloaded zip > **Extract All**, then open the new folder. (Double-clicking files while they are still inside the zip does not work.)
+> 2. **Double-click `mb2tpkx.bat`** - the only .bat in the folder. This manual sits right next to it. The **System Files** folder holds the program - leave it alone.
+> 3. **Blue "Windows protected your PC" box?** Click **More info**, then **Run anyway**. It only asks the first time. (Or, before extracting: right-click the zip > **Properties** > tick **Unblock** > **OK**.)
+> 4. **Python - nothing to install by hand.** If Python is missing, the window asks **Install Python now? [Y/N]**: type **Y** and press Enter. It installs just for you (no admin needed) - and the Pillow picture library too. On an older PC this can take several minutes and Windows Defender may make the PC look frozen - **do not close the window**.
+> 5. An MBTiles map file to convert (for example one made in QGIS).
+> 6. To open the TPKX it makes you need **ArcGIS Earth** (free from Esri: https://www.esri.com/en-us/arcgis/products/arcgis-earth/downloads).
+>
+> Something stops it? The window says what to do in plain words, and keeps a log in `System Files\Ready_To_Fly_log.txt`. On a work computer that blocks installs, ask IT to install Python 3 from python.org.
+<!-- install-blurb:end -->
+
 
 A printable copy of this manual is available as [mb2tpkx_User_Manual.pdf](mb2tpkx_User_Manual.pdf).
 
@@ -25,7 +39,7 @@ py -3 -m pip install Pillow
 ## Get the converter
 
 1. Download [`mb2tpkx.zip`](mb2tpkx.zip).
-2. Right-click it > **Extract All**. You get a `mb2tpkx_v1.1.2` folder holding just `mb2tpkx.bat` and `System Files` (the program - leave it alone).
+2. Right-click it > **Extract All**. You get a `mb2tpkx_v1.1.3` folder holding just `mb2tpkx.bat`, this manual as a PDF (`mb2tpkx_User_Manual.pdf`) and `System Files` (the program - leave it alone).
 3. Keep the two together.
 
 ## What's in the zip

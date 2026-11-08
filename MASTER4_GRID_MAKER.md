@@ -1,4 +1,17 @@
-# Master 4 Grid Maker v3.1.2
+# Master 4 Grid Maker v3.1.3
+
+<!-- install-blurb:start -->
+> ### Installing Master 4 Grid Maker - read this first
+>
+> 1. **Extract All first:** right-click the downloaded zip > **Extract All**, then open the new folder. (Double-clicking files while they are still inside the zip does not work.)
+> 2. **Double-click `Master4_Grid_Maker.bat`** - the only .bat in the folder. This manual sits right next to it. The **System Files** folder holds the program - leave it alone.
+> 3. **Blue "Windows protected your PC" box?** Click **More info**, then **Run anyway**. It only asks the first time. (Or, before extracting: right-click the zip > **Properties** > tick **Unblock** > **OK**.)
+> 4. **Python - nothing to install by hand.** If Python is missing, the window asks **Install Python now? [Y/N]**: type **Y** and press Enter. It installs just for you (no admin needed) - and the Pillow picture library too. On an older PC this can take several minutes and Windows Defender may make the PC look frozen - **do not close the window**.
+> 5. Its files are saved in `C:\downloads`.
+>
+> Something stops it? The window says what to do in plain words, and keeps a log in `System Files\Ready_To_Fly_log.txt`. On a work computer that blocks installs, ask IT to install Python 3 from python.org.
+<!-- install-blurb:end -->
+
 
 **v3.1.2 (2026-11-06):** a tidy folder - the zip holds a `Master4_Grid_Maker_v3.1.2` folder with `Master4_Grid_Maker.bat` (double-click this) and `System Files` (the program). Program and output unchanged.
 
@@ -18,10 +31,11 @@
 **[Download Master4_Grid_Maker.zip](Master4_Grid_Maker.zip)**  
 **[Open the printable v3.1 manual (PDF)](Master4_Grid_Maker_User_Manual.pdf)** - this page as a PDF
 
-Right-click the ZIP > **Extract All**. The folder holds just two things - keep them together:
+Right-click the ZIP > **Extract All**. The folder holds just three things - keep them together:
 
 ```text
 Master4_Grid_Maker.bat
+Master4_Grid_Maker_User_Manual.pdf   (this manual)
 System Files\      (the program - leave it alone)
 ```
 
