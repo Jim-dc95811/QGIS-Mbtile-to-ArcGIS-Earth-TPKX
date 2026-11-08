@@ -1,4 +1,4 @@
-# MBTiles to TPKX Converter 2.0 - User Manual
+# MBTiles to TPKX Converter 2.1 - User Manual
 
 <!-- install-blurb:start -->
 > ### Installing the MBTiles to TPKX Converter - read this first
@@ -39,7 +39,7 @@ py -3 -m pip install Pillow
 ## Get the converter
 
 1. Download [`mb2tpkx.zip`](mb2tpkx.zip).
-2. Right-click it > **Extract All**. You get a `mb2tpkx_v2.0` folder holding just `mb2tpkx.bat`, this manual as a PDF (`mb2tpkx_User_Manual.pdf`) and `System Files` (the program - leave it alone).
+2. Right-click it > **Extract All**. You get a `mb2tpkx_v2.1` folder holding just `mb2tpkx.bat`, this manual as a PDF (`mb2tpkx_User_Manual.pdf`) and `System Files` (the program - leave it alone).
 3. Keep the two together.
 
 ## What's in the zip
@@ -54,7 +54,8 @@ py -3 -m pip install Pillow
    Enter the full path to your MBTiles file:
    ```
 
-2. The console shows `mb2tpkx 2.0` (the v1.1 program; the family moved to 2.0 on 8 Nov 2026), then one line per finished tile bundle, for example `z20 tile/L20/R69480C45b00.bundle complete`.
+2. The console shows `mb2tpkx 2.1`, then one line per finished tile bundle with how far along it is, for example `bundle 812 of 4,630 (17%) - z20 tile/L20/R69480C45b00.bundle`.
+   If a TPKX with the same name is already there, it first asks `Replace it? [y/N]`: **Y** builds over it, **N** (or just Enter) keeps the old one.
 3. Wait for the `SUCCESS` line, for example:
 
    ```text
@@ -91,7 +92,8 @@ Only a separate presentation thumbnail is generated.
 
 ## Safe output
 
-- An existing TPKX is never overwritten.
+- An existing TPKX is only replaced when you answer **Y** to `Replace it? [y/N]`. If the old TPKX is open in ArcGIS Earth, it says so before doing any work.
+- Disk space is checked first: if the drive is too full for the TPKX, it stops at once and says how much room is needed.
 - The new TPKX is written as `<name>.tpkx.partial` and renamed only when the conversion has fully succeeded.
 - If a conversion fails or is cancelled, the partial file is removed. Nothing needs cleaning up before you try again.
 
@@ -104,7 +106,10 @@ Problems are reported as one plain `ERROR:` line, followed by `Conversion failed
 | `Pillow could not be installed automatically.` or `ERROR: Pillow is not installed...` | Run `py -3 -m pip install Pillow`, or ask IT if your network blocks downloads. |
 | `Python 3.9 or newer is not installed.` | Answer **Y** to let the .bat install it for you. On a work computer that blocks it, ask IT to install Python 3 from python.org. |
 | `MBTiles file not found` | Check the path, or drag the file onto the BAT. |
-| `Output already exists ... delete or rename it and run again.` | Move, rename or delete the old TPKX. |
+| `... already exists ... Replace it? [y/N]` | **Y** builds over the old TPKX; **N** keeps it (`Not converted - the existing TPKX was kept.`). |
+| `Could not replace ... - it may be open in ArcGIS Earth` | Remove the TPKX from ArcGIS Earth (or close ArcGIS Earth) and run again. |
+| `Not enough disk space: the TPKX needs about ...` | Free space on that drive, or move the MBTiles to a drive with more room. |
+| `Tile z.. (..) is empty - the MBTiles is damaged.` | Make the MBTiles again in QGIS. |
 | `Input and output paths cannot be the same.` | Give the output a `.tpkx` name. |
 | `MBTiles has no imagery tiles.` | The MBTiles is empty; rebuild it in QGIS. |
 | `Could not read ... as an MBTiles database` | The file is damaged or not an MBTiles file. |
@@ -115,7 +120,7 @@ Problems are reported as one plain `ERROR:` line, followed by `Conversion failed
 
 ## Large files
 
-Allow enough time and free disk space: because the tiles are copied unchanged, the TPKX is roughly the same size as the MBTiles (a 97 MB Bryceville MBTiles became a 95 MB TPKX). 4 GB, 20+ GB and 40 GB-class packages have been converted and opened in ArcGIS Earth.
+Allow enough time and free disk space (the converter checks the space before it starts): because the tiles are copied unchanged, the TPKX is roughly the same size as the MBTiles (a 97 MB Bryceville MBTiles became a 95 MB TPKX). 4 GB, 20+ GB and 40 GB-class packages have been converted and opened in ArcGIS Earth.
 
 ## QGIS workflow
 

@@ -24,6 +24,7 @@ The working converter then passed synthetic multi-bundle tests and real-image te
 
 Current: **mb2tpkx v1.1.2** (package, 2026-11-06: `mb2tpkx.bat` + `System Files/mb2tpkx.py`, zip SHA-256 `a07ff6b2ade88c1cabcf0d055d2d7749f21571d13f00a50c735fa6ae896e250d`, bat `2c578dace3eadafde6444af0cff5248283bccf76fad6aa03788d58457db25d17`; before that v1.1.1 program v1.1, 2026-10-31, hardening release; conversion core unchanged from v1.0 - see [MB2TPKX_V1.1_CHANGES.md](MB2TPKX_V1.1_CHANGES.md)).
 
+- **2.1 (2026-11-08):** re-hardening - output unchanged; current hashes in [MB2TPKX_MASTER4_V2.1_CHANGES.md](MB2TPKX_MASTER4_V2.1_CHANGES.md).
 - **2.0 (2026-11-08, the 2.0 Reference):** `mb2tpkx.py` and `Master4_Grid_Maker.py` changed only in their `VERSION` line (now "2.0"; Master 4 also its first docstring line) - conversion and grid output identical to v1.1 / v3.1. Current SHA-256 of every file: [REFERENCE_2.0.md](https://github.com/Jim-dc95811/ArcGIS-Earth-Unlocked/blob/main/REFERENCE_2.0.md). The hashes below are the v1.1 / v3.1 history.
 - `mb2tpkx.py` v1.1 SHA-256: `b2efa752a6f386b6bada84532efe8ee56fed3c9863fa3c6dd76f51129e85f785` (unchanged in package v1.1.1, 2026-11-02, whose `mb2tpkx.bat` `7321c148bc3c41ea1f1646ab7f8c84168f08baf1bd36dd06b28b88ae4b90172e` installs Pillow automatically)
 - `mb2tpkx.py` v1.1 GitHub blob SHA: `c44c8e23fb1253e9b19faf83be63fdc1bc2b7a27`

@@ -1,4 +1,4 @@
-# Master 4 Grid Maker 2.0
+# Master 4 Grid Maker 2.1
 
 <!-- install-blurb:start -->
 > ### Installing Master 4 Grid Maker - read this first
@@ -12,6 +12,8 @@
 > Something stops it? The window says what to do in plain words, and keeps a log in `System Files\Ready_To_Fly_log.txt`. On a work computer that blocks installs, ask IT to install Python 3 from python.org.
 <!-- install-blurb:end -->
 
+
+**2.1 (2026-11-08):** a box typed the wrong way (for example `-82,-81,30,31` or no commas) now shows the right way to type it: `82w, 81w, 30n, 31n`. The zip holds a `Master4_Grid_Maker_v2.1` folder. Grid output unchanged (byte-identical TXT, TIF and demo). See [MB2TPKX_MASTER4_V2.1_CHANGES.md](MB2TPKX_MASTER4_V2.1_CHANGES.md).
 
 **2.0 (2026-11-08):** the whole ArcGIS Earth Unlocked family moved to 2.0 as one reference point. The zip holds a `Master4_Grid_Maker_v2.0` folder; the program is v3.1 and the console says `Master 4 Grid Maker v2.0`. Grid output unchanged.
 
@@ -31,7 +33,7 @@
 ## Download
 
 **[Download Master4_Grid_Maker.zip](Master4_Grid_Maker.zip)**  
-**[Open the printable 2.0 manual (PDF)](Master4_Grid_Maker_User_Manual.pdf)** - this page as a PDF
+**[Open the printable 2.1 manual (PDF)](Master4_Grid_Maker_User_Manual.pdf)** - this page as a PDF
 
 Right-click the ZIP > **Extract All**. The folder holds just three things - keep them together:
 
@@ -73,7 +75,7 @@ Example:
 
 The four edges must be whole degrees and must describe exactly one 1-degree x 1-degree box. East and south work the same way, for example `10e, 11e, 30n, 31n` or `82w, 81w, 31s, 30s`.
 
-If an entry is invalid, the program explains why and asks again. Press Enter on a blank line to quit.
+If an entry is invalid, the program explains why, shows the right way to type it, and asks again. Press Enter on a blank line to quit.
 
 ## Standard output
 
@@ -258,8 +260,8 @@ v3.1 was regression-tested byte-for-byte against v3 and live-accepted in ArcGIS 
 
 The Master 4 production system is intended for Web Mercator workflows. Physical ground area changes with latitude because the grid is geographic. See [TECHNICAL.md](TECHNICAL.md) for projection/format details.
 
-## Current file checksums (2.0)
+## Current file checksums (2.1)
 
-Every file's SHA-256 in the 2.0 Reference is listed on one page: [REFERENCE_2.0.md](https://github.com/Jim-dc95811/ArcGIS-Earth-Unlocked/blob/main/REFERENCE_2.0.md). The program is v3.1 with only its version line changed.
+See [MB2TPKX_MASTER4_V2.1_CHANGES.md](MB2TPKX_MASTER4_V2.1_CHANGES.md). The 2.0 Reference hashes are on [REFERENCE_2.0.md](https://github.com/Jim-dc95811/ArcGIS-Earth-Unlocked/blob/main/REFERENCE_2.0.md).
 
 The project [MIT License](LICENSE) applies to the software. Source-imagery rights remain separate. The synthetic color demo does not download or redistribute third-party imagery.

@@ -17,23 +17,23 @@
 > 2. **Windows security warning:** Windows may warn about any program downloaded from the internet. Click **More info > Run anyway** (blue "Windows protected your PC" screen) or **Run**. To avoid the warning, right-click the zip > **Properties** > tick **Unblock** > **OK** before extracting.
 > 3. **Installing Python:** if the installer shows **"Add python.exe to PATH"**, tick it.
 
-### **⬇️ [5. DOWNLOAD MBTILES -> TPKX CONVERTER v2.0](mb2tpkx.zip)**
+### **⬇️ [5. DOWNLOAD MBTILES -> TPKX CONVERTER v2.1](mb2tpkx.zip)**
 **📖 [User manual (PDF)](mb2tpkx_User_Manual.pdf)**
 **🗂️ [What's in the zip - every file explained](images/mb2tpkx_whats_in_the_zip_full.png)**
 **📦 [Download the Whole ArcGIS Earth Unlocked Series of Tools - all 10 in one zip](https://github.com/Jim-dc95811/ArcGIS-Earth-Unlocked/raw/main/downloads/ArcGIS_Earth_Unlocked_All_Tools.zip)**
 
-Convert compatible raster MBTiles directly into native offline TPKX packages for ArcGIS Earth. **2.0 (8 Nov 2026):** the whole family moved to 2.0 as one reference point ([2.0 Reference](https://github.com/Jim-dc95811/ArcGIS-Earth-Unlocked/blob/main/REFERENCE_2.0.md)) - the program is v1.1, output unchanged. v1.1 adds safer failure handling and clearer error messages; conversion output is unchanged ([v1.1 changes](MB2TPKX_V1.1_CHANGES.md)). v1.1.1: the launcher installs Pillow by itself if it is missing. v1.1.2: a tidy folder - `mb2tpkx.bat` plus `System Files`. **v1.1.3 (Ready to Fly):** the .bat finds Python or installs it for you (no admin - answer **Y**), and Pillow too; the converter is unchanged.
+Convert compatible raster MBTiles directly into native offline TPKX packages for ArcGIS Earth. **2.1 (8 Nov 2026):** checks the disk has room before it starts, shows `bundle N of M (P%)`, asks **Replace it? [y/N]** when the TPKX already exists, and explains a damaged MBTiles in plain words - the map tiles it writes are byte-identical to 2.0 ([2.1 changes](MB2TPKX_MASTER4_V2.1_CHANGES.md)). **2.0 (8 Nov 2026):** the whole family moved to 2.0 as one reference point ([2.0 Reference](https://github.com/Jim-dc95811/ArcGIS-Earth-Unlocked/blob/main/REFERENCE_2.0.md)) - the program is v1.1, output unchanged. v1.1 adds safer failure handling and clearer error messages; conversion output is unchanged ([v1.1 changes](MB2TPKX_V1.1_CHANGES.md)). v1.1.1: the launcher installs Pillow by itself if it is missing. v1.1.2: a tidy folder - `mb2tpkx.bat` plus `System Files`. **v1.1.3 (Ready to Fly):** the .bat finds Python or installs it for you (no admin - answer **Y**), and Pillow too; the converter is unchanged.
 
 [![A converted TPKX open offline in ArcGIS Earth: Bryceville, Florida, imagery with roads and place labels](images/mb2tpkx_bryceville_tpkx_arcgis_earth.jpg)](https://www.youtube.com/watch?v=C71n8TAByuE)
 
 *A QGIS MBTiles map of Bryceville, Florida, converted to TPKX and open offline in ArcGIS Earth. ▶️ [Watch the how-to video](https://www.youtube.com/watch?v=C71n8TAByuE) (YouTube).*
 
-### **⬇️ [6. DOWNLOAD MASTER 4 GRID MAKER v2.0](Master4_Grid_Maker.zip)**
+### **⬇️ [6. DOWNLOAD MASTER 4 GRID MAKER v2.1](Master4_Grid_Maker.zip)**
 **📖 [User manual (PDF)](Master4_Grid_Maker_User_Manual.pdf)**
 **🗂️ [What's in the zip - every file explained](images/master4_grid_maker_whats_in_the_zip_full.png)**
 **📦 [Download the Whole ArcGIS Earth Unlocked Series of Tools - all 10 in one zip](https://github.com/Jim-dc95811/ArcGIS-Earth-Unlocked/raw/main/downloads/ArcGIS_Earth_Unlocked_All_Tools.zip)**
 
-Create repeatable 1-degree production grids, numbered cells, exact QGIS-ready extents, and deterministic filenames. **2.0 (8 Nov 2026):** part of the [2.0 Reference](https://github.com/Jim-dc95811/ArcGIS-Earth-Unlocked/blob/main/REFERENCE_2.0.md) - the program is v3.1, grid output unchanged. v3.1 adds safer input and file handling; grid output is unchanged ([v3.1 changes](MASTER4_V3.1_CHANGES.md)). v3.1.1: the launcher installs Pillow by itself if it is missing. v3.1.2: a tidy folder - `Master4_Grid_Maker.bat` plus `System Files`. **v3.1.3 (Ready to Fly):** the .bat finds Python or installs it for you (no admin - answer **Y**), and Pillow too; the grid maker is unchanged.
+Create repeatable 1-degree production grids, numbered cells, exact QGIS-ready extents, and deterministic filenames. **2.1 (8 Nov 2026):** a box typed the wrong way (for example `-82,-81,30,31`) now shows how to type it; grid output unchanged ([2.1 changes](MB2TPKX_MASTER4_V2.1_CHANGES.md)). **2.0 (8 Nov 2026):** part of the [2.0 Reference](https://github.com/Jim-dc95811/ArcGIS-Earth-Unlocked/blob/main/REFERENCE_2.0.md) - the program is v3.1, grid output unchanged. v3.1 adds safer input and file handling; grid output is unchanged ([v3.1 changes](MASTER4_V3.1_CHANGES.md)). v3.1.1: the launcher installs Pillow by itself if it is missing. v3.1.2: a tidy folder - `Master4_Grid_Maker.bat` plus `System Files`. **v3.1.3 (Ready to Fly):** the .bat finds Python or installs it for you (no admin - answer **Y**), and Pillow too; the grid maker is unchanged.
 
 <a href="https://www.youtube.com/watch?v=zNt-I4KgAy8"><img src="images/master4_grid_jacksonville_arcgis_earth.jpg" width="520" alt="Master 4 grid in ArcGIS Earth: a 1-degree box over Jacksonville, Florida, split into 100 numbered cells"></a>
 
@@ -203,7 +203,7 @@ These diagrams explain tile pyramids and layer compositing. They do **not** impl
 ## Master 4 Grid Maker guides
 
 **[Read the full Master 4 guide](MASTER4_GRID_MAKER.md)**  
-**[Open the 2.0 manual as a PDF](Master4_Grid_Maker_User_Manual.pdf)**
+**[Open the 2.1 manual as a PDF](Master4_Grid_Maker_User_Manual.pdf)**
 
 The Master 4 numbering is hemisphere-aware. The first decimal digit of absolute latitude gives the tens row; the first decimal digit of absolute longitude plus one gives the column. Thus `30.56N, 81.34W`, `30.56N, 10.34E`, `30.56S, 81.34W`, and `30.56S, 10.34E` all identify **cell 54**.
 
