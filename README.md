@@ -1,6 +1,14 @@
-# MBTiles -> TPKX: offline maps for ArcGIS Earth
+# Make offline TPKX maps for ArcGIS Earth
 
 > 🤖 **Using AI assistance?** Have the agent read the [CLAUDE.md](https://github.com/Jim-dc95811/ArcGIS-Earth-Unlocked/blob/main/CLAUDE.md) file first.
+
+This is the **map-production** home of the family: three ways to build and plan native offline **TPKX** maps for ArcGIS Earth.
+
+- **QGIS → TPKX converter** — turn compatible raster MBTiles into native offline TPKX.
+- **Master 4 Grid Maker** — plan large areas into numbered 1-degree production cells with exact extents.
+- **ArcGIS TPKX Batch Factory** — build TPKX straight from ArcGIS Pro, 1-10 controlled extents at a time.
+
+Once your maps are built, plot live positions on them with the [**ArcGIS Earth Map Plotting**](https://github.com/Jim-dc95811/ArcGIS-Earth-Offline-Maps-Chartplotting) tools (P25 radio GPS, PRAVE / ME tracking).
 
 ## Get everything you need
 
@@ -12,12 +20,16 @@
 
 **4. ⬇️ [ArcGIS Earth](https://www.esri.com/en-us/arcgis/products/arcgis-earth/downloads)** - free 3D globe from Esri (Windows desktop version); it opens the finished TPKX maps.
 
+**5. ⬇️ [ArcGIS Pro 3.7](https://esri.com/en-us/arcgis/products/arcgis-pro/trial)** - Esri's licensed desktop GIS (21-day free trial). **Batch Factory only.**
+
+**6. ⬇️ [.NET 10 SDK](https://dotnet.microsoft.com/en-us/download/dotnet/10.0)** - free from Microsoft; the Batch Factory installer uses it. **Batch Factory only.**
+
 > **First time? Three quick tips**
 > 1. **Extract the zip first:** right-click the downloaded zip > **Extract All**, then open the new folder. Double-clicking files while they are still inside the zip does not work.
 > 2. **Windows security warning:** Windows may warn about any program downloaded from the internet. Click **More info > Run anyway** (blue "Windows protected your PC" screen) or **Run**. To avoid the warning, right-click the zip > **Properties** > tick **Unblock** > **OK** before extracting.
 > 3. **Installing Python:** if the installer shows **"Add python.exe to PATH"**, tick it.
 
-### **⬇️ [5. DOWNLOAD MBTILES -> TPKX CONVERTER v2.1](mb2tpkx.zip)**
+### **⬇️ [7. DOWNLOAD MBTILES -> TPKX CONVERTER v2.1](mb2tpkx.zip)**
 **📖 [User manual (PDF)](mb2tpkx_User_Manual.pdf)**
 **🗂️ [What's in the zip - every file explained](images/mb2tpkx_whats_in_the_zip_full.png)**
 **📦 [Download the Whole ArcGIS Earth Unlocked Series of Tools - all 10 in one zip](https://github.com/Jim-dc95811/ArcGIS-Earth-Unlocked/raw/main/downloads/ArcGIS_Earth_Unlocked_All_Tools.zip)**
@@ -28,7 +40,7 @@ Convert compatible raster MBTiles directly into native offline TPKX packages for
 
 *A QGIS MBTiles map of Bryceville, Florida, converted to TPKX and open offline in ArcGIS Earth. ▶️ [Watch the how-to video](https://www.youtube.com/watch?v=C71n8TAByuE) (YouTube).*
 
-### **⬇️ [6. DOWNLOAD MASTER 4 GRID MAKER v2.1](Master4_Grid_Maker.zip)**
+### **⬇️ [8. DOWNLOAD MASTER 4 GRID MAKER v2.1](Master4_Grid_Maker.zip)**
 **📖 [User manual (PDF)](Master4_Grid_Maker_User_Manual.pdf)**
 **🗂️ [What's in the zip - every file explained](images/master4_grid_maker_whats_in_the_zip_full.png)**
 **📦 [Download the Whole ArcGIS Earth Unlocked Series of Tools - all 10 in one zip](https://github.com/Jim-dc95811/ArcGIS-Earth-Unlocked/raw/main/downloads/ArcGIS_Earth_Unlocked_All_Tools.zip)**
@@ -38,6 +50,19 @@ Create repeatable 1-degree production grids, numbered cells, exact QGIS-ready ex
 <a href="https://www.youtube.com/watch?v=zNt-I4KgAy8"><img src="images/master4_grid_jacksonville_arcgis_earth.jpg" width="520" alt="Master 4 grid in ArcGIS Earth: a 1-degree box over Jacksonville, Florida, split into 100 numbered cells"></a>
 
 *A 1-degree Master 4 box over Jacksonville, Florida, split into 100 numbered cells in ArcGIS Earth. ▶️ [Watch the Master 4 video](https://www.youtube.com/watch?v=zNt-I4KgAy8) (YouTube).*
+
+### **⬇️ [9. DOWNLOAD ARCGIS TPKX BATCH FACTORY v2.0](TPKX_Batch_Factory_v1.zip)**
+**📖 [User manual](TPKX_BATCH_FACTORY.md)** ([PDF](TPKX_Batch_Factory_User_Guide.pdf))
+**🗂️ [What's in the zip - every file explained](images/tpkx_batch_factory_whats_in_the_zip_full.png)**
+**📦 [Download the Whole ArcGIS Earth Unlocked Series of Tools - all 10 in one zip](https://github.com/Jim-dc95811/ArcGIS-Earth-Unlocked/raw/main/downloads/ArcGIS_Earth_Unlocked_All_Tools.zip)**
+
+The ArcGIS Pro route to TPKX. An add-in that turns 1-10 controlled extents into **Satellite**, **Road Overlay**, or **Both** TPKX packages at Z16-Z20, with preflight checks, logs and safety rails. The extents come straight from the [Master 4 Grid Maker](MASTER4_GRID_MAKER.md) above - two tools, one production line. **Needs ArcGIS Pro 3.7 and the .NET 10 SDK** (items 5-6 above); built on your PC by `BUILD_INSTALL.bat`, then it appears as **Open Factory** on the Add-In tab.
+
+![ArcGIS TPKX Batch Factory window in ArcGIS Pro: map product, maximum zoom, destination, extent rows and BUILD BATCH](images/batch_factory_window.png)
+
+*The Batch Factory inside ArcGIS Pro: pick the map product, maximum zoom and destination, paste up to 10 extents, then BUILD BATCH.*
+
+> **Pasting Master 4 rows into the Batch Factory:** delete the file name at the end of each row first. The Factory accepts `01 -9028010.7033,-9016878.7543,3503549.8435,3516410.3983 [EPSG:3857]` but rejects the same row with `W082W081N031N030-001-GHY-Z20.tpkx` still on the end.
 
 **Make native offline ArcGIS Earth maps from compatible raster MBTiles, then organize large areas with the Master 4 grid system.** The converter preserves the original PNG/JPEG map tiles at every recorded zoom level. Master 4 adds repeatable geographic cells, deterministic filenames, a numbered reference overlay, and an optional synthetic TPKX that makes stored zoom levels visible before QGIS production begins.
 
@@ -262,6 +287,7 @@ JPEG/75 is chosen while producing MBTiles, not by the converter. The PNG and JPE
 - [MASTER4_V3.1_CHANGES.md](MASTER4_V3.1_CHANGES.md) - Master 4 Grid Maker v3.1 change document and verification record.
 - [DEMO.md](DEMO.md) - videos and beginner/field workflow.
 - [MASTER4_GRID_MAKER.md](MASTER4_GRID_MAKER.md) - Master 4 v3 operation and optional demo TPKX.
+- [TPKX_BATCH_FACTORY.md](TPKX_BATCH_FACTORY.md) - ArcGIS TPKX Batch Factory operator guide (ArcGIS Pro add-in).
 - [CONTINUITY.md](CONTINUITY.md) - current project handoff.
 - [TECHNICAL.md](TECHNICAL.md) - technical behavior, format invariants and current v3 record.
 - [RELEASE_CHECKLIST.md](RELEASE_CHECKLIST.md) - public-release and regression review.
@@ -272,7 +298,7 @@ JPEG/75 is chosen while producing MBTiles, not by the converter. The PNG and JPE
 
 ## Human-AI engineering collaboration
 
-This project was conceived, directed, developed through hands-on experiments, and field-tested by **Jim Gaddy**, working with **OpenAI's ChatGPT** and **Anthropic's Claude** as AI coding and documentation partners. Jim supplied the problem, technical direction, reference tests and real-world acceptance testing; ChatGPT assisted with the original implementation, technical research, regression work, diagrams and documentation; Claude built the hardening releases (mb2tpkx v1.1, Master 4 v3.1) and the self-installing launchers (v1.1.1 / v3.1.1), with byte-for-byte regression tests, and wrote the converter user manual and the 'What's in the zip' sheets.
+This project was conceived, directed, developed through hands-on experiments, and field-tested by **Jim Gaddy**, working with **OpenAI's ChatGPT** and **Anthropic's Claude** as AI coding and documentation partners. Jim supplied the problem, technical direction, reference tests and real-world acceptance testing; ChatGPT assisted with the original implementation, technical research, regression work, diagrams and documentation; Claude built the hardening releases (mb2tpkx v1.1, Master 4 v3.1) and the self-installing launchers (v1.1.1 / v3.1.1), with byte-for-byte regression tests, and wrote the converter user manual and the 'What's in the zip' sheets. The **ArcGIS TPKX Batch Factory** (an ArcGIS Pro add-in, built with ChatGPT) joined this repository in the 2026-11-11 reorganization that grouped all TPKX map-production tools together.
 
 This acknowledgment is not a claim of OpenAI or Anthropic sponsorship or endorsement and does not alter any rights in third-party software, specifications or imagery.
 
