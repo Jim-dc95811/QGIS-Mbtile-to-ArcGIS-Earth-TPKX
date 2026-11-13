@@ -31,7 +31,7 @@ Once your maps are built, plot live positions on them with the [**ArcGIS Earth M
 > 2. **Windows security warning:** Windows may warn about any program downloaded from the internet. Click **More info > Run anyway** (blue "Windows protected your PC" screen) or **Run**. To avoid the warning, right-click the zip > **Properties** > tick **Unblock** > **OK** before extracting.
 > 3. **Installing Python:** if the installer shows **"Add python.exe to PATH"**, tick it.
 
-### **⭐ [7. Get the MBTiles to TPKX Converter from Google Drive](https://drive.google.com/drive/folders/1jsxVTDsYdgJHibhCCeI9I69FsG0qMGgc?usp=sharing)**
+### **⭐ [7. Get the MBTiles to TPKX Converter from Google Drive](https://drive.google.com/drive/folders/1jCBdgq0EXnN1WWaURIMEdhPfQq1On5o8)**
 
 *Easiest, no download warning: open the Drive folder, open **mb2tpkx_v2.1**, and run its one `.bat`. Prefer GitHub? Developers can grab the [direct zip](mb2tpkx.zip) - a direct download can trip a Windows antivirus false alarm, which Drive avoids.*
 **📖 [User manual (PDF)](mb2tpkx_User_Manual.pdf)**
@@ -46,7 +46,7 @@ Convert compatible raster MBTiles directly into native offline TPKX packages for
 
 *A QGIS MBTiles map of Bryceville, Florida, converted to TPKX and open offline in ArcGIS Earth. ▶️ [Watch the how-to video](https://www.youtube.com/watch?v=C71n8TAByuE) (YouTube).*
 
-### **⭐ [8. Get Master 4 Grid Maker from Google Drive](https://drive.google.com/drive/folders/1jsxVTDsYdgJHibhCCeI9I69FsG0qMGgc?usp=sharing)**
+### **⭐ [8. Get Master 4 Grid Maker from Google Drive](https://drive.google.com/drive/folders/1psSeko18C2F8wog9WbNQw-81NNR8BibE)**
 
 *Easiest, no download warning: open the Drive folder, open **Master4_Grid_Maker_v2.1**, and run its one `.bat`. Prefer GitHub? Developers can grab the [direct zip](Master4_Grid_Maker.zip) - a direct download can trip a Windows antivirus false alarm, which Drive avoids.*
 **📖 [User manual (PDF)](Master4_Grid_Maker_User_Manual.pdf)**
