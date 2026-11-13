@@ -32,6 +32,8 @@ Once your maps are built, plot live positions on them with the [**ArcGIS Earth M
 ### **⬇️ [7. DOWNLOAD MBTILES -> TPKX CONVERTER v2.1](mb2tpkx.zip)**
 **📖 [User manual (PDF)](mb2tpkx_User_Manual.pdf)**
 **🗂️ [What's in the zip - every file explained](images/mb2tpkx_whats_in_the_zip_full.png)**
+**⭐ EASIEST WAY — [Get all 11 tools from Google Drive](https://drive.google.com/drive/folders/1jsxVTDsYdgJHibhCCeI9I69FsG0qMGgc?usp=sharing)** — no download warnings, the whole series is under 10 MB. Open the folder, open the tool you want, and run its one `.bat`.
+
 **📦 [Download the Whole ArcGIS Earth Unlocked Series of Tools - all 10 in one zip](https://github.com/Jim-dc95811/ArcGIS-Earth-Unlocked/raw/main/downloads/ArcGIS_Earth_Unlocked_All_Tools.zip)**
 
 Convert compatible raster MBTiles directly into native offline TPKX packages for ArcGIS Earth. **2.1 (8 Nov 2026):** checks the disk has room before it starts, shows `bundle N of M (P%)`, asks **Replace it? [y/N]** when the TPKX already exists, and explains a damaged MBTiles in plain words - the map tiles it writes are byte-identical to 2.0 ([2.1 changes](MB2TPKX_MASTER4_V2.1_CHANGES.md)). **2.0 (8 Nov 2026):** the whole family moved to 2.0 as one reference point ([2.0 Reference](https://github.com/Jim-dc95811/ArcGIS-Earth-Unlocked/blob/main/REFERENCE_2.0.md)) - the program is v1.1, output unchanged. v1.1 adds safer failure handling and clearer error messages; conversion output is unchanged ([v1.1 changes](MB2TPKX_V1.1_CHANGES.md)). v1.1.1: the launcher installs Pillow by itself if it is missing. v1.1.2: a tidy folder - `mb2tpkx.bat` plus `System Files`. **v1.1.3 (Ready to Fly):** the .bat finds Python or installs it for you (no admin - answer **Y**), and Pillow too; the converter is unchanged.
@@ -43,6 +45,8 @@ Convert compatible raster MBTiles directly into native offline TPKX packages for
 ### **⬇️ [8. DOWNLOAD MASTER 4 GRID MAKER v2.1](Master4_Grid_Maker.zip)**
 **📖 [User manual (PDF)](Master4_Grid_Maker_User_Manual.pdf)**
 **🗂️ [What's in the zip - every file explained](images/master4_grid_maker_whats_in_the_zip_full.png)**
+**⭐ EASIEST WAY — [Get all 11 tools from Google Drive](https://drive.google.com/drive/folders/1jsxVTDsYdgJHibhCCeI9I69FsG0qMGgc?usp=sharing)** — no download warnings, the whole series is under 10 MB. Open the folder, open the tool you want, and run its one `.bat`.
+
 **📦 [Download the Whole ArcGIS Earth Unlocked Series of Tools - all 10 in one zip](https://github.com/Jim-dc95811/ArcGIS-Earth-Unlocked/raw/main/downloads/ArcGIS_Earth_Unlocked_All_Tools.zip)**
 
 Create repeatable 1-degree production grids, numbered cells, exact QGIS-ready extents, and deterministic filenames. **2.1 (8 Nov 2026):** a box typed the wrong way (for example `-82,-81,30,31`) now shows how to type it; grid output unchanged ([2.1 changes](MB2TPKX_MASTER4_V2.1_CHANGES.md)). **2.0 (8 Nov 2026):** part of the [2.0 Reference](https://github.com/Jim-dc95811/ArcGIS-Earth-Unlocked/blob/main/REFERENCE_2.0.md) - the program is v3.1, grid output unchanged. v3.1 adds safer input and file handling; grid output is unchanged ([v3.1 changes](MASTER4_V3.1_CHANGES.md)). v3.1.1: the launcher installs Pillow by itself if it is missing. v3.1.2: a tidy folder - `Master4_Grid_Maker.bat` plus `System Files`. **v3.1.3 (Ready to Fly):** the .bat finds Python or installs it for you (no admin - answer **Y**), and Pillow too; the grid maker is unchanged.
@@ -54,6 +58,8 @@ Create repeatable 1-degree production grids, numbered cells, exact QGIS-ready ex
 ### **⬇️ [9. DOWNLOAD ARCGIS TPKX BATCH FACTORY v2.0](TPKX_Batch_Factory_v1.zip)**
 **📖 [User manual](TPKX_BATCH_FACTORY.md)** ([PDF](TPKX_Batch_Factory_User_Guide.pdf))
 **🗂️ [What's in the zip - every file explained](images/tpkx_batch_factory_whats_in_the_zip_full.png)**
+**⭐ EASIEST WAY — [Get all 11 tools from Google Drive](https://drive.google.com/drive/folders/1jsxVTDsYdgJHibhCCeI9I69FsG0qMGgc?usp=sharing)** — no download warnings, the whole series is under 10 MB. Open the folder, open the tool you want, and run its one `.bat`.
+
 **📦 [Download the Whole ArcGIS Earth Unlocked Series of Tools - all 10 in one zip](https://github.com/Jim-dc95811/ArcGIS-Earth-Unlocked/raw/main/downloads/ArcGIS_Earth_Unlocked_All_Tools.zip)**
 
 The ArcGIS Pro route to TPKX. An add-in that turns 1-10 controlled extents into **Satellite**, **Road Overlay**, or **Both** TPKX packages at Z16-Z20, with preflight checks, logs and safety rails. The extents come straight from the [Master 4 Grid Maker](MASTER4_GRID_MAKER.md) above - two tools, one production line. **Needs ArcGIS Pro 3.7 and the .NET 10 SDK** (items 5-6 above); built on your PC by `BUILD_INSTALL.bat`, then it appears as **Open Factory** on the Add-In tab.
