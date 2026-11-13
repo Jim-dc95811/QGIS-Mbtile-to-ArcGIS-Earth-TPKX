@@ -31,7 +31,9 @@ Once your maps are built, plot live positions on them with the [**ArcGIS Earth M
 > 2. **Windows security warning:** Windows may warn about any program downloaded from the internet. Click **More info > Run anyway** (blue "Windows protected your PC" screen) or **Run**. To avoid the warning, right-click the zip > **Properties** > tick **Unblock** > **OK** before extracting.
 > 3. **Installing Python:** if the installer shows **"Add python.exe to PATH"**, tick it.
 
-### **⬇️ [7. DOWNLOAD MBTILES -> TPKX CONVERTER v2.1](mb2tpkx.zip)**
+### **⭐ [7. Get the MBTiles to TPKX Converter from Google Drive](https://drive.google.com/drive/folders/1jsxVTDsYdgJHibhCCeI9I69FsG0qMGgc?usp=sharing)**
+
+*Easiest, no download warning: open the Drive folder, open **mb2tpkx_v2.1**, and run its one `.bat`. Prefer GitHub? Developers can grab the [direct zip](mb2tpkx.zip) - a direct download can trip a Windows antivirus false alarm, which Drive avoids.*
 **📖 [User manual (PDF)](mb2tpkx_User_Manual.pdf)**
 **🗂️ [What's in the zip - every file explained](images/mb2tpkx_whats_in_the_zip_full.png)**
 **⭐ EASIEST WAY — [Get all 11 tools from Google Drive](https://drive.google.com/drive/folders/1jsxVTDsYdgJHibhCCeI9I69FsG0qMGgc?usp=sharing)** — no download warnings, the whole series is under 10 MB. Open the folder, open the tool you want, and run its one `.bat`.
@@ -44,7 +46,9 @@ Convert compatible raster MBTiles directly into native offline TPKX packages for
 
 *A QGIS MBTiles map of Bryceville, Florida, converted to TPKX and open offline in ArcGIS Earth. ▶️ [Watch the how-to video](https://www.youtube.com/watch?v=C71n8TAByuE) (YouTube).*
 
-### **⬇️ [8. DOWNLOAD MASTER 4 GRID MAKER v2.1](Master4_Grid_Maker.zip)**
+### **⭐ [8. Get Master 4 Grid Maker from Google Drive](https://drive.google.com/drive/folders/1jsxVTDsYdgJHibhCCeI9I69FsG0qMGgc?usp=sharing)**
+
+*Easiest, no download warning: open the Drive folder, open **Master4_Grid_Maker_v2.1**, and run its one `.bat`. Prefer GitHub? Developers can grab the [direct zip](Master4_Grid_Maker.zip) - a direct download can trip a Windows antivirus false alarm, which Drive avoids.*
 **📖 [User manual (PDF)](Master4_Grid_Maker_User_Manual.pdf)**
 **🗂️ [What's in the zip - every file explained](images/master4_grid_maker_whats_in_the_zip_full.png)**
 **⭐ EASIEST WAY — [Get all 11 tools from Google Drive](https://drive.google.com/drive/folders/1jsxVTDsYdgJHibhCCeI9I69FsG0qMGgc?usp=sharing)** — no download warnings, the whole series is under 10 MB. Open the folder, open the tool you want, and run its one `.bat`.
@@ -57,7 +61,9 @@ Create repeatable 1-degree production grids, numbered cells, exact QGIS-ready ex
 
 *A 1-degree Master 4 box over Jacksonville, Florida, split into 100 numbered cells in ArcGIS Earth. ▶️ [Watch the Master 4 video](https://www.youtube.com/watch?v=zNt-I4KgAy8) (YouTube).*
 
-### **⬇️ [9. DOWNLOAD ARCGIS TPKX BATCH FACTORY v2.0](TPKX_Batch_Factory_v1.zip)**
+### **⬇️ [9. Download ArcGIS TPKX Batch Factory v2.0](TPKX_Batch_Factory_v1.zip)**
+
+*ArcGIS Pro add-in, GitHub only. A direct download can trip an over-eager Windows antivirus false alarm; if you trust it, click More info > Run anyway.*
 **📖 [User manual](TPKX_BATCH_FACTORY.md)** ([PDF](TPKX_Batch_Factory_User_Guide.pdf))
 **🗂️ [What's in the zip - every file explained](images/tpkx_batch_factory_whats_in_the_zip_full.png)**
 **⭐ EASIEST WAY — [Get all 11 tools from Google Drive](https://drive.google.com/drive/folders/1jsxVTDsYdgJHibhCCeI9I69FsG0qMGgc?usp=sharing)** — no download warnings, the whole series is under 10 MB. Open the folder, open the tool you want, and run its one `.bat`.
